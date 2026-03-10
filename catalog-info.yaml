@@ -1,20 +1,18 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: blank.prototype.kit
-  title: Blank-Prototype-Kit
+  name: pip.agent.rebuild
+  title: Pip-Agent-Rebuild
   description: |
-    A blank prototype kit version 13.18.1 with DWP Frontend installed
-
+    A blank prototype
   annotations:
-    gitlab.com/project-slug: dwp/user-centred-design/blank-prototype-kit
-
+    gitlab.com/project-slug: dwp/user-centred-design/pip-agent-rebuild
   labels:
     dwp.gov.uk/version: 1.0.0
     dwp.gov.uk/license: unknown
 
     dwp.gov.uk/last-verified.by: Ben Raine
-    dwp.gov.uk/last-verified.on: 2026-03-06
+    dwp.gov.uk/last-verified.on: 2026-03-10
 
     dwp.gov.uk/open-source.approved: "true"
     dwp.gov.uk/open-source.location: none
