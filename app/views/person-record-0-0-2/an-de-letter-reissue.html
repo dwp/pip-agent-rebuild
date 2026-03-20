@@ -1,0 +1,87 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  {% if data["applicaiton-actions"] == "ok" %}
+  <form action="an-de-disagree-reasons" method="post" class="form">
+
+  {% elif data["applicaiton-actions"] == "1m" or data["applicaiton-actions"] == "13m" %}
+  <form action="an-de-goodcause-check" method="post" class="form">
+
+  {% else %}
+  {% endif %}
+
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-reissue-lost-letter",
+        name: "an-de-reissue-lost-letter",
+        fieldset: {
+          legend: {
+            html: "Do they need us to resend their decision letter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "The letter can take up to 3 weeks to arrive."
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["an-de-reissue-lost-letter"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["an-de-reissue-lost-letter"] == "No")
+        }
+        ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

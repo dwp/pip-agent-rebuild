@@ -1,0 +1,78 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "Personal Independence Payment",
+            serviceHref: "./entry-home",
+            action: "My Home page",
+            actionHref: "./entry-home",
+            container: true
+        })
+}}
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/explore-header.js"></script>
+{% endblock %}
+
+
+{% block footer %}
+
+
+
+<div class="govuk-width-container">
+
+  <p class="govuk-body">
+    <a class="govuk-footer__link" href="/another-decision-0-0-6/an-de-exit-mr-process-early">I cannot complete this mandatory reconsideration decision</a>.
+  </p>
+
+</div>
+
+{% block govukFooter %}
+
+ {{ govukFooter({
+   meta: {
+      items: [
+     {
+       href: "/manage-prototype/clear-data",
+       text: "Clear data"
+     },
+      {
+        href: "/privacy",
+        text: "Accessibility statement"
+      },
+      {
+         href: "/privacy",
+         text: "Cookies"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+
+
+
+ }) }}
+{% endblock %}
+
+{% endblock %}

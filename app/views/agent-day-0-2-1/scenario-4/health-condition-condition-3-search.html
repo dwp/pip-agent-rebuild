@@ -1,0 +1,557 @@
+{% extends "layouts/layout.html" %}
+
+{% block pageTitle %}
+Record another condition or disability
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block head %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="/public/images/accessible-autocomplete.min.css"/>
+  <script src="/public/javascripts/accessible-autocomplete2.min.js"></script>
+  <style>
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+      font-family: GDS Transport,arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="health-condition-summary-3" method="post">
+
+
+
+      {% include "agent-day-0-2-1/record-id.html" %}
+
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Record another condition or disability</h1>
+
+            <!-- DATA SET -->
+            <div>
+
+              {% set illnesses = [
+            {
+            text: "",
+            value: "",
+            code: ""
+            }, {
+
+            text: "Achondroplasia	",
+            value: "Achondroplasia	",
+            code: "XX1	"
+            }, {
+
+            text: "Acne vulgaris 	",
+            value: "Acne vulgaris 	",
+            code: "XX2	"
+            }, {
+
+            text: "Aortic valve disease 	",
+            value: "Aortic valve disease 	",
+            code: "XX3	"
+            }, {
+
+            text: "Benign essential tremor	",
+            value: "Benign essential tremor	",
+            code: "XX4	"
+            }, {
+
+            text: "Blepharospasm	",
+            value: "Blepharospasm	",
+            code: "XX5	"
+            }, {
+
+            text: "Brachial plexus 	",
+            value: "Brachial plexus 	",
+            code: "XX6	"
+            }, {
+
+            text: "Brachial plexus 	",
+            value: "Brachial plexus 	",
+            code: "XX7	"
+            }, {
+
+            text: "Cancer of renal pelvis 	",
+            value: "Cancer of renal pelvis 	",
+            code: "XX8	"
+            }, {
+
+            text: "Cataplexy	",
+            value: "Cataplexy	",
+            code: "XX9	"
+            }, {
+
+            text: "Cerebral palsy ataxic	",
+            value: "Cerebral palsy ataxic	",
+            code: "XX10	"
+            }, {
+
+            text: "Cerebral palsy athetoid 	",
+            value: "Cerebral palsy athetoid 	",
+            code: "XX11	"
+            }, {
+
+            text: "Cerebral palsy other/type not known	",
+            value: "Cerebral palsy other/type not known	",
+            code: "XX12	"
+            }, {
+
+            text: "Cerebral palsy quadriplegia	",
+            value: "Cerebral palsy quadriplegia	",
+            code: "XX13	"
+            }, {
+
+            text: "Cerebral palsy spastic diplegia	",
+            value: "Cerebral palsy spastic diplegia	",
+            code: "XX14	"
+            }, {
+
+            text: "Cerebralpalsy hemiparesis	",
+            value: "Cerebralpalsy hemiparesis	",
+            code: "XX14	"
+            }, {
+
+            text: "Cerebrovascular accident (stroke)	",
+            value: "Cerebrovascular accident (stroke)	",
+            code: "XX14	"
+            }, {
+
+            text: "Charcot Marie Tooth disease	",
+            value: "Charcot Marie Tooth disease	",
+            code: "XX14	"
+            }, {
+
+            text: "Chronic fatigue syndrome	",
+            value: "Chronic fatigue syndrome	",
+            code: "XX14	"
+            }, {
+
+            text: "Chronic venous insufficiency 	",
+            value: "Chronic venous insufficiency 	",
+            code: "XX14	"
+            }, {
+
+            text: "Cognitive disorder due to stroke 	",
+            value: "Cognitive disorder due to stroke 	",
+            code: "XX14	"
+            }, {
+
+            text: "Creutzfeldt Jacob disease (Transmissible Spongiform Encephalopathy TSE)	",
+            value: "Creutzfeldt Jacob disease (Transmissible Spongiform Encephalopathy TSE)	",
+            code: "XX14	"
+            }, {
+
+            text: "Dermatomyositis	",
+            value: "Dermatomyositis	",
+            code: "XX14	"
+            }, {
+
+            text: "Diabetes mellitus (non insulin dependent) 	",
+            value: "Diabetes mellitus (non insulin dependent) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Diabetic neuropathy	",
+            value: "Diabetic neuropathy	",
+            code: "XX14	"
+            }, {
+
+            text: "Drop attacks	",
+            value: "Drop attacks	",
+            code: "XX14	"
+            }, {
+
+            text: "Duchenne muscular dystrophy	",
+            value: "Duchenne muscular dystrophy	",
+            code: "XX14	"
+            }, {
+
+            text: "Dystrophia myotonica	",
+            value: "Dystrophia myotonica	",
+            code: "XX14	"
+            }, {
+
+            text: "Eczema (dermatitis) 	",
+            value: "Eczema (dermatitis) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Ehlers-Danlos syndrome 	",
+            value: "Ehlers-Danlos syndrome 	",
+            code: "XX14	"
+            }, {
+
+            text: "Ehlers-Danlos syndrome (hypermobility type) 	",
+            value: "Ehlers-Danlos syndrome (hypermobility type) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Endometriosis 	",
+            value: "Endometriosis 	",
+            code: "XX14	"
+            }, {
+
+            text: "Facioscapulohumeral muscular dystrophy	",
+            value: "Facioscapulohumeral muscular dystrophy	",
+            code: "XX14	"
+            }, {
+
+            text: "Friedrich's ataxia	",
+            value: "Friedrich's ataxia	",
+            code: "XX14	"
+            }, {
+
+            text: "Generalised seizures (with status in last 12 months)	",
+            value: "Generalised seizures (with status in last 12 months)	",
+            code: "XX14	"
+            }, {
+
+            text: "Generalised seizures (without status in last 12 months)	",
+            value: "Generalised seizures (without status in last 12 months)	",
+            code: "XX14	"
+            }, {
+
+            text: "Golfer elbow (medial epicondylitis) 	",
+            value: "Golfer elbow (medial epicondylitis) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Guillain Barre syndrome	",
+            value: "Guillain Barre syndrome	",
+            code: "XX14	"
+            }, {
+
+            text: "Head injury with  cognitive and sensorimotor impairment	",
+            value: "Head injury with  cognitive and sensorimotor impairment	",
+            code: "XX14	"
+            }, {
+
+            text: "Head injury with cognitive impairment	",
+            value: "Head injury with cognitive impairment	",
+            code: "XX14	"
+            }, {
+
+            text: "Head injury with sensorimotor impairment	",
+            value: "Head injury with sensorimotor impairment	",
+            code: "XX14	"
+            }, {
+
+            text: "Huntington's disease	",
+            value: "Huntington's disease	",
+            code: "XX14	"
+            }, {
+
+            text: "Hydrocephalus	",
+            value: "Hydrocephalus	",
+            code: "XX14	"
+            }, {
+
+            text: "Infection brain or nervous system other 	",
+            value: "Infection brain or nervous system other 	",
+            code: "XX14	"
+            }, {
+
+            text: "Keratoconus 	",
+            value: "Keratoconus 	",
+            code: "XX14	"
+            }, {
+
+            text: "Leg ulcers (arterial) 	",
+            value: "Leg ulcers (arterial) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Leg ulcers (venous) 	",
+            value: "Leg ulcers (venous) 	",
+            code: "XX14	"
+            }, {
+
+            text: "Limb girdle muscular dystrophy	",
+            value: "Limb girdle muscular dystrophy	",
+            code: "XX14	"
+            }, {
+
+            text: "Migraine	",
+            value: "Migraine	",
+            code: "XX14	"
+            }, {
+
+            text: "Motor neurone disease	",
+            value: "Motor neurone disease	",
+            code: "XX14	"
+            }, {
+
+            text: "Multiple sclerosis	",
+            value: "Multiple sclerosis	",
+            code: "XX14	"
+            }, {
+
+            text: "Muscular dystrophy Other/type not known	",
+            value: "Muscular dystrophy Other/type not known	",
+            code: "XX14	"
+            }, {
+
+            text: "Myasthenia gravis	",
+            value: "Myasthenia gravis	",
+            code: "XX14	"
+            }, {
+
+            text: "Narcolepsy	",
+            value: "Narcolepsy	",
+            code: "XX14	"
+            }, {
+
+            text: "Neurofibromatosis	",
+            value: "Neurofibromatosis	",
+            code: "XX14	"
+            }, {
+
+            text: "Non epileptic attack disorder (pseudoseizures)	",
+            value: "Non epileptic attack disorder (pseudoseizures)	",
+            code: "XX14	"
+            }, {
+
+            text: "Other ataxias	",
+            value: "Other ataxias	",
+            code: "XX14	"
+            }, {
+
+            text: "Other benign tumours	",
+            value: "Other benign tumours	",
+            code: "XX14	"
+            }, {
+
+            text: "Other causes of headache	",
+            value: "Other causes of headache	",
+            code: "XX14	"
+            }, {
+
+            text: "Other causes of spinal cord compression	",
+            value: "Other causes of spinal cord compression	",
+            code: "XX14	"
+            }, {
+
+            text: "Other cerebrovascular disease  	",
+            value: "Other cerebrovascular disease  	",
+            code: "XX14	"
+            }, {
+
+            text: "Other degenerative neuronal diseases	",
+            value: "Other degenerative neuronal diseases	",
+            code: "XX14	"
+            }, {
+
+            text: "Other diseases of blood vessels/lymphatics 	",
+            value: "Other diseases of blood vessels/lymphatics 	",
+            code: "XX14	"
+            }, {
+
+            text: "Other diseases of collagen and elastic tissue 	",
+            value: "Other diseases of collagen and elastic tissue 	",
+            code: "XX14	"
+            }, {
+
+            text: "Other diseases of muscle	",
+            value: "Other movement disorders 	",
+            code: "XX14	"
+            }, {
+
+            text: "Other neuropathies not known including peripheral	",
+            value: "Other neuropathies not known including peripheral	",
+            code: "XX14	"
+            }, {
+
+            text: "Other non epileptic disturbances of consciousness	",
+            value: "Other non epileptic disturbances of consciousness	",
+            code: "XX14	"
+            }, {
+
+            text: "Other or unspecified neurological disorders	",
+            value: "Other or unspecified neurological disorders	",
+            code: "XX14	"
+            }, {
+
+            text: "Other papulosquamous and inflammatory rashes 	",
+            value: "Other papulosquamous and inflammatory rashes 	",
+            code: "XX14	"
+            }, {
+
+            text: "Other peripheral nerve injury	",
+            value: "Other peripheral nerve injury	",
+            code: "XX14	"
+            }, {
+
+            text: "Other syncope	",
+            value: "Other syncope	",
+            code: "XX14	"
+            }, {
+
+            text: "Parkinson's disease	",
+            value: "Parkinson's disease	",
+            code: "XX14	"
+            }, {
+
+            text: "Parkinsonism 	",
+            value: "Parkinsonism 	",
+            code: "XX14	"
+            }, {
+
+            text: "Partial seizures (with status in last 12 months)	",
+            value: "Partial seizures (with status in last 12 months)	",
+            code: "XX14	"
+            }, {
+
+            text: "Partial seizures (without status in last 12 months)	",
+            value: "Partial seizures (without status in last 12 months)	",
+            code: "XX14	"
+            }, {
+
+            text: "Poliomyelitis and post polio syndrome	",
+            value: "Poliomyelitis and post polio syndrome	",
+            code: "XX14	"
+            }, {
+
+            text: "Polymyositis	",
+            value: "Polymyositis	",
+            code: "XX14	"
+            }, {
+
+            text: "Pressure sores 	",
+            value: "Pressure sores 	",
+            code: "XX14	"
+            }, {
+
+            text: "Psoriasis 	",
+            value: "Psoriasis 	",
+            code: "XX14	"
+            }, {
+
+            text: "Rosacea 	",
+            value: "Rosacea 	",
+            code: "XX14	"
+            }, {
+
+            text: "Spina bifida	",
+            value: "Spina bifida	",
+            code: "XX14	"
+            }, {
+
+            text: "Stokes Adams attacks (cardiovascular syncope)	",
+            value: "Stokes Adams attacks (cardiovascular syncope)	",
+            code: "XX14	"
+            }, {
+
+            text: "Syringomyelia and syringobulbia	",
+            value: "Syringomyelia and syringobulbia	",
+            code: "XX14	"
+            }, {
+
+            text: "Torticollis	",
+            value: "Torticollis	",
+            code: "XX14	"
+            }, {
+
+            text: "Tourette's syndrome	",
+            value: "Tourette's syndrome	",
+            code: "XX14	"
+            }, {
+
+            text: "Transient ischaemic attacks (TIAs)	",
+            value: "Transient ischaemic attacks (TIAs)	",
+            code: "XX14	"
+            }, {
+
+            text: "Traumatic paraplegia	",
+            value: "Traumatic paraplegia	",
+            code: "XX14	"
+            }, {
+
+            text: "Traumatic tetraplegia	",
+            value: "Traumatic tetraplegia	",
+            code: "XX14	"
+            }, {
+
+            text: "Unclassifiable seizures	",
+            value: "Unclassifiable seizures	",
+            code: "XX14	"
+            }, {
+
+            text: "Urticaria 	",
+            value: "Urticaria 	",
+            code: "XX14	"
+            }, {
+
+            text: "Varicose eczema 	",
+            value: "Varicose eczema 	",
+            code: "XX14	"
+            }, {
+
+            text: "Viral encephalitis or meningitis and its complications	",
+            value: "Viral encephalitis or meningitis and its complications	",
+            code: "XX14	"
+            }, {
+
+            text: "Writer's cramp	",
+            value: "Writer's cramp	",
+            code: "XX14	"
+            }, {
+
+            text: "No condition	",
+            value: "No condition	",
+            code: "XX14	"
+            }, {
+
+            text: "I cannot find the condition	",
+            value: "I cannot find the condition	",
+            code: "XX14	"
+            }
+
+            ] %}
+
+
+            </div>
+
+
+
+      {{ govukSelect({
+          id: "health-condition-3-search",
+          name: "health-condition-3-search",
+          value: data['health-condition-3-search'],
+          items: illnesses,
+          errorMessage: {
+            text:  data.validation['health-condition-3-search'].error.text
+          } if  data.validation['health-condition-3-search'].error
+        }) }}
+
+        <script>
+          accessibleAutocomplete.enhanceSelectElement({
+           selectElement: document.querySelector('#health-condition-3-search')
+         })
+       </script>
+
+
+        <p class="govuk-body">
+          <a href="health-condition-primary-enter" class="govuk-link govuk-link--no-visited-state">I cannot record a condition</a>
+        </p>
+
+        <button type="health-condition-summary-3" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

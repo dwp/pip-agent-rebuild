@@ -1,0 +1,80 @@
+{% extends "layouts/main-agent-process-mr.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="an-de-letter-inhand-check" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-letter-check",
+        name: "an-de-letter-check",
+        fieldset: {
+          legend: {
+            html: "How were they informed about their decision?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Over the phone",
+          text: "Over the phone",
+          checked: (data["an-de-letter-check"] == "Over the phone"),
+      hint: {
+        text: "They have not yet received their decision letter"
+      }
+    },
+        {
+          value: "By letter",
+          text: "By letter",
+          checked: (data["an-de-letter-check"] == "By letter ")
+        }
+        ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

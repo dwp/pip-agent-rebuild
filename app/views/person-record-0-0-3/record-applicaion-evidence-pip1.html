@@ -1,0 +1,580 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="application-5-view-evidence" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent-0-13/record-id.html" %}
+
+      {% include "includes/js-back-link.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information captured in registration (PIP1) </h1>
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Person details</h2>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Application details</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identity verified
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Start of application
+          </dt>
+          <dd class="govuk-summary-list__value">
+           1 March 2025
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+
+      </dl>
+
+<h3 class="govuk-heading-m govuk-!-margin-bottom-4">Personal data</h3>
+
+
+           <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            NA 11 22 33 C
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Jeff Bridges
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Age
+          </dt>
+          <dd class="govuk-summary-list__value">
+           50
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+           5 January 1976
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+<h3 class="govuk-heading-m govuk-!-margin-bottom-4">Contact details</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 Pearl Street<br>
+            Bristol<br>
+            BS3 4AB<br>
+            United Kingom
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Can write to this address
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          11 Pearl Street<br>
+            Bristol<br>
+            BS3 4AB<br>
+            United Kingom
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobile phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+           07555 7775555
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+        Wants text updates about application
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternative phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+           07555 7772222
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+         Textphone
+          </dt>
+          <dd class="govuk-summary-list__value">
+           07555 7771111
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+           jeff@bridges.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Currently in health or care accommodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+           No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+           <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When they went into health or care accommodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+         Not applicable
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Health or care accommodation address
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Not applicable
+          </dd>
+
+        </div>
+      </dl>
+<h3 class="govuk-heading-m govuk-!-margin-bottom-4">Nationality</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+           British
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Started living in the UK before 1 January 2021
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Been in the UK for at least 2 of the last 3 years
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Applicant or a family member get pension or benefit from another European Economic Area (EEA) state or Switzerland
+          </dt>
+          <dd class="govuk-summary-list__value">
+           No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Applicant or a family member work, pay, or have paid insurance to another European Economic Area (EEA) state or Switzerland
+          </dt>
+          <dd class="govuk-summary-list__value">
+           No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom-4">Health professionals</h2>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Consent</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Health and care professionals can share information
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Health professional 1</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Dr Camilla Stasiak
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Profession
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Doctor
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+    	020 8291 7007
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+      	The Vale Medical Centre<br>
+195-197 Perry Vale<br>
+Forest Hill<br>
+London<br>
+SE23 2JF<br>
+United Kingdom<br>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Approximate date of last appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+      April 2023
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+       </dl>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Health professional 2</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Mr Ramon Niekrash
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Profession
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Consultant
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+    	020 8836 5435
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+      	Queen Elizabeth Hospital<br>
+Stadium Road<br>
+Greenwich<br>
+London<br>
+SE18 4QH<br>
+United Kingdom<br>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Approximate date of last appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+    June 2024
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Support and communication</h2>
+       <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Help and support</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Needs help communicating with us
+          </dt>
+          <dd class="govuk-summary-list__value">
+     Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Needs help completing forms and understanding letters
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Being helped with application
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Name of person helping with application
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Nick Carter
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+     <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Alternative formats</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Needs communication in another format
+          </dt>
+          <dd class="govuk-summary-list__value">
+     Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Format needed
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Large print with custom font
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Format details
+          </dt>
+          <dd class="govuk-summary-list__value">
+      Arial
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Motability scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+      No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+        </div>
+      </div>
+<h2 class="govuk-heading-l govuk-!-margin-bottom-4">Payment details</h2>
+
+             <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Payment details</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Can provide bank, building society or credit union account details
+          </dt>
+         <dd class="govuk-summary-list__value">
+    Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+      </dl>
+     <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Account details</h3>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Name on the account
+          </dt>
+          <dd class="govuk-summary-list__value">
+     Jeffrey Bridges
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Sort code
+          </dt>
+          <dd class="govuk-summary-list__value">
+      30-12-12
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Account number
+          </dt>
+          <dd class="govuk-summary-list__value">
+      12345678
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Building society roll number
+          </dt>
+          <dd class="govuk-summary-list__value">
+      No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+  </form>
+
+{% endblock %}

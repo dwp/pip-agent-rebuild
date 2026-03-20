@@ -1,0 +1,83 @@
+{% extends "layouts/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="system-doc-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-doc-selector",
+  name: "system-doc-selector",
+  fieldset: {
+    legend: {
+      text: "Select a document scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "APOD",
+    text: "I am making the original decision",
+    checked: (data["system-doc-selector"] == "APOD")
+  },
+  {
+    value: "ODMR",
+    text: "I am making an mandatory reconsideration against the original decision ",
+    checked: (data["system-doc-selector"] == "ODMR")
+  },
+  {
+    value: "MRAR",
+    text: "I am making an mandatory reconsideration against an award review ",
+    checked: (data["system-doc-selector"] == "MRAR")
+  },
+  {
+    value: "ODAR",
+    text: "I am making an award review decision against the original decision",
+    checked: (data["system-doc-selector"] == "ODAR")
+  },
+  {
+    value: "ARMR",
+    text: "I am making an award review decision against a mandatory reconsideration decision",
+    checked: (data["system-doc-selector"] == "ARMR")
+  },
+  {
+    value: "AAMR",
+    text: "I am writing an appeal response against a mandatory reconsideration decision",
+    checked: (data["system-doc-selector"] == "AAMR")
+  }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -8,3 +8,32 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
+
+   const months = [
+     'January',
+     'February',
+     'March',
+     'April',
+     'May',
+     'June',
+     'July',
+     'August',
+     'September',
+     'October',
+     'November',
+     'December'
+   ]
+
+    var filters = {
+      getMonth (month) {
+        const monthIndex = parseInt(month, 10) - 1
+        return months[monthIndex]
+      },
+      formatDate (input) {
+        const date = input ? new Date(input) : new Date()
+        const day = date.getDate()
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        return day + ' ' + months[month] + ' ' + year
+      }
+  }

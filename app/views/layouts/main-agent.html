@@ -1,0 +1,29 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "Personal Independence Payment",
+            serviceHref: "../index",
+            action: "My Home page",
+            actionHref: "./entry-home",
+            container: true
+        })
+}}
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/explore-header.js"></script>
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+#accordion-default > div.govuk-accordion__controls > button {display: none}
+/* #accordion-default-heading-1 > span {display: none} */
+</style>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "documents-0-1/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Document library (7)</h2>
+
+
+
+      <div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Document filters
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+
+                {{ govukCheckboxes({
+                idPrefix: "record-1-event-history-filter",
+                name: "record-1-event-history-filter",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                legend: {
+                  text: "Select 'used for' type",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s "
+                }
+                },
+                items: [
+                {
+                value: "c2",
+                text: "Assessment report (1 June 2025)",
+                checked: (data["record-1-event-history-filter"] == "claim2")
+                },
+                {
+                value: "c2",
+                text: "Original decison (1 June 2025)",
+                checked: (data["record-1-event-history-filter"] == "claim1")
+                },
+                {
+                value: "c2",
+                text: "Award review (1 December 2025)",
+                checked: (data["record-1-event-history-filter"] == "claim1")
+                },
+                {
+                value: "c2",
+                text: "Manditory reconsideration (2 January 2026)",
+                checked: (data["record-1-event-history-filter"] == "claim1")
+                },
+                {
+                value: "c2",
+                text: "Appeal response (2 February 2026)",
+                checked: (data["record-1-event-history-filter"] == "claim1")
+                }
+                ]
+                }) }}
+
+                {{ govukButton({
+                text: "Apply",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+                }) }}
+
+              </div>
+              <div class="govuk-grid-column-one-half">
+
+                {{ govukCheckboxes({
+                idPrefix: "record-1-event-history-filter",
+                name: "record-1-event-history-filter",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                legend: {
+                text: "Select filter type",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s "
+                }
+                },
+                items: [
+                {
+                value: "4",
+                text: "Sent by DWP",
+                checked: (data["record-1-event-history-filter"] == "4")
+                },
+                {
+                value: "4",
+                text: "Recived",
+                checked: (data["record-1-event-history-filter"] == "4")
+                },
+                {
+                value: "1",
+                text: "PDFs",
+                checked: (data["record-1-event-history-filter"] == "1")
+                },
+                {
+                value: "2",
+                text: "Jpgs",
+                checked: (data["record-1-event-history-filter"] == "2")
+                },
+                {
+                value: "3",
+                text: "Audio",
+                checked: (data["record-1-event-history-filter"] == "3")
+                }
+                ]
+                }) }}
+
+
+
+              </div>
+
+
+
+              <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+                </div>
+
+
+
+
+{% if data["doc-1-grade"] or data["doc-2-grade"] or data["doc-3-grade"] or data["doc-4-grade"] or data["doc-5-grade"] or data["doc-6-grade"] %}
+{% else %}
+<div><!-- Still to assess start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date sent<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Type</td>
+        <td class="govuk-table__cell govuk-10-percent">Tags</td>
+      </tr>
+      </thead>
+
+      {% if data["doc-uwm-grade"] == "Good" %}
+      {% elif data["doc-uwm-grade"] == "Bad" %}
+      {% elif data["doc-uwm-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-uwm-library-status.html" %}
+      {% endif %}
+
+
+      {% if data["doc-5-grade"] == "Good" %}
+      {% elif data["doc-5-grade"] == "Bad" %}
+      {% elif data["doc-5-grade"] == "Remove" %}
+      {% else %}
+      {% include "documents-0-1/doc-5-library-status.html" %}
+
+      {% endif %}
+
+
+            {% if data["doc-uwm-grade"] == "Good" %}
+            {% elif data["doc-uwm-grade"] == "Bad" %}
+            {% elif data["doc-uwm-grade"] == "Remove" %}
+            {% else %}
+            {% include "documents-0-1/doc-uwm-library-status.html" %}
+            {% endif %}
+
+            {% if data["doc-3-grade"] == "Good" %}
+            {% elif data["doc-3-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-3-library-status.html" %}
+            {% endif %}
+
+            {% if data["doc-uwm-grade"] == "Good" %}
+            {% elif data["doc-uwm-grade"] == "Bad" %}
+            {% elif data["doc-uwm-grade"] == "Remove" %}
+            {% else %}
+            {% include "documents-0-1/doc-uwm-library-status.html" %}
+            {% endif %}
+
+            {% if data["doc-uwm-grade"] == "Good" %}
+            {% elif data["doc-uwm-grade"] == "Bad" %}
+            {% elif data["doc-uwm-grade"] == "Remove" %}
+            {% else %}
+            {% include "documents-0-1/doc-uwm-library-status.html" %}
+            {% endif %}
+
+
+      </table>
+
+
+</div><!-- Still to assess end -->
+{% endif %}
+
+
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+
+        </div>
+      </div>
+
+
+  </form>
+
+{% endblock %}
