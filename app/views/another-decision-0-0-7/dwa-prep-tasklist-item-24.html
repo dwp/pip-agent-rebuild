@@ -1,0 +1,78 @@
+
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+      {% if data["dwa-prep-tasklist-item-25"] %}
+      <form action="dwa-prep-tasklist" method="post" class="form">
+      {% else %}
+      <form action="dwa-prep-tasklist-item-24-router" method="post" class="form">
+      {% endif %}
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "dwa-prep-tasklist-item-24",
+        name: "dwa-prep-tasklist-item-24",
+        fieldset: {
+          legend: {
+            html: "Do they have any stays in residential schools or colleges?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Check the health information gather (PIP2) and assessment report."
+        },
+        items: [
+        {
+          value: "Unexpected",
+          text: "Yes",
+          checked: (data["dwa-prep-tasklist-item-24"] == "Unexpected")
+        },
+        {
+          value: "Expected",
+          text: "No",
+          checked: (data["dwa-prep-tasklist-item-24"] == "Expected")
+        },
+        {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["dwa-prep-tasklist-item-24"] == "Pause")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

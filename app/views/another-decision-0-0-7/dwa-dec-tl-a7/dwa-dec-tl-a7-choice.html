@@ -1,0 +1,112 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="../dwa-dec-tasklist" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH1 %}
+              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for communicating verbally?
+                  </h2>
+                  {% endset %}
+            <!------------Legend--------------->
+
+
+            {{ govukRadios({
+              idPrefix: "dwa-dec-tl-a7-score",
+              name: "dwa-dec-tl-a7-score",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                html: legendNumbers
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "a1",
+                html: "<strong>Descriptor A (0 points):</strong> Can express and understand verbal information unaided",
+                checked: (data["dwa-dec-tl-a7-score"] == "1")
+              },
+              {
+                value: "b2",
+                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to speak or hear",
+                checked: (data["dwa-dec-tl-a7-score"] == "2")
+              },
+              {
+                value: "c3",
+                html: "<strong>Descriptor C (4 points):</strong> Needs communication support to be able to express or understand complex verbal information",
+                checked: (data["dwa-dec-tl-a7-score"] == "3")
+              },
+              {
+                value: "d4",
+                html: "<strong>Descriptor D (8 points):</strong> Needs communication support to be able to express or understand basic verbal information",
+                checked: (data["dwa-dec-tl-a7-score"] == "4")
+              },
+              {
+                value: "e5",
+                html: "<strong>Descriptor E (12 points):</strong> Cannot express or understand verbal information at all even with communication support",
+                checked: (data["dwa-dec-tl-a7-score"] == "5")
+              }
+              ]
+            }) }}
+
+
+
+
+
+
+
+
+
+
+
+            <br>
+
+            {{ govukTextarea({
+              name: "application-about-a7-reason",
+              id: "application-about-a7-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: ""
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

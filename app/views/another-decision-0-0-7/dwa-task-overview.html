@@ -1,0 +1,75 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="dwa-prep-tasklist" method="post" class="form">
+  <!-- <form action="mr-retain-questions" method="post" class="form"> -->
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-7/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Attempt to make a decision without assessment</h1>
+
+
+
+        {% if data["system-application-selector"] == "11" %}
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This application is now ready for a decision.</p>
+        {% else %}
+        {% endif %}
+
+
+
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__header">Online identity verification</td>
+          <td class="govuk-table__cell">Incomplete (Means we have to call them to assure and means BAU, so why are we seeing this task?)<br> Completed (Telephone but wouldnt be here as sent to BAU, so why are we seeing this task?)  <br> Completed (Apply)</td>
+        </tr> -->
+        <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Application submitted</td>
+            <td class="govuk-table__cell">1 March 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Age of applicant</td>
+            <td class="govuk-table__cell">XX</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Date of birth</td>
+            <td class="govuk-table__cell">DD MM YYYY</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Conditions</td>
+            <td class="govuk-table__cell">Downs syndrome <br> Huntingtons disease <br> Motor neurone disease</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% if data["dwa-dec-tl-a7-score"] == "a1" %}
+  Descriptor A: Can express and understand verbal information unaided
+
+{% elif data["dwa-dec-tl-a7-score"] == "b2" %}
+  Descriptor B: Needs to use an aid or appliance to be able to speak or hear
+
+{% elif data["dwa-dec-tl-a7-score"] == "c3" %}
+  Descriptor C: Needs communication support to be able to express or understand complex verbal information
+
+{% elseif data["dwa-dec-tl-a7-score"] == "d4" %}
+  Descriptor D: Needs communication support to be able to express or understand basic verbal information
+
+{% elseif data["dwa-dec-tl-a7-score"] == "e5" %}
+  Descriptor E: Cannot express or understand verbal information at all even with communication support
+
+{% else %}
+  Blank
+
+{% endif %}

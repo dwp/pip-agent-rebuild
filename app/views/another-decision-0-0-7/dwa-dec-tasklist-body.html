@@ -1,0 +1,278 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+
+                  <table class="govuk-table">
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
+
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
+          <td class="govuk-table__cell govuk-16-percent">Score</td>
+          <td class="govuk-table__cell govuk-16-percent">Status</td>
+
+        </tr>
+        </thead>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a1/dwa-dec-tl-a1-choice">Preparing food</a></td>
+          <td class="govuk-table__cell table-spacer">
+            {% if data["dwa-dec-tl-a1-score"] %}
+            {% include "./dwa-dec-tl-a1/dwa-dec-tl-a1-score-overwrite.html" %}
+            {% else %}
+            0
+            {% endif %}
+          </td>
+
+          <td class="govuk-table__cell table-spacer">
+            {% if data["dwa-dec-tl-a1-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+            {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+            {% endif %}
+          </td>
+
+
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a2/dwa-dec-tl-a2-choice">Taking nutrition</a></td>
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a2-score"] %}
+              {% include "./dwa-dec-tl-a2/dwa-dec-tl-a2-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+            </td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a2-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+              {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+              {% endif %}
+            </td>
+
+            </tr>
+
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a3/dwa-dec-tl-a3-choice">Managing therapy or monitoring<br>a health condition</a></td>
+          <td class="govuk-table__cell table-spacer">
+            {% if data["dwa-dec-tl-a3-score"] %}
+            {% include "./dwa-dec-tl-a3/dwa-dec-tl-a3-score-overwrite.html" %}
+            {% else %}
+            0
+            {% endif %}
+          </td>
+
+          <td class="govuk-table__cell table-spacer">
+            {% if data["dwa-dec-tl-a3-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+            {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+            {% endif %}
+          </td>
+
+          </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a4/dwa-dec-tl-a4-choice">Washing and bathing</a></td>
+                <td class="govuk-table__cell table-spacer">
+                  {% if data["dwa-dec-tl-a4-score"] %}
+                  {% include "./dwa-dec-tl-a4/dwa-dec-tl-a4-score-overwrite.html" %}
+                  {% else %}
+                  0
+                  {% endif %}
+                </td>
+
+                <td class="govuk-table__cell table-spacer">
+                  {% if data["dwa-dec-tl-a4-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                  {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                  {% endif %}
+                </td>
+
+
+                </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a5/dwa-dec-tl-a5-choice">Managing toilet needs or incontinence</a></td>
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a5-score"] %}
+              {% include "./dwa-dec-tl-a5/dwa-dec-tl-a5-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+            </td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a5-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+              {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+              {% endif %}
+            </td>
+
+            </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a6/dwa-dec-tl-a6-choice">Dressing and undressing</a></td>
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["dwa-dec-tl-a6-score"] %}
+                      {% include "./dwa-dec-tl-a6/dwa-dec-tl-a6-score-overwrite.html" %}
+                      {% else %}
+                      0
+                      {% endif %}
+                    </td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["dwa-dec-tl-a6-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                      {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                      {% endif %}
+                    </td>
+
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a7/dwa-dec-tl-a7-choice">Communicating verbally</a></td>
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a7-score"] %}
+                        {% include "./dwa-dec-tl-a7/dwa-dec-tl-a7-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a7-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                        {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                        {% endif %}
+                      </td>
+
+                      </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a8/dwa-dec-tl-a8-choice">Reading and understanding signs,<br>symbols and words</a></td>
+                  <td class="govuk-table__cell table-spacer">
+                    {% if data["dwa-dec-tl-a8-score"] %}
+                    {% include "./dwa-dec-tl-a8/dwa-dec-tl-a8-score-overwrite.html" %}
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+
+                  <td class="govuk-table__cell table-spacer">
+                    {% if data["dwa-dec-tl-a8-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                    {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                    {% endif %}
+                  </td>
+
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a9/dwa-dec-tl-a9-choice">Engaging with other people face to face</a></td>
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["dwa-dec-tl-a9-score"] %}
+                      {% include "./dwa-dec-tl-a9/dwa-dec-tl-a9-score-overwrite.html" %}
+                      {% else %}
+                      0
+                      {% endif %}
+                    </td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["dwa-dec-tl-a9-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                      {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                      {% endif %}
+                    </td>
+
+                    </tr>
+
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a10/dwa-dec-tl-a10-choice">Making budgeting decisions</a></td>
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a10-score"] %}
+                        {% include "./dwa-dec-tl-a10/dwa-dec-tl-a10-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a10-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                        {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                        {% endif %}
+                      </td>
+
+                      </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+                    <td class="govuk-table__cell table-spacer"><strong>0</strong>
+                    </td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      &nbsp
+                    </td>
+
+                    </tr>
+
+
+
+                  </table>
+
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+
+                    <table class="govuk-table">
+
+                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Mobility activities</h1>
+
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
+                          <td class="govuk-table__cell govuk-16-percent">Score</td>
+                          <td class="govuk-table__cell govuk-16-percent">Status</td>
+
+                        </tr>
+                        </thead>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a11/dwa-dec-tl-a11-choice">Planning and following journeys</a></td>
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a11-score"] %}
+                        {% include "./dwa-dec-tl-a11/dwa-dec-tl-a11-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["dwa-dec-tl-a11-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+                        {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+                        {% endif %}
+                      </td>
+                      </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer"><a href="dwa-dec-tl-a12/dwa-dec-tl-a12-choice">Moving around</a></td>
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a12-score"] %}
+              {% include "./dwa-dec-tl-a12/dwa-dec-tl-a12-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+            </td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["dwa-dec-tl-a12-score"] %}      <strong class="govuk-tag dtl-tasktag-alignment tasktag-done">Done</strong>
+              {% else %}                                            <strong class="govuk-tag dtl-tasktag-alignment tasktag-todo" id="eligibility-completed">To do</strong>
+              {% endif %}
+            </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+              <td class="govuk-table__cell table-spacer"><strong>0</strong></td>
+            <td class="govuk-table__cell table-spacer">
+              &nbsp
+            </td>
+              </tr>
+
+        </table>
+
+      </div>
+      </div>

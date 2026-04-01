@@ -5,6 +5,9 @@
 
 window.GOVUKPrototypeKit.documentReady(() => {
   // Add JavaScript here
+
+    var $header = document.querySelector('[data-module="govuk-header"]');
+    new GOVUK.Modules.Header($header).init();
 })
 
 function CopyCodeButton($module) {

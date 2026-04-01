@@ -427,29 +427,49 @@ a.govuk-skip-link {text-decoration: underline;}
   padding-left:0px;
 }
 
-// About tasks
+// About tasks / TASK LIST ITEMS
 
-.app-task-list__apl-task-alignment {
+.tasktag-alignment {
   // text-transform: capitalize;
   float: right !important;
 }
 
-.app-task-list__apl-task-done {
-  text-transform: uppercase;
-  color: #144e81;
-  background-color: #d2e2f1;
+.dtl-tasktag-alignment {
+  // text-transform: capitalize;
+  float: left !important;
 }
+
+
+.tasktag-todo {
+  color: #0b0d0c;
+  background-color: #cecece;
+}
+
+.tasktag-done {
+  color: #093d29;
+  background-color: #cfe4dc;
+}
+
+.tasktag-not-done {
+  color: #093d29;
+  background-color: #cfe4dc;
+}
+
+.tasktag-paused {
+  color: #7a3b1d;
+  background-color: #ffee7f;
+}
+
+.tasktag-bad {
+  color: #942514;
+  background-color: #f6d7d2;
+}
+
 
 .app-task-list__apl-task-not-done {
   text-transform: uppercase;
   color: #6f777b;
   background-color: #dee0e2;
-}
-
-.app-task-list__apl-task-pause {
-  text-transform: uppercase;
-  background-color: #fff7bf;
-  color: #594d00;
 }
 
 
@@ -459,11 +479,7 @@ a.govuk-skip-link {text-decoration: underline;}
   // background-color: #1d70b8;
 }
 
-.app-task-list__apl-task-bad {
-  text-transform: uppercase;
-  color: #942514;
-  background-color: #f6d7d2;
-}
+
 
 .app-task-list__apl-task-notclaimed {
   text-transform: uppercase;
@@ -772,4 +788,13 @@ text-align: right!important;
 
 .noborder {
   border-bottom: 0px !important;
+}
+
+
+
+
+// Explore header overides
+.govuk-template--rebranded .govuk-header__link--homepage:not(:focus) {
+  background-color: #000 !important;
+  font-weight: bold;
 }
