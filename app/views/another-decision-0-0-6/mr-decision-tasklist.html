@@ -2,7 +2,7 @@
 {% extends "layout-eject.html" %}
 
 <!-- {% if data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
-{% extends "layout-process-mr.html" %}
+{% extends "layouts/main-agent.html" %}
 {% else %}
 {% extends "layout-eject.html" %}
 {% endif %} -->
@@ -12,9 +12,7 @@
   Process a PIP application
 {% endblock %}
 
-{% block header %}
- {% include "explore-header-global-nav-multi.html" %}
-{% endblock %}
+
 
 {% block content %}
 

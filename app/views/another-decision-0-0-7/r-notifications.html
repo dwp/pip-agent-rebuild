@@ -85,7 +85,6 @@
 {% set flagContext %}
 <p class="govuk-body govuk-!-font-size-19">
 
-
   {% if data["r-flags-task-add-as"] == "Yes" or data["r-flags-task-add-as"] == "Flag3" %}
   The additional support
   {% else %}
@@ -118,3 +117,52 @@ attributes: {
 {% else %}
 
 {% endif %}
+
+<!--DWA OUTCOME BANNERS -->
+
+
+
+<!-- top Level Notifications -->
+<!-- Colins banner -->
+<!-- Add # to the url on the final return page -->
+
+{% set DWABanner %}
+<p class="govuk-body govuk-!-font-size-19">
+
+  {% if data["dwa-prep-task-outcome"] == "Decision" %}
+    You have successfully processed this application and sent the decision letter. The person has been awarded PIP. <br> The sent letter will be available to view in ECMS shortly.
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "setPause" %}
+    Paused
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "SendForAssessment" %}
+    Send to AP
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "PIPcs" %}
+    Moved to PIPcs
+  {% else %}
+  {% endif %}
+
+{% if data["dwa-prep-task-outcome"] == "Disallow" %}
+    Disallow
+  {% else %}
+  {% endif %}
+
+  </p>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-dwa-banners"
+},
+  html: DWABanner,
+  type: 'success'
+}) }}

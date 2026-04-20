@@ -1,0 +1,99 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+
+{% block content %}
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="ap-send-request-type" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <!---------- Conditional ---------->
+
+              {% set ConditionalHtml %}
+
+              {{ govukTextarea({
+                name: "ap-send-check",
+                id: "ap-send-check",
+                rows: "4",
+                label: {
+                  text: "Record the details of what they would like to tell us",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+              {% endset -%}
+
+      <!----------  ---------->
+
+
+        {{ govukRadios({
+          idPrefix: "ap-send-check-check",
+          name: "ap-send-check-check",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              html: "Why does this application need to go for an assessment?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "XXX"
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["ap-send-check-check"] == "Yes")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["ap-send-check-check"] == "Yes")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["ap-send-check-check"] == "Yes")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["ap-send-check-check"] == "Yes")
+          },
+
+            {
+              value: "Something else",
+              text: "Something else",
+              checked: (data["ap-send-check-check"] == "No"),
+              conditional: {
+                html: ConditionalHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

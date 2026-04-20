@@ -1,4 +1,4 @@
-{% extends "layouts/layout-rebuild.html" %}
+{% extends "layouts/main-agent.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -16,22 +16,22 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Add your justification for setting a X years/month review period</h1>
 
 
       {% set legendHint %}
 
-      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider whether the person:</p>
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider whether there is an exception to this such as:  </p>
 
-      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-2">
-      <li>is waiting for treatment and how long that treatment will take</li>
-      <li>is close to State Pension age</li>
-      <li>has high level needs which will either stay the same or get worse</li>
-      <li>has a health condition or disability that is likely to improve</li>
-      <li>has limited leave to remain in the UK</li>
-    </ul>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>the person is under 25</li>
+      <li>the person is close to State Pension age</li>
+      <li>the person has high-level needs which will either stay the same or get worse</li>
+      <li>the person has a health condition or disability that is likely to improve</li>
+      <li>the person is undergoing or waiting for treatment that will last a period of time</li>
+      </ul>
 
       <!------------CANNED PHRASES LEGEND------------>
         {% set legendCannedDetails %}

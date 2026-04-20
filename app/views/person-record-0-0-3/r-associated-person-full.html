@@ -1,0 +1,167 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-3/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="#" method="post" class="form">
+
+      {% include "person-record-0-0-3/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-3/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Associated person</h3>
+
+
+    <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-appointees-add" target="">Add another associated person</a></p>-->
+
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: "Sam Elliott"
+        },
+        actions: {
+          items: [
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Change",
+              visuallyHiddenText: "of University of Gloucestershire"
+            },
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Remove",
+              visuallyHiddenText: "from University of Gloucestershire"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Beneift"
+          },
+          value: {
+            html: "Carers Allowance (CA)"
+          }
+        },
+        {
+          key: {
+            text: "Status"
+          },
+          value: {
+            html: "Active"
+          }
+        },
+        {
+          key: {
+            text: "Started"
+          },
+          value: {
+            html: "1 January 2026"
+          }
+        },
+        {
+          key: {
+            text: "National Insurance number"
+          },
+          value: {
+            html: 'NA 33 22 11 C'
+          }
+        }
+      ]
+    }) }}
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Past associations</h3>
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+          </tr>
+
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row border-bottom-end-clear">
+            <td class="govuk-table__header border-bottom-end-clear">Sam Elliott</td>
+            <td class="govuk-table__cell">National insurance number</td>
+            <td class="govuk-table__cell">NA 33 22 11 C</td>
+          </tr>
+
+          <tr class="govuk-table__row border-bottom-end-clear">
+            <td class="govuk-table__header border-bottom-end-clear"></td>
+            <td class="govuk-table__cell">Benefit</td>
+            <td class="govuk-table__cell">Carers Allowance (CA)</td>
+          </tr>
+
+          <tr class="govuk-table__row border-bottom-end-clear">
+            <td class="govuk-table__header border-bottom-end-clear"></td>
+            <td class="govuk-table__cell">Started</td>
+            <td class="govuk-table__cell">DD Month Year</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-padding-bottom-6">
+            <td class="govuk-table__cell">Ended/Closed</td>
+            <td class="govuk-table__cell">DD Month Year</td>
+          </tr>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear">John Turturro</td>
+              <td class="govuk-table__cell">National insurance number</td>
+              <td class="govuk-table__cell">NA 22 33 11 C</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Benefit</td>
+              <td class="govuk-table__cell">Carers Allowance (CA)</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Started</td>
+              <td class="govuk-table__cell">DD Month Year</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-padding-bottom-6">
+              <td class="govuk-table__cell">Ended/Closed</td>
+              <td class="govuk-table__cell">DD Month Year</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+              <a class="" href="r-associated-person" target=""> (N)</a> <a class="" href="r-associated-person-with" target=""> (Y)</a> <a class="" href="r-associated-person-previous" target=""> (P)</a> <a class="" href="r-associated-person-full" target=""> (F)</a>
+
+
+  </div>
+
+
+    </form>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layouts/main-agent.html" %}
+{% extends "layouts/main-agent-full-nav.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -7,15 +7,15 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="dwa-prep-task-outcome-router" method="post" class="form">
+    <form action="dwa-prep-task-outcome-router#r-dwa-banners" method="post" class="form">
 
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-9/record-id-base.html" %}
+      {% include "another-decision-0-0-7/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for a decision without assessment</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for a decision</h1>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -495,7 +495,7 @@
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">It is ready for a decision.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"> </p>
 
 
 {{ govukRadios({
@@ -515,12 +515,17 @@
   items: [
   {
     value: "Decision",
-    text: "Continue to make a decision",
+    text: "Make a decision (DWA)",
     checked: (data["dwa-prep-task-outcome"] == "Decision")
   },
   {
+    value: "setPause",
+    text: "I cannot make a decision without a PIP2 or other evidence",
+    checked: (data["dwa-prep-task-outcome"] == "setPause")
+  },
+  {
     value: "SendForAssessment",
-    text: "Send for assessment",
+    text: "Send application to an assessment provider",
     checked: (data["dwa-prep-task-outcome"] == "SendForAssessment")
   },
   {
@@ -574,12 +579,17 @@
     items: [
     {
       value: "Decision",
-      text: "Continue to make a decision",
+      text: "Make a decision (DWA)",
       checked: (data["dwa-prep-task-outcome"] == "Decision")
     },
     {
+      value: "setPause",
+      text: "I cannot make a decision without a PIP2 or other evidence",
+      checked: (data["dwa-prep-task-outcome"] == "setPause")
+    },
+    {
       value: "PIPcs",
-      text: "Move application to PIPCS",
+      text: "Send application to an assessment provider",
       checked: (data["dwa-prep-task-outcome"] == "PIPcs")
     },
     {
@@ -603,7 +613,7 @@
 
     {% else %}
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this application later</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="move-send-check" rel="noopener">There is an issue with this application</a></p>
 
 
     {% endif %}

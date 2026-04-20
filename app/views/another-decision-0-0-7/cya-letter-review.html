@@ -7,7 +7,8 @@
 {% block content %}
 
 
-<form action="cya-payment-breakdown-a" method="post" class="form">
+
+<form action="entry-home" method="post" class="form">
 
 
   <div class="govuk-grid-row">
@@ -224,6 +225,15 @@
               <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Review dates</h3>
 
 
+
+
+              <!--DATA LOAD IN-->
+              {% set dataAwardReviewJustification %}
+                {{data["award-dates-review-justification"]}}
+              {% endset %}
+              <!--DATA LOAD IN-->
+
+
                 {{ govukSummaryList({
                   rows: [
                     {
@@ -237,7 +247,7 @@
                         items: [
                           {
                             href: "award-dates-playback",
-                            text: "",
+                            text: "Change",
                             visuallyHiddenText: "XXX"
                           }
                         ]
@@ -254,12 +264,29 @@
                         items: [
                           {
                             href: "award-dates-playback",
-                            text: "",
+                            text: "Change",
                             visuallyHiddenText: "XXX"
                           }
                         ]
                       }
-                    },
+                      },
+                      {
+                        key: {
+                          text: "Award review period justification"
+                        },
+                        value: {
+                          html: dataAwardReviewJustification
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "award-dates-review-justification",
+                              text: "Change",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
+                      },
                     {
                       key: {
                         text: "Review period"
@@ -371,236 +398,43 @@ R3
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-
-Outcome checker
-    {% if data["payability-check"] == "Yes" or data["an-de-exit-mr-process-early"] %}<br>
-    Outcome R2 = With issue move to PIPcs<br><br>
-
-    <!------------CheckBox Hint------------>
-
-      {% set dynamicCheckBoxHintPayment %}
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">To complete this action, select ‘Identified need to move to PIPCS in event history’.</p>
-
-      {% endset %}
-    <!------------Legend--------------->
-
-
-    {{ govukCheckboxes({
-      idPrefix: "ConfimLetter",
-      name: "ConfimLetter",
-      fieldset: {
-        classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
-        legend: {
-          text: "Moving to PIPCS",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
-        }
-      },
-      hint: {
-        html: dynamicCheckBoxHintPayment
-      },
-      items: [
-        {
-          value: "ConfimLetter",
-          text: "I confirm that I have completed the move to PIPCS.",
-          checked: (data["dwa-dec-tl-a9-score"] == "0")
-        }
-      ]
-    }) }}
-
-    {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-!-margin-bottom-8"
-    }) }}
-
-
-    {% elif data["payability-check"] == "No" %}
-
-
-    <!------------CheckBox Hint------------>
-
-      {% set dynamicCheckBoxHintPayment %}
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Select the appropriate template and use the information on this page to write your justification for the letter.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need to manually send the letter and save it to ECMS. The person's address is in their <a href="/r-overview" class="govuk-link">registration (PIP1).</a></p>
-
-      {% endset %}
-    <!------------Legend--------------->
-
-    {{ govukCheckboxes({
-      idPrefix: "ConfimLetter",
-      name: "ConfimLetter",
-      fieldset: {
-        classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
-        legend: {
-          text: "Sending the Mandatory Reconsideration Notice",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
-        }
-      },
-      hint: {
-        html: dynamicCheckBoxHintPayment
-      },
-      items: [
-        {
-          value: "ConfimLetter",
-          text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
-          checked: (data["dwa-dec-tl-a9-score"] == "0")
-        }
-      ]
-    }) }}
-
-    {{ govukButton({
-      text: "Contiune",
-      classes: "govuk-!-margin-bottom-8"
-    }) }}
-
-
-
-
-{% elif data["payability-check"] == "YesR3" %}
-R3
-    {% if data["payability-tasklist-item-3"] == "Yes" %} <br>
-    Outcome R3 = With issue move to PIPcs<br><br>
-
-    <!------------CheckBox Hint------------>
     {% set dynamicCheckBoxHintPayment %}
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">To complete this action, select ‘Identified need to move to PIPCS in event history’.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX </p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
-      {% endset %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The decision letter will be generated based on the information above and sent automatically. The letter will also include payment details. </p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">This is your last opportunity to see the information that will be in the letter, so make sure you have checked it carefully. </p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Do not proceed unless you are completely sure the information is correct.</p>
 
+    {% endset %}
     <!------------Legend--------------->
 
     {{ govukCheckboxes({
-      idPrefix: "ConfimLetter",
-      name: "ConfimLetter",
-      fieldset: {
-        classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
-        legend: {
-          text: "Moving to PIPCS",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
-        }
-      },
-      hint: {
-        html: dynamicCheckBoxHintPayment
-      },
-      items: [
-        {
-          value: "ConfimLetter",
-          text: "I confirm that I have completed the move to PIPCS.",
-          checked: (data["dwa-dec-tl-a9-score"] == "0")
-        }
-      ]
+    idPrefix: "ConfimLetter",
+    name: "ConfimLetter",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
+      legend: {
+        text: "Send decision letter",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+      }
+    },
+    hint: {
+      html: dynamicCheckBoxHintPayment
+    },
+    items: [
+      {
+        value: "ConfimLetter",
+        text: "I confirm that I have fully checked the information for the decision letter.",
+        checked: (data["dwa-dec-tl-a9-score"] == "0")
+      }
+    ]
     }) }}
 
     {{ govukButton({
-      text: "Continue to payment schedule",
-      classes: "govuk-!-margin-bottom-8",
-      text: "Finish and close"
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
     }) }}
-
-
-    {% else %}
-
-Outcome R3 = No issues
-    <!------------CheckBox Hint------------>
-
-      {% set dynamicCheckBoxHintPayment %}
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Select the appropriate template and use the information on this page to write your justification for the letter.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need to manually send the letter and save it to ECMS. The person's address is in their <a href="/r-overview" class="govuk-link">registration (PIP1).</a></p>
-
-      {% endset %}
-    <!------------Legend--------------->
-
-    {{ govukCheckboxes({
-      idPrefix: "ConfimLetter",
-      name: "ConfimLetter",
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
-        legend: {
-          text: "Sending the Mandatory Reconsideration Notice",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
-        }
-      },
-      hint: {
-        html: dynamicCheckBoxHintPayment
-      },
-      items: [
-        {
-          value: "ConfimLetter",
-          text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
-          checked: (data["dwa-dec-tl-a9-score"] == "0")
-        }
-      ]
-    }) }}
-
-    {{ govukButton({
-      text: "Continue",
-      classes: "govuk-!-margin-bottom-8"
-    }) }}
-
-
-
-    {% endif %}
-
-
-
-{% else %}
-{% endif %}
-
-
-{% set dynamicCheckBoxHintPayment %}
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Select the appropriate template and use the information on this page to write your justification for the letter.</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need to manually send the letter and save it to ECMS. The person's address is in their <a href="/r-overview" class="govuk-link">registration (PIP1).</a></p>
-
-{% endset %}
-<!------------Legend--------------->
-
-
-
-
-{% if data["entry-home-processing-options"] == "MakeMRNil" %}
-
-
-{{ govukCheckboxes({
-idPrefix: "ConfimLetter",
-name: "ConfimLetter",
-classes: "govuk-checkboxes--small",
-fieldset: {
-  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
-  legend: {
-    text: "Sending the Mandatory Reconsideration Notice",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
-  }
-},
-hint: {
-  html: dynamicCheckBoxHintPayment
-},
-items: [
-  {
-    value: "ConfimLetter",
-    text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
-    checked: (data["dwa-dec-tl-a9-score"] == "0")
-  }
-]
-}) }}
-
-{{ govukButton({
-text: "Continue",
-classes: "govuk-!-margin-bottom-8"
-}) }}
-
-{% else %}
-{% endif %}
 
 
       </div>

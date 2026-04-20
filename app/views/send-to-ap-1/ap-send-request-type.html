@@ -1,0 +1,95 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+
+{% block content %}
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="../another-decision-0-0-7/entry-home#r-dwa-banners" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <!---------- Conditional ---------->
+
+              {% set ConditionalHtml %}
+
+              {{ govukTextarea({
+                name: "ap-send-request-type",
+                id: "ap-send-request-type",
+                rows: "4",
+                label: {
+                  text: "Record the details of what they would like to tell us",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+              {% endset -%}
+
+      <!----------  ---------->
+
+
+        {{ govukRadios({
+          idPrefix: "ap-send-request-type-check",
+          name: "ap-send-request-type-check",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              html: "What type of assessment is needed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "XXX"
+          },
+          items: [
+          {
+            value: "typeA",
+            text: "Assessment report without scores or review dates",
+            checked: (data["ap-send-request-type-check"] == "typeA")
+          },
+          {
+            value: "typeB",
+            text: "Face-to-face assessment)",
+            checked: (data["ap-send-request-type-check"] == "typeB")
+          },
+          {
+            value: "typeC",
+            text: "Paper based assessment)",
+            checked: (data["ap-send-request-type-check"] == "typeC")
+          },
+          {
+            value: "typeC",
+            text: "Telephone assessment)",
+            checked: (data["ap-send-request-type-check"] == "typeC")
+          },
+          {
+            value: "typeC",
+            text: "Full assessment (Unknown type needed)",
+            checked: (data["ap-send-request-type-check"] == "typeC")
+          }
+          ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

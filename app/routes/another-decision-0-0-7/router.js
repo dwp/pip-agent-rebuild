@@ -2234,8 +2234,11 @@ router.post(`/dwa-prep-task-outcome-router`, (req, res) => {
   else if (preparationOutcomeTaskList == 'PIPcs') {
     res.redirect(`/move-to-pipcs-1/eject-process`)
   }
+  else if (preparationOutcomeTaskList == 'setPause') {
+    res.redirect(`dwa-set-task`)
+  }
   else if (preparationOutcomeTaskList == 'SendForAssessment') {
-    res.redirect(`entry-home`)
+    res.redirect(`../send-to-ap-1/ap-send-check`)
   }
   else if (preparationOutcomeTaskList == 'Disallow') {
     res.redirect(`/move-to-pipcs-1/eject-process`)
@@ -2247,6 +2250,29 @@ router.post(`/dwa-prep-task-outcome-router`, (req, res) => {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
+
+
+
+router.post(`/move-send-check-router`, (req, res) => {
+  const ejectCheck = req.session.data['move-send-check']
+
+  if (ejectCheck == 'SendToAP') {
+    res.redirect(`../send-to-ap-1/ap-send-check`)
+  }
+  else if (ejectCheck == 'MoveToPIPcs') {
+    res.redirect(`../move-to-pipcs-1/eject-overview`)
+  }
+  else if (ejectCheck == 'Disallow') {
+    res.redirect(`XXX`)
+  }
+  else if (ejectCheck == 'SaveAndReturn') {
+    res.redirect(`application-exit-bail`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
 
 
 

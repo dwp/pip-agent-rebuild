@@ -1,0 +1,64 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+<form action="move-send-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-7/record-id.html" %}
+
+      {{ govukRadios({
+        idPrefix: "move-send-check",
+        name: "move-send-check",
+        fieldset: {
+          legend: {
+            html: "What do you want to do now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "XXX"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "SaveAndReturn",
+          text: "I need to come back to this applciation later",
+          checked: (data["move-send-check"] == "SaveAndReturn")
+        },
+        {
+          value: "SendToAP",
+          text: "Send application to an assessment provider",
+          checked: (data["move-send-check"] == "SendToAP")
+        },
+        {
+          value: "MoveToPIPcs",
+          text: "Move application to PIPCS",
+          checked: (data["move-send-check"] == "MoveToPIPcs")
+        },
+        {
+          value: "Disallow",
+          text: "Disallow application????",
+          checked: (data["move-send-check"] == "Disallow")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

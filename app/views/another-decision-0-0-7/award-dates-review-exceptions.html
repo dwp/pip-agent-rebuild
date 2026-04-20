@@ -1,0 +1,72 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block content %}
+
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+  <form action="award-dates-review-manual" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {% set legendHint %}
+
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider whether there is an exception to this such as:  </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>the person is under 25</li>
+      <li>the person is close to State Pension age</li>
+      <li>the person has high-level needs which will either stay the same or get worse</li>
+      <li>the person has a health condition or disability that is likely to improve</li>
+      <li>the person is undergoing or waiting for treatment that will last a period of time</li>
+      </ul>
+      {% endset %}
+
+
+    {{ govukRadios({
+      idPrefix: "award-dates-review-exceptions",
+      name: "award-dates-review-exceptions",
+      fieldset: {
+        legend: {
+          html: "Is this a standard 3 year award?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+      html: legendHint
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["award-dates-review-exceptions"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "No",
+        checked: (data["award-dates-review-exceptions"] == "No")
+          }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+      {% endblock %}
+
+
+  </form>
