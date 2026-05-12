@@ -166,3 +166,62 @@ attributes: {
   html: DWABanner,
   type: 'success'
 }) }}
+
+
+{% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application checks complete. It will be sent to a decision maker once the health information gather (PIP2) is received.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["assurance-tasklist-separate-outcome"] == "Pause" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application has gone on hold</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["assurance-tasklist-separate-outcome"] == "PIPcs" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application has been id'd to move to PIPcs</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{% else %}
+
+{% endif %}
+
+
+
+
+{% if data["dwp-task-allocated-hold-reason"] %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">You have put this on hold bro</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+
+{% endif %}

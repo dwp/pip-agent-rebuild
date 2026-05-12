@@ -1,0 +1,61 @@
+      {% set taskTagOpen %}
+      {{govukTag({
+        text: "Allocated",
+        classes: "govuk-tag--yellow"
+      })}}
+      {% endset %}
+
+      {% set taskLink %}
+      <a class="ovuk-body govuk-!-font-size-19" href="dwp-task-allocated-overview">Start</a>
+      {% endset %}
+
+{{ govukTable({
+        head: [
+          {
+            text: "Details"
+          },
+          {
+            text: "Created"
+          },
+          {
+            text: "Task"
+          },
+          {
+            text: "Person"
+          },
+          {
+            text: "National Insurance number"
+          },
+          {
+            text: "Due"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: taskLink
+            },
+            {
+              text: "Just now"
+            },
+            {
+              text: "Prepare an application for a decision maker"
+            },
+            {
+              text: "Jeff Bridges"
+            },
+            {
+              text: "NA 11 22 33 C"
+            },
+            {
+              text: "Now"
+            },
+            {
+              html: taskTagOpen
+            }
+          ]
+        ]
+      }) }}

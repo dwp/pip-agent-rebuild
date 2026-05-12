@@ -9,22 +9,35 @@
 
 {% include "another-decision-0-0-7/record-id.html" %}
 
-<form action="../another-decision-0-0-7/entry-home#r-dwa-banners" method="post" class="form">
+<form action="dwa-set-task-sticky" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
 
+
+
+      {% set legendHint %}
+
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Select who you need more information or guidance from and record details of:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>what information or guidance you need</li>
+      <li>whether you've been able to contact the person</li>
+      </ul>
+
+      {% endset %}
+
       <!---------- Conditional ---------->
 
-              {% set ConditionalHtml %}
+      {% set ConditionalHtmlR1 %}
 
               {{ govukTextarea({
                 name: "ap-send-check",
                 id: "ap-send-check",
                 rows: "4",
                 label: {
-                  text: "Why do you need to pause this?",
+                  text: "Record the details of why the application needs to be put on hold",
                   classes: "govuk-label--s",
                   isPageHeading: true
                 },
@@ -37,43 +50,224 @@
 
       <!----------  ---------->
 
+      {% set ConditionalHtmlR2 %}
 
-        {{ govukRadios({
+      {{ govukTextarea({
+        name: "ap-send-check",
+        id: "ap-send-check",
+        rows: "4",
+        label: {
+          text: "Record the details of why the application needs to be put on hold",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtmlR3 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtmlR4 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtmlR5 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtmlR6 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtmlR7 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+{% set ConditionalHtml0 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record the details of why the application needs to be put on hold",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+
+        {{ govukCheckboxes({
           idPrefix: "ap-send-check-check",
           name: "ap-send-check-check",
           classes: "govuk-checkboxes",
           fieldset: {
             legend: {
-              html: "Why do you need to pause this?",
+              html: "Why do you need to put the application on hold?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            html: "XXX"
+            html: legendHint
           },
           items: [
           {
-            value: "Yes",
-            text: "X",
-            checked: (data["ap-send-check-check"] == "Yes")
+          value: "R1",
+          text: "The applicant",
+          checked: (data["ap-send-check-check"] == "R1"),
+          conditional: {
+          html: ConditionalHtmlR1
+          }
           },
           {
-            value: "Yes",
-            text: "Y",
-            checked: (data["ap-send-check-check"] == "Yes")
+          value: "R2",
+          text: "An appointee or representative",
+          checked: (data["ap-send-check-check"] == "R2"),
+          conditional: {
+          html: ConditionalHtmlR2
+          }
           },
           {
-            value: "Yes",
-            text: "Z",
-            checked: (data["ap-send-check-check"] == "Yes")
+          value: "R3",
+          text: "Another PIP Agent (Peer Support)",
+          checked: (data["ap-send-check-check"] == "R3"),
+          conditional: {
+          html: ConditionalHtmlR3
+          }
+          },
+          {
+          value: "R4",
+          text: "A Service Assurance Manager",
+          checked: (data["ap-send-check-check"] == "R4"),
+          conditional: {
+          html: ConditionalHtmlR4
+          }
+          },
+          {
+          value: "R5",
+          text: "An external health professional (such as a GP or consultant)",
+          checked: (data["ap-send-check-check"] == "R5"),
+          conditional: {
+          html: ConditionalHtmlR5
+          }
+          },
+          {
+          value: "R6",
+          text: "An assessment provider - Intensive support",
+          checked: (data["ap-send-check-check"] == "R6"),
+          conditional: {
+          html: ConditionalHtmlR6
+          }
+          },
+          {
+          value: "R7",
+          text: "An assessment provider - Light touch support",
+          checked: (data["ap-send-check-check"] == "R7"),
+          conditional: {
+            html: ConditionalHtmlR7
+          }
           },
             {
-              value: "Something else",
-              text: "Something else",
-              checked: (data["ap-send-check-check"] == "No"),
+              value: "R0",
+              text: "Another reason",
+              checked: (data["ap-send-check-check"] == "R0"),
               conditional: {
-                html: ConditionalHtml
+                html: ConditionalHtml0
               }
             }
           ]
@@ -83,6 +277,7 @@
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
         }) }}
+
 
 
         </div>

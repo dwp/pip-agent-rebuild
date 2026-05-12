@@ -1,0 +1,59 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="system-pause-ab-router" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-7/record-id.html" %}
+
+      {{ govukRadios({
+        idPrefix: "system-pause-ab",
+        name: "system-pause-ab",
+        fieldset: {
+          legend: {
+            html: "Pause/OnHold AB",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "XXX"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "A",
+          text: "DWP Task",
+          checked: (data["system-pause-ab"] == "A")
+        },
+        {
+        value: "B",
+        text: "PIPs",
+        checked: (data["system-pause-ab"] == "B")
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

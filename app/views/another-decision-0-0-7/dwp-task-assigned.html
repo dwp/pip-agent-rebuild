@@ -1,0 +1,127 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+{% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+Checks completed, Check if a decision can be made
+{% else %}
+No checks done
+{% endif %}
+
+
+<form action="X" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My tasks</h1>
+
+
+      {{ govukButton({
+        text: "Claim new task",
+        classes: "govuk-!-margin-bottom-8",
+        href: "dwp-task-none"
+      }) }}
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-8">
+        <div class="govuk-grid-column-full">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+
+              {{ govukSelect({
+                id: "sort",
+                name: "sort",
+                label: {
+                  text: "Sort by"
+                },
+                items: [
+                  {
+                    value: "published",
+                    text: "Claimed, newest to oldest"
+                  },
+                  {
+                    value: "updated",
+                    text: "Claimed, oldest to newest",
+                    selected: true
+                  },
+                  {
+                    value: "views",
+                    text: "Due soon, newest to oldest"
+                  },
+                  {
+                    value: "views",
+                    text: "Due soon, oldest to newest"
+                  },
+                  {
+                    value: "comments",
+                    text: "Created, newest to oldest"
+                  },
+                  {
+                    value: "comments",
+                    text: "Created, oldest to newest"
+                  }
+                ]
+              }) }}
+
+            </div>
+            <div class="govuk-grid-column-one-half">
+
+
+              {{ govukPasswordInput({
+                label: {
+                  text: "Filter your tasks"
+                },
+                id: "password-input",
+                name: "password"
+              }) }}
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {% set pastDayHtml %}
+      <h2 class="govuk-heading-l">Open tasks</h2>
+      {% include "another-decision-0-0-7/dwp-tasks-assigned.html" %}
+      {% endset -%}
+
+      {% set pastWeekHtml %}
+      <h2 class="govuk-heading-l">Closed tasks</h2>
+      {% include "another-decision-0-0-7/dwp-tasks-closed.html" %}
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Open tasks",
+            id: "past-day",
+            panel: {
+              html: pastDayHtml
+            }
+          },
+          {
+            label: "Closed tasks",
+            id: "past-week",
+            panel: {
+              html: pastWeekHtml
+            }
+          }
+        ]
+      }) }}
+
+
+        </div>
+      </div>
+
+
+  </form>
+
+{% endblock %}

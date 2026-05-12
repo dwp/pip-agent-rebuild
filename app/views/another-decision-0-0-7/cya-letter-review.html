@@ -8,7 +8,7 @@
 
 
 
-<form action="entry-home" method="post" class="form">
+<form action="processing-notes" method="post" class="form">
 
 
   <div class="govuk-grid-row">
@@ -16,32 +16,8 @@
 
       {% include "another-decision-0-0-7/record-id.html" %}
 
-        {% if data["payability-check"] == "Yes" or data["an-de-exit-mr-process-early"] %} <br>
-       R2
-       Outcome R2 = With issue move to PIPcs<br><br>
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the mandatory reconsideration details and move to PIPCS</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check information for decision letter</h1>
 
-       {% elif data["payability-check"] == "No" %}
-       Outcome R2 = Get the letter written and sent
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information for the Mandatory Reconsideration Notice</h1>
-
-
-       {% elif data["payability-check"] == "YesR3" %}
-       R3
-           {% if data["payability-tasklist-item-8"] == "Yes" %} <br>
-       Outcome R3 = With issue move to PIPcs<br><br>
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the mandatory reconsideration details and move to PIPCS</h1>
-
-              {% else %}
-       R3
-       Outcome R3 = Get the letter written and sent
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information for the Mandatory Reconsideration Notice</h1>
-
-           {% endif %}
-
-
-       {% else %}
-       {% endif %}
 
 
 
@@ -236,6 +212,23 @@
 
                 {{ govukSummaryList({
                   rows: [
+                  {
+                    key: {
+                      text: "Is this a standard 3-year award?"
+                    },
+                    value: {
+                      text: "Yes/No"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "award-dates-playback",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
                     {
                       key: {
                         text: "Award start date"
@@ -289,7 +282,7 @@
                       },
                     {
                       key: {
-                        text: "Review period"
+                        text: "Award review period"
                       },
                       value: {
                         text: "3 years"
@@ -331,7 +324,7 @@
 
 
 
-                <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Documents used when reconsidering the decision </h3>
+                <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Documents for the decision </h3>
 
           {% set DynamicSelectedDocumentsList %}
 

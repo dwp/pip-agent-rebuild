@@ -1,0 +1,39 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+    <form action="assurance-tasklist-item-3a" method="post" class="form">
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-7/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Address is under devopment and due to change</h1>
+
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

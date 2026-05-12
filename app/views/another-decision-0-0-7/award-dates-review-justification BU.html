@@ -1,0 +1,155 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block content %}
+
+
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Add your justification for setting a X years/month review period</h1>
+
+
+      {% set legendHint %}
+
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider whether there is an exception to this such as:  </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>the person is under 25</li>
+      <li>the person is close to State Pension age</li>
+      <li>the person has high-level needs which will either stay the same or get worse</li>
+      <li>the person has a health condition or disability that is likely to improve</li>
+      <li>the person is undergoing or waiting for treatment that will last a period of time</li>
+      </ul>
+
+      <!------------CANNED PHRASES LEGEND------------>
+        {% set legendCannedDetails %}
+        {% include "another-decision-0-0-7/standard-award-phrase-selector.html" %}
+        {% endset %}
+
+        {{ govukDetails({
+          summaryText: "Standard wording examples",
+          classes: "govuk-!-margin-bottom-0",
+          html: legendCannedDetails
+        }) }}
+
+      <!------------Legend--------------->
+
+            {% endset %}
+
+    {{ govukTextarea({
+      name: "award-dates-review-justification",
+      id: "award-dates-review-justification",
+      classes: " govukTextarea--overwrite",
+      label: {
+        text: "",
+        classes: "govuk-label--m",
+        isPageHeading: true
+      },
+      hint: {
+        html: legendHint
+      },
+      value: data["award-dates-review-justification"]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+
+
+    {% set 3Html %}
+
+    {{ govukTextarea({
+      name: "award-dates-review-date-reason-payments",
+      id: "award-dates-review-date-reason-payments",
+      rows: "4",
+      label: {
+        text: "Record the details of why they disagree with the payment amounts, including arrears",
+        classes: "govuk-label--s",
+        isPageHeading: true
+      },
+      hint: {
+        html: ""
+      }
+    }) }}
+
+    {% endset -%}
+
+<!----------  ---------->
+
+
+{{ govukCheckboxes({
+idPrefix: "award-dates-review-date-reason",
+name: "award-dates-review-date-reason",
+classes: "govuk-checkboxes",
+fieldset: {
+  legend: {
+    text: "Which part of their decision do they disagree with?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--xl"
+  }
+},
+hint: {
+  html: "Select all that apply."
+},
+items: [
+{
+  value: "Under25",
+  text: "The person is under 25",
+  checked: (data["award-dates-review-date-reason"] == "under25")
+},
+  {
+    value: "SPA",
+    text: "The person is close to State Pension age",
+    checked: (data["award-dates-review-date-reason"] == "SPA")
+  },
+  {
+    value: "HighLevel",
+    text: "the person has high-level needs which will either stay the same or get worse",
+    checked: (data["award-dates-review-date-reason"] == "HighLevel")
+  },
+  {
+    value: "LikelyToImprove",
+    text: "The person has a health condition or disability that is likely to improve",
+    checked: (data["award-dates-review-date-reason"] == "LikelyToImprove")
+  },
+  {
+    value: "LikelyToImprove",
+    text: "the person is undergoing or waiting for treatment that will last a period of time",
+    checked: (data["award-dates-review-date-reason"] == "LikelyToImprove")
+  },
+  {
+    value: "Other",
+    text: "Other reasons",
+    checked: (data["award-dates-review-date-reason"] == "Other"),
+    conditional: {
+      html: 3Html
+    }
+  }
+]
+}) }}
+
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

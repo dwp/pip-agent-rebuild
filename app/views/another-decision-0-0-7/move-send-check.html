@@ -24,13 +24,13 @@
           }
         },
         hint: {
-          html: "XXX"
+          html: ""
         },
         classes: "govuk-radios",
         items: [
         {
           value: "SaveAndReturn",
-          text: "I need to come back to this applciation later",
+          text: "Put application on hold",
           checked: (data["move-send-check"] == "SaveAndReturn")
         },
         {
@@ -42,14 +42,12 @@
           value: "MoveToPIPcs",
           text: "Move application to PIPCS",
           checked: (data["move-send-check"] == "MoveToPIPcs")
-        },
-        {
-          value: "Disallow",
-          text: "Disallow application????",
-          checked: (data["move-send-check"] == "Disallow")
         }
         ]
       }) }}
+
+      <!--checked: (data["move-send-check"] == "Disallow")-->
+
 
       {{ govukButton({
         text: "Continue",

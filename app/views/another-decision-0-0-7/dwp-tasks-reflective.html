@@ -1,0 +1,147 @@
+
+      {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" and data["dwa-decision-ready-check"] == "setPause" %}
+      Assurance compelte and Paused Check
+      {% else %}
+      No status
+      {% endif %}
+
+
+      {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" and data["dwa-decision-ready-check"] == "setPause" and data["move-send-check"] == "SaveAndReturn"%}
+      Assurance compelte and Paused Check and Prep for decision on hold
+
+      {% elseif data["assurance-tasklist-separate-outcome"] == "ChecksComplete" and data["dwa-decision-ready-check"] == "setPause" %}
+      Assurance compelte and Paused Check
+
+      {% set taskTagOpen %}
+      {{govukTag({
+        text: "Paused",
+        classes: "govuk-tag--purple"
+      })}}
+      {% endset %}
+
+      {% set taskLink %}
+      <a class="ovuk-body govuk-!-font-size-19" href="dwa-decision-ready-check">Continue</a>
+      {% endset %}
+
+      {{ govukTable({
+              head: [
+                {
+                  text: "Details"
+                },
+                {
+                  text: "Created"
+                },
+                {
+                  text: "Task"
+                },
+                {
+                  text: "Person"
+                },
+                {
+                  text: "National Insurance number"
+                },
+                {
+                  text: "Due"
+                },
+                {
+                  text: "Status"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: taskLink
+                  },
+                  {
+                    text: "Just now"
+                  },
+                  {
+                    text: "Check if a decision can be made"
+                  },
+                  {
+                    text: "Jeff Bridges"
+                  },
+                  {
+                    text: "NA 11 22 33 C"
+                  },
+                  {
+                    text: "Now"
+                  },
+                  {
+                    html: taskTagOpen
+                  }
+                ]
+              ]
+            }) }}
+
+      {% elseif data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+
+      {% set taskTagOpen %}
+      {{govukTag({
+        text: "Allocated",
+        classes: "govuk-tag--yellow"
+      })}}
+      {% endset %}
+
+      {% set taskLink %}
+      <a class="ovuk-body govuk-!-font-size-19" href="dwp-task-allocated-overview">Start</a>
+      {% endset %}
+
+
+{{ govukTable({
+        head: [
+          {
+            text: "Details"
+          },
+          {
+            text: "Created"
+          },
+          {
+            text: "Task"
+          },
+          {
+            text: "Person"
+          },
+          {
+            text: "National Insurance number"
+          },
+          {
+            text: "Due"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: taskLink
+            },
+            {
+              text: "Just now"
+            },
+            {
+              text: "Check if a decision can be made"
+            },
+            {
+              text: "Jeff Bridges"
+            },
+            {
+              text: "NA 11 22 33 C"
+            },
+            {
+              text: "Now"
+            },
+            {
+              html: taskTagOpen
+            }
+          ]
+        ]
+      }) }}
+
+
+      {% else %}
+
+      <p class="govuk-body govuk-!-margin-bottom-2">You have not claimed any tasks yet.</p>
+
+      {% endif %}

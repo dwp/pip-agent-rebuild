@@ -1,0 +1,82 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+
+{% block content %}
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="dwa-set-task-reminder-date" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!----------  ---------->
+
+      {% set ConditionalStickyReason %}
+
+      {{ govukTextarea({
+        name: "dwa-set-task-sticky-reason",
+        id: "dwa-set-task-sticky-reason",
+        rows: "4",
+        label: {
+          text: "Record the details of why it should return to the queue",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {% endset -%}
+
+      <!----------  ---------->
+
+    {{ govukRadios({
+      idPrefix: "dwa-set-task-sticky",
+      name: "dwa-set-task-sticky",
+      fieldset: {
+        legend: {
+          html: "Do you want to keep this task?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        html: ""
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["dwa-set-task-sticky"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["dwa-set-task-sticky"] == "No"),
+          conditional: {
+            html: ConditionalStickyReason
+          }
+          }
+      ]
+    }) }}
+
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

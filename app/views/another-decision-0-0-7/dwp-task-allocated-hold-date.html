@@ -1,0 +1,66 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="entry-home" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <!--<h1 class="govuk-heading-xl govuk-!-margin-bottom-8"></h1>
+      <p class="govuk-body govuk-!-margin-bottom-2"></p>
+-->
+
+      {{ govukDateInput({
+        id: "qppt-set-data-submission-date",
+        namePrefix: "qppt-set-data-submission-date",
+        fieldset: {
+          legend: {
+            html: "Set a date to put this task on hold",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: "This task will become available to work on again on this date."
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["qppt-set-data-submission-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["qppt-set-data-submission-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["qppt-set-data-submission-date-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

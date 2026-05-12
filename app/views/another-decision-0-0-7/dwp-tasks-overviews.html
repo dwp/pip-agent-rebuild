@@ -1,0 +1,294 @@
+      {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+      Checks completed, Check if a decision can be made
+      {% else %}
+      No checks done
+      {% endif %}
+
+
+      {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+
+      {% set taskTag %}
+            {{govukTag({
+              text: "Ready",
+              classes: "govuk-tag--green"
+            })}}
+            {% endset %}
+
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Person"
+                  },
+                  value: {
+                    text: "Jeff Bridges"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "National Insurance number"
+                  },
+                  value: {
+                    text: "NA 11 22 33 C"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "date of birth"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Task"
+                  },
+                  value: {
+                    html: "Check if a decison can be made"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "address"
+                      }
+                    ]
+                  }
+                  },
+                  {
+                    key: {
+                      text: "Due"
+                    },
+                    value: {
+                      html: "Today"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "",
+                          visuallyHiddenText: "address"
+                        }
+                      ]
+                    }
+                    },
+                    {
+                      key: {
+                        text: "Created"
+                      },
+                      value: {
+                        html: "Today, 1 minute ago"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "#",
+                            text: "",
+                            visuallyHiddenText: "address"
+                          }
+                        ]
+                      }
+                    },
+                {
+                  key: {
+                    text: "Status"
+                  },
+                  value: {
+                    html: taskTag
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "dwa-set-task-ab",
+                        text: "Put on hold",
+                        visuallyHiddenText: "address"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Open task",
+                href: "dwa-decision-ready-check"
+              }) }}
+
+              {{ govukButton({
+                text: "Close task",
+                classes: "govuk-button"
+              }) }}
+
+              {{ govukButton({
+                text: "Return to queue",
+                classes: "govuk-button--secondary"
+              }) }}
+
+              {{ govukButton({
+                text: "Back",
+                classes: "govuk-button--secondary"
+              }) }}
+            </div>
+
+
+
+
+      {% else %}
+
+      {% set taskTag %}
+            {{govukTag({
+              text: "Active",
+              classes: "govuk-tag--green"
+            })}}
+            {% endset %}
+
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Person"
+                  },
+                  value: {
+                    text: "Jeff Bridges"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "National Insurance number"
+                  },
+                  value: {
+                    text: "NA 11 22 33 C"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "date of birth"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Task"
+                  },
+                  value: {
+                    html: "Prepare an application for a decision maker"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "address"
+                      }
+                    ]
+                  }
+                  },
+                  {
+                    key: {
+                      text: "Due"
+                    },
+                    value: {
+                      html: "13 October 2024 at 14:39"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "",
+                          visuallyHiddenText: "address"
+                        }
+                      ]
+                    }
+                    },
+                    {
+                      key: {
+                        text: "Created"
+                      },
+                      value: {
+                        html: "9 October 2024 at 14:39"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "#",
+                            text: "",
+                            visuallyHiddenText: "address"
+                          }
+                        ]
+                      }
+                    },
+                {
+                  key: {
+                    text: "Status"
+                  },
+                  value: {
+                    html: taskTag
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "dwa-set-task-ab",
+                        text: "Put on hold",
+                        visuallyHiddenText: "address"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Open task",
+                href: "assurance-overview"
+              }) }}
+
+              {{ govukButton({
+                text: "Close task",
+                classes: "govuk-button"
+              }) }}
+
+              {{ govukButton({
+                text: "Return to queue",
+                classes: "govuk-button--secondary"
+              }) }}
+
+
+
+              {{ govukButton({
+                text: "Back",
+                classes: "govuk-button--secondary"
+              }) }}
+
+            </div>
+
+
+
+
+      {% endif %}

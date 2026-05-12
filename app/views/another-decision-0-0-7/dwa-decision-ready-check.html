@@ -1,0 +1,104 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <form action="dwa-decision-ready-check-router" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-7/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check whether a decision can be made</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h1>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-4">@dave Links will open in a new tab</p> -->
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/v13/case-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="pip2" target="_blank" rel="noopener">Health Information gather (PIP2) (opens in new tab)</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank" rel="noopener">Supporting documents (opens in new tab)</a></p>
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="evidence-6" target="_blank" rel="noopener">Health assessment report (opens in new tab)</a></p>-->
+
+
+    </div>
+  </div>
+
+
+
+
+    <!------------ ––– ------------>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukRadios({
+          idPrefix: "dwa-decision-ready-check",
+          name: "dwa-decision-ready-check",
+          fieldset: {
+            legend: {
+              html: "What do you want to do now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Decision",
+            text: "Make a decision",
+            checked: (data["dwa-decision-ready-check"] == "Decision")
+          },
+          {
+            value: "setPause",
+            text: "Put application on hold",
+            checked: (data["dwa-decision-ready-check"] == "setPause")
+          },
+          {
+            value: "SendForAssessment",
+            text: "Send application to an assessment provider",
+            checked: (data["dwa-decision-ready-check"] == "SendForAssessment")
+          },
+          {
+            value: "PIPcs",
+            text: "Move application to PIPCS",
+            checked: (data["dwa-decision-ready-check"] == "PIPcs")
+          }
+          ]
+        }) }}
+
+          <!--checked: (data["dwa-decision-ready-check"] == "Disallow")
+          checked: (data["dwa-decision-ready-check"] == "Withdraw")-->
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

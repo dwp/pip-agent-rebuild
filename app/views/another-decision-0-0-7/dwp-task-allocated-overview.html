@@ -1,0 +1,37 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">PIP Task type X</h1>
+
+      {% set taskTag %}
+      {{govukTag({
+        text: "Active",
+        classes: "govuk-tag--green"
+      })}}
+      {% endset %}
+
+      {% include "another-decision-0-0-7/dwp-tasks-overviews.html" %}
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

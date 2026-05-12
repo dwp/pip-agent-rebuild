@@ -1,0 +1,137 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+
+{% block content %}
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      {% set legendHint %}
+
+      <!--<p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Who did you have direct contact with in order to make the decision:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>XXX</li>
+      <li>XXX</li>
+      </ul>-->
+
+      Select all that apply.
+
+      {% endset %}
+
+      <!---------- Conditional ---------->
+
+{% set ConditionalHtml0 %}
+
+{{ govukTextarea({
+  name: "ap-send-check",
+  id: "ap-send-check",
+  rows: "4",
+  label: {
+    text: "Record details of how you made the decision",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    html: ""
+  }
+}) }}
+
+{% endset -%}
+
+<!----------  ---------->
+
+
+        {{ govukCheckboxes({
+          idPrefix: "ap-send-check-check",
+          name: "ap-send-check-check",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              html: "How did you make the decision?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: legendHint
+          },
+          items: [
+          {
+          value: "R1",
+          text: "I had direct contact with the applicant",
+          checked: (data["ap-send-check-check"] == "R1")
+          },
+          {
+          value: "R2",
+          text: "I consulted another PIP agent",
+          checked: (data["ap-send-check-check"] == "R2")
+          },
+          {
+          value: "R3",
+          text: "I had direct contact with an external health professional (such as a GP or a consultant)",
+          checked: (data["ap-send-check-check"] == "R3")
+          },
+          {
+          value: "R4",
+          text: "I had light-touch support from an assessment provider",
+          checked: (data["ap-send-check-check"] == "R4")
+          },
+          {
+          value: "R5",
+          text: "I had intensive support from an assessment provider",
+          checked: (data["ap-send-check-check"] == "R5")
+          },
+          {
+          value: "R5",
+          text: "I requested an assessment report",
+          checked: (data["ap-send-check-check"] == "R5")
+          },
+          {
+          value: "R6",
+          text: "I used the clinical guidance available",
+          checked: (data["ap-send-check-check"] == "R6")
+          },
+          {
+          value: "R6",
+          text: "I used the forms [what forms might these be?!]",
+          checked: (data["ap-send-check-check"] == "R6")
+          },
+          {
+              value: "R0",
+              text: "Something else",
+              checked: (data["ap-send-check-check"] == "R0"),
+              conditional: {
+                html: ConditionalHtml0
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

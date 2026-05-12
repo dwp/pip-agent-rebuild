@@ -7,7 +7,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="dwa-prep-task-outcome-router#r-dwa-banners" method="post" class="form">
+    <form action="dwa-prep-task-outcome-router" method="post" class="form">
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -515,12 +515,12 @@
   items: [
   {
     value: "Decision",
-    text: "Make a decision (DWA)",
+    text: "Make a decision",
     checked: (data["dwa-prep-task-outcome"] == "Decision")
   },
   {
     value: "setPause",
-    text: "I cannot make a decision without a PIP2 or other evidence",
+    text: "Put application on hold",
     checked: (data["dwa-prep-task-outcome"] == "setPause")
   },
   {
@@ -532,19 +532,12 @@
     value: "PIPcs",
     text: "Move application to PIPCS",
     checked: (data["dwa-prep-task-outcome"] == "PIPcs")
-  },
-  {
-    value: "Disallow",
-    text: "Disallow application",
-    checked: (data["dwa-prep-task-outcome"] == "Disallow")
-  },
-  {
-    value: "Withdraw",
-    text: "Withdraw application",
-    checked: (data["dwa-prep-task-outcome"] == "Withdraw")
   }
   ]
 }) }}
+
+<!--checked: (data["dwa-prep-task-outcome"] == "Disallow")
+checked: (data["dwa-prep-task-outcome"] == "Withdraw")-->
 
 {{ govukButton({
   text: "Continue",
@@ -579,31 +572,33 @@
     items: [
     {
       value: "Decision",
-      text: "Make a decision (DWA)",
+      text: "Make a decision",
       checked: (data["dwa-prep-task-outcome"] == "Decision")
     },
     {
       value: "setPause",
-      text: "I cannot make a decision without a PIP2 or other evidence",
+      text: "Put application on hold",
       checked: (data["dwa-prep-task-outcome"] == "setPause")
     },
     {
-      value: "PIPcs",
+      value: "SendForAssessment",
       text: "Send application to an assessment provider",
+      checked: (data["dwa-prep-task-outcome"] == "SendForAssessment")
+    },
+    {
+      value: "PIPcs",
+      text: "Move application to PIPCS",
       checked: (data["dwa-prep-task-outcome"] == "PIPcs")
-    },
-    {
-      value: "Disallow",
-      text: "Disallow application",
-      checked: (data["dwa-prep-task-outcome"] == "Disallow")
-    },
-    {
-      value: "Withdraw",
-      text: "Withdraw application",
-      checked: (data["dwa-prep-task-outcome"] == "Withdraw")
     }
     ]
   }) }}
+
+
+
+
+    <!--checked: (data["dwa-prep-task-outcome"] == "Disallow")
+    checked: (data["dwa-prep-task-outcome"] == "Withdraw")-->
+
 
   {{ govukButton({
     text: "Continue",

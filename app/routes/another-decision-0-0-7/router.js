@@ -460,10 +460,18 @@ router.post(`/assurance-tasklist-separate-outcome-router`, (req, res) => {
   else if (assuranceOutcomeTaskList == 'Withdraw') {
     res.redirect(`/move-to-pipcs-1/eject-process`)
   }
-   else {
+  else if (assuranceOutcomeTaskList == 'ChecksComplete') {
+    res.redirect(`entry-home`)
+  }
+  else if (assuranceOutcomeTaskList == 'Pause') {
+    res.redirect(`dwp-task-allocated-overview`)
+  }
+  else {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
+
+
 
 router.post(`/assurance-disallow-check-router`, (req, res) => {
   const assuranceOutcomeDisallow = req.session.data['assurance-disallow-check']
@@ -2235,7 +2243,7 @@ router.post(`/dwa-prep-task-outcome-router`, (req, res) => {
     res.redirect(`/move-to-pipcs-1/eject-process`)
   }
   else if (preparationOutcomeTaskList == 'setPause') {
-    res.redirect(`dwa-set-task`)
+    res.redirect(`dwp-task-allocated-overview`)
   }
   else if (preparationOutcomeTaskList == 'SendForAssessment') {
     res.redirect(`../send-to-ap-1/ap-send-check`)
@@ -2266,12 +2274,93 @@ router.post(`/move-send-check-router`, (req, res) => {
     res.redirect(`XXX`)
   }
   else if (ejectCheck == 'SaveAndReturn') {
-    res.redirect(`application-exit-bail`)
+    res.redirect(`dwp-task-allocated-overview`)
   }
    else {
     res.redirect(`XXX`)
   }
 })
+
+
+router.post(`/dwa-scenario-selector-router`, (req, res) => {
+  const dwaScenarioSelector = req.session.data['dwa-scenario-selector']
+
+  if (dwaScenarioSelector == 'dwaA1') {
+    res.redirect(`assurance-overview`)
+  }
+  else if (dwaScenarioSelector == 'dwaA2') {
+    res.redirect(`dwa-decision-ready-check-overview`)
+  }
+  else if (dwaScenarioSelector == 'dwaB1') {
+    res.redirect(`dwa-task-overview`)
+  }
+  else if (dwaScenarioSelector == 'XXX') {
+    res.redirect(`XXX`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+router.post(`/dwa-decision-ready-check-router`, (req, res) => {
+  const dwaDecisionReadyCheck = req.session.data['dwa-decision-ready-check']
+
+  if (dwaDecisionReadyCheck == 'SendForAssessment') {
+    res.redirect(`entry-home`)
+  }
+  else if (dwaDecisionReadyCheck == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (dwaDecisionReadyCheck == 'Disallow') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (dwaDecisionReadyCheck == 'Withdraw') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (dwaDecisionReadyCheck == 'ChecksComplete') {
+    res.redirect(`entry-home`)
+  }
+  else if (dwaDecisionReadyCheck == 'setPause') {
+    res.redirect(`dwp-task-allocated-overview`)
+  }
+  else {
+    res.redirect(`dwa-task-overview`)
+  }
+})
+
+
+
+
+router.post(`/award-dates-review-exceptions-router`, (req, res) => {
+  const awardDatesReviewExceptionCheck = req.session.data['award-dates-review-exceptions']
+
+  if (awardDatesReviewExceptionCheck == 'Yes') {
+    res.redirect(`award-dates-review-justification`)
+  }
+  else if (awardDatesReviewExceptionCheck == 'No') {
+    res.redirect(`award-dates-review-manual`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/system-pause-ab-router`, (req, res) => {
+  const systemAB = req.session.data['system-pause-ab']
+
+  if (systemAB == 'A') {
+    res.redirect(`dwp-task-allocated-hold-reason`)
+  }
+  else if (systemAB == 'B') {
+    res.redirect(`dwa-set-task`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
 
 
 

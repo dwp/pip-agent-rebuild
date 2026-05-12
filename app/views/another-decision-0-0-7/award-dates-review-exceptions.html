@@ -1,4 +1,4 @@
-{% extends "layouts/main-agent.html" %}
+{% extends "layouts/main-agent-dwa.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -9,7 +9,7 @@
 
 {% include "another-decision-0-0-7/record-id.html" %}
 
-  <form action="award-dates-review-manual" method="post" class="form">
+  <form action="award-dates-review-exceptions-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -34,7 +34,7 @@
       name: "award-dates-review-exceptions",
       fieldset: {
         legend: {
-          html: "Is this a standard 3 year award?",
+          html: "Is this a standard 3-year award?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
         }

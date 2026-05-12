@@ -19,14 +19,14 @@
       {% include "another-decision-0-0-7/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for a decision without an assessment report</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
 
 
-        {% if data["system-application-selector"] == "11" %}
+        <!--{% if data["system-application-selector"] == "11" %}
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This application is now ready for a decision.</p>
         {% else %}
-        {% endif %}
+        {% endif %}-->
 
 
 
@@ -42,6 +42,16 @@
             <td class="govuk-table__cell">1 March 2025</td>
           </tr>
 
+          <!--<tr class="govuk-table__row">
+            <td class="govuk-table__header">Pre-decision checks completed (Conditional)</td>
+            <td class="govuk-table__cell">1 January 2025</td>
+          </tr>-->
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Assessment report completed (Conditional)</td>
+            <td class="govuk-table__cell">26 March 2024</td>
+          </tr>
+
           <tr class="govuk-table__row">
             <td class="govuk-table__header">Age of applicant</td>
             <td class="govuk-table__cell">XX</td>
@@ -52,10 +62,6 @@
             <td class="govuk-table__cell">DD MM YYYY</td>
           </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header">Health conditions or disabilities </td>
-            <td class="govuk-table__cell">Downs syndrome <br> Huntingtons disease <br> Motor neurone disease</td>
-          </tr>
 
         </tbody>
       </table>

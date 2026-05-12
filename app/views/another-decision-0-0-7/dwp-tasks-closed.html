@@ -1,0 +1,66 @@
+      {% set taskTagClosed %}
+      {{govukTag({
+        text: "Complete",
+        classes: "govuk-tag--green"
+      })}}
+      {% endset %}
+
+      {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+      Post submission checks complete
+
+  {{ govukTable({
+  head: [
+    {
+      text: "Details"
+    },
+    {
+      text: "Created"
+    },
+    {
+      text: "Task"
+    },
+    {
+      text: "Person"
+    },
+    {
+      text: "National Insurance number"
+    },
+    {
+      text: "Due"
+    },
+    {
+      text: "Status"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "Complete"
+      },
+      {
+        text: "Monday"
+      },
+      {
+        text: "Checks completed"
+      },
+      {
+        text: "Jeff Bridges"
+      },
+      {
+        text: "NA 11 22 33 C"
+      },
+      {
+        text: "Today, 1 minute ago"
+      },
+      {
+        html: taskTagClosed
+      }
+    ]
+  ]
+}) }}
+
+{% else %}
+
+<p class="govuk-body govuk-!-margin-bottom-2">You have not closed any tasks today.</p>
+
+{% endif %}

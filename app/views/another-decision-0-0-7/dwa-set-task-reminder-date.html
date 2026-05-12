@@ -1,0 +1,137 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+
+{% block content %}
+
+{% include "another-decision-0-0-7/record-id.html" %}
+
+<form action="../another-decision-0-0-7/entry-home#dwp-task-allocated-hold-reason" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {% set setDate %}
+
+  {{ govukDateInput({
+    id: "dwa-set-task-reminder-date",
+    namePrefix: "dwa-set-task-reminder-date",
+    fieldset: {
+      legend: {
+        html: "Set reminder date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+      }
+    },
+    hint: {
+      html: ""
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["dwa-set-task-reminder-date-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["dwa-set-task-reminder-date-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["dwa-set-task-reminder-date-year"]
+      }
+    ]
+  }) }}
+
+    {% endset -%}
+
+
+    <!---------- Conditional ---------->
+
+            {% set DynamicHeader %}
+
+            {% if data["dwa-set-task-sticky"] == "Yes" %}
+            Select when you would like a reminder
+            {% else %}
+            Select when you think this application will be able to be picked up again
+            {% endif %}
+
+            {% endset -%}
+
+    <!----------  ---------->
+
+
+
+
+
+    {{ govukRadios({
+      idPrefix: "dwa-set-task-date-check",
+      name: "dwa-set-task-date-check",
+      fieldset: {
+        legend: {
+          html: DynamicHeader,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        html: ""
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "Yes",
+        text: "1 day",
+        checked: (data["dwa-set-task-date-check"] == "Yes")
+      },
+      {
+        value: "Yes",
+        text: "1 week",
+        checked: (data["dwa-set-task-date-check"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "2 weeks",
+        checked: (data["dwa-set-task-date-check"] == "No")
+        },
+        {
+          value: "No",
+          text: "1 month",
+          checked: (data["dwa-set-task-date-check"] == "No")
+          },
+      {
+        value: "specific",
+        text: "Other",
+        checked: (data["dwa-set-task-date-check"] == "specific"),
+              conditional: {
+                html: setDate
+          }
+        },
+        {
+          value: "No",
+          text: "No date needed",
+          checked: (data["dwa-set-task-date-check"] == "No")
+          }
+      ]
+    }) }}
+
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

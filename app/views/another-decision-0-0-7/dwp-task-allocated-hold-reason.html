@@ -1,0 +1,182 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="dwp-task-allocated-hold-date" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <!--<h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Put this task on hold</h1>
+      <p class="govuk-body govuk-!-margin-bottom-2">Put this task on hold until it can be worked on again.</p>-->
+
+
+      {% set taskTag %}
+      {{govukTag({
+        text: "Active",
+        classes: "govuk-tag--green"
+      })}}
+      {% endset %}
+
+
+      {% set emailHtml %}
+
+      {{ govukCheckboxes({
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Reason",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select all that apply"
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "Waiting for information from customer"
+          },
+          {
+            value: "mines",
+            text: "Waiting for information from someone external"
+          },
+          {
+            value: "farm",
+            text: "Waiting for information from a colleague"
+          },
+          {
+            value: "farm",
+            text: "Need to contact the customer"
+          },
+          {
+            value: "farm",
+            text: "Waiting for another agent to complete an action"
+          },
+          {
+            value: "farm",
+            text: "Another reason",
+                  hint: {
+                    text: "Talk to your team lead about what this reason is."
+                  }
+
+          }
+        ]
+      }) }}
+
+      {% endset -%}
+
+      {% set phoneHtml %}
+
+      {{ govukCheckboxes({
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Reason",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select all that apply"
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "Waiting for information from customer"
+          },
+          {
+            value: "mines",
+            text: "Waiting for information from someone external"
+          },
+          {
+            value: "farm",
+            text: "Waiting for information from a colleague"
+          },
+          {
+            value: "farm",
+            text: "Need to contact the customer"
+          },
+          {
+            value: "farm",
+            text: "Waiting for another agent to complete an action"
+          },
+          {
+            value: "farm",
+            text: "Another reason",
+                  hint: {
+                    text: "Talk to your team lead about what this reason is."
+                  }
+
+          }
+        ]
+      }) }}
+
+      {% endset -%}
+
+
+
+
+
+
+      {{ govukRadios({
+      name: "dwp-task-allocated-hold-reason",
+      id: "dwp-task-allocated-hold-reason",
+        fieldset: {
+          legend: {
+            text: "Put this task on hold",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Put this task on hold until it can be worked on again"
+        },
+        items: [
+          {
+            value: "TaskQueue",
+            checked: (data["dwp-task-allocated-hold-reason"] == "TaskQueue"),
+            text: "Put on hold and keep",
+                  hint: {
+                    text: "This task will remain in your work area."
+                  },
+            conditional: {
+              html: emailHtml
+            }
+          },
+          {
+            value: "TaskQueue",
+            checked: (data["dwp-task-allocated-hold-reason"] == "TaskQueue"),
+            text: "Put on hold and return to queue",
+                  hint: {
+                    text: "This task will return to the queue."
+                  },
+            conditional: {
+              html: phoneHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

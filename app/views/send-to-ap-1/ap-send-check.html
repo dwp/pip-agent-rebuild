@@ -38,7 +38,7 @@
       <!----------  ---------->
 
 
-        {{ govukRadios({
+        {{ govukCheckboxes({
           idPrefix: "ap-send-check-check",
           name: "ap-send-check-check",
           classes: "govuk-checkboxes",
@@ -50,27 +50,27 @@
             }
           },
           hint: {
-            html: "XXX"
+            html: "Select all	that apply."
           },
           items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "I've followed all the guidance and I'm not able to make a decision",
             checked: (data["ap-send-check-check"] == "Yes")
           },
           {
             value: "Yes",
-            text: "Yes",
+            text: "Despite sufficient evidence, an assessment is needed",
             checked: (data["ap-send-check-check"] == "Yes")
           },
           {
             value: "Yes",
-            text: "Yes",
+            text: "This application needs specialist knowledge due to the type of condition ",
             checked: (data["ap-send-check-check"] == "Yes")
           },
           {
             value: "Yes",
-            text: "Yes",
+            text: "I need the assessment provider to gather further evidence",
             checked: (data["ap-send-check-check"] == "Yes")
           },
 
@@ -84,6 +84,7 @@
             }
           ]
         }) }}
+
 
         {{ govukButton({
         text: "Continue",
