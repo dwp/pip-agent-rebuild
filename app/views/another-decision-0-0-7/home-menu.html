@@ -40,8 +40,20 @@
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
                     <h2 class="govuk-body govuk-!-font-weight-bold">Processing</h2>
 
-                    <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="dwp-task-none">DWP Task</a></p>
+                    <!--<p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="dwp-task-none">DWP Task</a></p>-->
 
+
+                    {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-reflecting">DWP Task (R)</a>
+                      {% elseif data["assurance-tasklist-separate-outcome"] == "setPause" %}
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-assigned">DWP Task (P)</a>
+
+                      {% elseif data["dwa-decision-ready-check"] == "setPause" and data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-reflecting">DWP Task (R)</a>
+
+                      {% else %}
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-none">DWP Task (0)</a>
+                    {% endif %}
 
                     <!--{% if data["application-1-task-t4"] == "Pause" %}   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="entry-home-processing-options">Process an application or claim</a></p>
                     {% else %}                                          <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="entry-home-processing-options">Process an application or claim</a></p>
@@ -51,19 +63,6 @@
 
                      <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="dwa-scenario-selector">Training scenarios (DWA)</a></p>
 
-
-                     {% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
-                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-reflecting">View my open tasks (DWP TASK) (R)</a>
-                       {% elseif data["assurance-tasklist-separate-outcome"] == "setPause" %}
-                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-assigned">View my open tasks (DWP TASK) (P)</a>
-
-                       {% elseif data["dwa-decision-ready-check"] == "setPause" and data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
-                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-reflecting">View my open tasks (DWP TASK) (R)</a>
-
-
-                       {% else %}
-                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="dwp-task-none">View my open tasks (DWP TASK) (0)</a>
-                     {% endif %}
 
 
 

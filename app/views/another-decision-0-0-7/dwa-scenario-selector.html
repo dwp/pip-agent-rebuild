@@ -28,24 +28,24 @@
           }
         },
         hint: {
-          text: "XXX"
+          text: ""
         },
         classes: "govuk-radios",
         items: [
         {
           value: "dwaA1",
-          text: "(A.1) Post submission checks",
+          text: "(A.1) Prepare an application for a decision maker",
           checked: (data["dwa-scenario-selector"] == "dwaA1")
         },
         {
-        value: "dwaA2",
-        text: "(A.2) Check if a a decision can be made",
-        checked: (data["dwa-scenario-selector"] == "dwaA2")
+        value: "dwaB1",
+        text: "(B.1) Check whether a decision can be made",
+        checked: (data["dwa-scenario-selector"] == "dwaB1")
       },
       {
-      value: "dwaB1",
-      text: "(B.0) Make a decision without an assessment",
-      checked: (data["dwa-scenario-selector"] == "dwaB1")
+      value: "dwaB2",
+      text: "(B.2) Prepare application for a decision / Make a decision",
+      checked: (data["dwa-scenario-selector"] == "dwaB2")
     }
         ]
       }) }}

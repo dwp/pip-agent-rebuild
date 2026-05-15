@@ -28,7 +28,7 @@
       id: "award-dates-review-date-reason-payments",
       rows: "4",
       label: {
-        text: "Record why you set this review peiord",
+        text: "Record your justification for the award review period selection",
         classes: "govuk-label--s",
         isPageHeading: true
       },
@@ -48,7 +48,7 @@ name: "award-dates-review-date-reason",
 classes: "govuk-checkboxes",
 fieldset: {
   legend: {
-    text: "Add your justification for setting a X years/month review period",
+    text: "Add your justification for the award review period selection",
     isPageHeading: true,
     classes: "govuk-fieldset__legend--xl"
   }
@@ -84,7 +84,7 @@ items: [
   },
   {
     value: "Other",
-    text: "Another reason",
+    text: "Something else",
     checked: (data["award-dates-review-date-reason"] == "Other"),
     conditional: {
       html: 3Html

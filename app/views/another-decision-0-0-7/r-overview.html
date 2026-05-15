@@ -1,4 +1,4 @@
-{% extends "layouts/main-agent-full-nav.html" %}
+{% extends "layouts/main-agent.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -55,14 +55,28 @@
           </td>
         </tr>
 
-        {% else %}
+        {% elif data["find-someone-1-offline-return"] == "YesFlags" %}
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Application/claim</th>
           <td class="govuk-table__cell">Decision made: In payment</td>
         </tr>
 
-        {% endif %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Standard</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Nil</p>
+          </td>
+        </tr>
+
+
+        {% else %}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Application/claim</th>
+          <td class="govuk-table__cell">Decision made: In payment</td>
+        </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Outcome</th>
@@ -71,6 +85,11 @@
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Standard rate</p>
           </td>
         </tr>
+
+        {% endif %}
+
+
+
       </tbody>
     </table>
 

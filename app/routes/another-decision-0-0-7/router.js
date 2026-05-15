@@ -2288,10 +2288,10 @@ router.post(`/dwa-scenario-selector-router`, (req, res) => {
   if (dwaScenarioSelector == 'dwaA1') {
     res.redirect(`assurance-overview`)
   }
-  else if (dwaScenarioSelector == 'dwaA2') {
+  else if (dwaScenarioSelector == 'dwaB1') {
     res.redirect(`dwa-decision-ready-check-overview`)
   }
-  else if (dwaScenarioSelector == 'dwaB1') {
+  else if (dwaScenarioSelector == 'dwaB2') {
     res.redirect(`dwa-task-overview`)
   }
   else if (dwaScenarioSelector == 'XXX') {
