@@ -177,7 +177,7 @@
   id: "ap-send-check",
   rows: "4",
   label: {
-    text: "Record the details of why the application needs to be put on hold",
+    text: "Record the details of who you need more information or guidance from",
     classes: "govuk-label--s",
     isPageHeading: true
   },
@@ -224,7 +224,7 @@
           },
           {
           value: "R3",
-          text: "Another PIP Agent (Peer Support)",
+          text: "Another PIP agent (peer support)",
           checked: (data["ap-send-check-check"] == "R3"),
           conditional: {
           html: ConditionalHtmlR3
@@ -248,7 +248,7 @@
           },
           {
           value: "R6",
-          text: "An assessment provider - Intensive support",
+          text: "An assessment provider (intensive support)",
           checked: (data["ap-send-check-check"] == "R6"),
           conditional: {
           html: ConditionalHtmlR6
@@ -256,7 +256,7 @@
           },
           {
           value: "R7",
-          text: "An assessment provider - Light touch support",
+          text: "An assessment provider - (light touch support)",
           checked: (data["ap-send-check-check"] == "R7"),
           conditional: {
             html: ConditionalHtmlR7
@@ -264,7 +264,7 @@
           },
             {
               value: "R0",
-              text: "Another reason",
+              text: "Someone else",
               checked: (data["ap-send-check-check"] == "R0"),
               conditional: {
                 html: ConditionalHtml0
