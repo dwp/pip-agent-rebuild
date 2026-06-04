@@ -1,0 +1,64 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="dwa-scenario-selector-router" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      {{ govukRadios({
+        idPrefix: "dwa-scenario-selector",
+        name: "dwa-scenario-selector",
+        fieldset: {
+          legend: {
+            html: "DWA scenario selector",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "dwaA1",
+          text: "(A.1) Prepare an application for a decision maker",
+          checked: (data["dwa-scenario-selector"] == "dwaA1")
+        },
+        {
+        value: "dwaB1",
+        text: "(B.1) Check whether a decision can be made",
+        checked: (data["dwa-scenario-selector"] == "dwaB1")
+      },
+      {
+      value: "dwaB2",
+      text: "(B.2) Prepare application for a decision / Make a decision",
+      checked: (data["dwa-scenario-selector"] == "dwaB2")
+    }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

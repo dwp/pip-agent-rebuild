@@ -1,0 +1,22 @@
+{% if data["dwa-dec-tl-a5-score"] == "a1" %}
+  Descriptor A: Can manage toilet needs or incontinence unaided
+
+{% elif data["dwa-dec-tl-a5-score"] == "b2" %}
+  Descriptor B: Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+
+{% elif data["dwa-dec-tl-a5-score"] == "c3" %}
+  Descriptor C: Needs supervision or prompting to be able to manage toilet needs
+
+{% elseif data["dwa-dec-tl-a5-score"] == "d4" %}
+  Descriptor D: Needs assistance to be able to manage toilet needs
+
+{% elseif data["dwa-dec-tl-a5-score"] == "e5" %}
+  Descriptor E: Needs assistance to be able to manage incontinence of either bladder or bowel
+
+{% elseif data["dwa-dec-tl-a5-score"] == "f6" %}
+  Descriptor F: Needs assistance to be able to manage incontinence of both bladder and bowel
+
+{% else %}
+  Blank
+
+{% endif %}

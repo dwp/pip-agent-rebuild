@@ -1,0 +1,227 @@
+{% if data["entry-home-processing-options"] == "MakeMRNil" %}
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration completed. The outcome of the decision remains the same. An entry has been added to the event history and the decision overview.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["entry-home-processing-options"] == "MakeMRChange" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Manditory reconsideration submitted (Change in rate)</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+
+{% endif %}
+
+
+<!-- ProcessMR OUTCOME -->
+
+
+{% if data["payability-check"] == "Yes" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">@rachel Moved to PIPcs</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["payability-check"] == "No" %}
+
+              {% set html %}
+              <p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration completed. The decision has changed/remains the same. An entry has been added to the event history and the decision overview. </p>
+              {% endset %}
+
+              {{ govukNotificationBanner({
+                html: html,
+                type: 'success'
+              }) }}
+
+
+{% elif data["payability-check"] == "YesR3" %}
+
+
+        {% if data["payability-tasklist-item-8"] == "Yes" %}
+
+                      {% set html %}
+                      <p class="govuk-body govuk-!-font-size-19">Moved to PIPcs as cant process in service</p>
+                      {% endset %}
+
+                      {{ govukNotificationBanner({
+                        html: html,
+                        type: 'success'
+                      }) }}
+        {% else %}
+                      {% set html %}
+                      <p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration completed. The decision has changed/remains the same. An entry has been added to the event history and the decision overview. (After the payment details have been checked.) </p>
+                      {% endset %}
+
+                      {{ govukNotificationBanner({
+                        html: html,
+                        type: 'success'
+                      }) }}
+        {% endif %}
+
+
+
+{% else %}
+
+{% endif %}
+
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">
+
+  {% if data["r-flags-task-add-as"] == "Yes" or data["r-flags-task-add-as"] == "Flag3" %}
+  The additional support
+  {% else %}
+  {% endif %}
+  marker has been added to the person's record. </p>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-task-add-as-marker"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+
+
+{% if data["an-de-exit-mr-process-early"] == "MyOpenTasks" %}
+
+              {% set html %}
+              <p class="govuk-body govuk-!-font-size-19">Paused, now in My open tasks</p>
+              {% endset %}
+
+              {{ govukNotificationBanner({
+                html: html,
+                type: 'success'
+              }) }}
+{% else %}
+
+{% endif %}
+
+<!--DWA OUTCOME BANNERS -->
+
+
+
+<!-- top Level Notifications -->
+<!-- Colins banner -->
+<!-- Add # to the url on the final return page -->
+
+{% set DWABanner %}
+<p class="govuk-body govuk-!-font-size-19">
+
+  {% if data["dwa-prep-task-outcome"] == "Decision" %}
+    You have successfully processed this application and sent the decision letter. The person has been awarded PIP. <br> The sent letter will be available to view in ECMS shortly.
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "setPause" %}
+    Paused
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "SendForAssessment" %}
+    Send to AP
+  {% else %}
+  {% endif %}
+
+  {% if data["dwa-prep-task-outcome"] == "PIPcs" %}
+    Moved to PIPcs
+  {% else %}
+  {% endif %}
+
+{% if data["dwa-prep-task-outcome"] == "Disallow" %}
+    Disallow
+  {% else %}
+  {% endif %}
+
+  </p>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-dwa-banners"
+},
+  html: DWABanner,
+  type: 'success'
+}) }}
+
+
+{% if data["assurance-tasklist-separate-outcome"] == "ChecksComplete" %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application checks complete. It will be sent to a decision maker once the health information gather (PIP2) is received.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["assurance-tasklist-separate-outcome"] == "Pause" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application has gone on hold</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["assurance-tasklist-separate-outcome"] == "PIPcs" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Application has been id'd to move to PIPcs</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{% else %}
+
+{% endif %}
+
+
+
+
+{% if data["dwp-task-allocated-hold-reason"] %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">You have put this on hold bro</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+
+{% endif %}

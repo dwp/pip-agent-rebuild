@@ -1,0 +1,13 @@
+{% if data["dwa-dec-tl-a7-score"] == "a1" %}
+  0
+{% elif data["dwa-dec-tl-a7-score"] == "b2" %}
+  2
+{% elif data["dwa-dec-tl-a7-score"] == "c3" %}
+  4
+{% elseif data["dwa-dec-tl-a7-score"] == "d4" %}
+  8
+{% elseif data["dwa-dec-tl-a7-score"] == "e5" %}
+  12
+{% else %}
+  0
+{% endif %}

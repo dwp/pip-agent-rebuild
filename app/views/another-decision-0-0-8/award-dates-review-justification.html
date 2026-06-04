@@ -1,0 +1,111 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block content %}
+
+
+
+{% include "another-decision-0-0-8/record-id.html" %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-heading-xl govuk-!-margin-bottom-4"></h1>-->
+
+
+    {% set 3Html %}
+
+    {{ govukTextarea({
+      name: "award-dates-review-date-reason-payments",
+      id: "award-dates-review-date-reason-payments",
+      rows: "4",
+      label: {
+        text: "Record your justification for the award review period selection",
+        classes: "govuk-label--s",
+        isPageHeading: true
+      },
+      hint: {
+        html: ""
+      }
+    }) }}
+
+    {% endset -%}
+
+<!----------  ---------->
+
+
+{{ govukCheckboxes({
+idPrefix: "award-dates-review-date-reason",
+name: "award-dates-review-date-reason",
+classes: "govuk-checkboxes",
+fieldset: {
+  legend: {
+    text: "Add your justification for the award review period selection",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--xl"
+  }
+},
+hint: {
+  html: "Select all that apply."
+},
+items: [
+{
+  value: "Under25",
+  text: "The person is under 25",
+  checked: (data["award-dates-review-date-reason"] == "under25")
+},
+  {
+    value: "SPA",
+    text: "The person is close to State Pension age",
+    checked: (data["award-dates-review-date-reason"] == "SPA")
+  },
+  {
+    value: "HighLevel",
+    text: "The person has high-level needs which will either stay the same or get worse",
+    checked: (data["award-dates-review-date-reason"] == "HighLevel")
+  },
+  {
+    value: "LikelyToImprove",
+    text: "The person has a health condition or disability that is likely to improve",
+    checked: (data["award-dates-review-date-reason"] == "LikelyToImprove")
+  },
+  {
+    value: "LikelyToImprove",
+    text: "The person is undergoing or waiting for treatment that will last a period of time",
+    checked: (data["award-dates-review-date-reason"] == "LikelyToImprove")
+  },
+  {
+    value: "Other",
+    text: "Something else",
+    checked: (data["award-dates-review-date-reason"] == "Other"),
+    conditional: {
+      html: 3Html
+    }
+  }
+]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

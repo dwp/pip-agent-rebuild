@@ -1,0 +1,20 @@
+
+
+
+{% if data["call-complete"] %}
+{% include "dwa-dec-call-bar-active-review.html" %}
+
+{% else %}
+
+      {% if data["obc-security"] == "Yes" and data["obc-greeting"] == "Yes" and data["obc-other-help"] %}
+      {% include "dwa-dec-call-bar-active-review.html" %}
+
+      {% elif data["obc-greeting"] == "Yes" and data["obc-security"] == "Yes" and data["obc-payability-check"] == "Yes"  %}
+      {% include "dwa-dec-call-bar-active-tasklist.html" %}
+
+      {% else %}
+      {% include "dwa-dec-call-bar-prepare.html" %}
+
+      {% endif %}
+
+{% endif %}

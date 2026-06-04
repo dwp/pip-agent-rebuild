@@ -1,0 +1,438 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="processing-notes" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information you are adding to the decision letter</h1>
+
+
+
+
+
+      <!------------H1 LEGEND------------>
+
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-5-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+
+
+
+      <!------------OUTCOME LEGEND------------>
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Outcome</h3>
+
+
+        {% if data["system-application-selector"]  == "1" %}
+        [The applicant will not be given PIP]
+
+        {% else %}
+
+        {% endif %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
+<!-- DL -->
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the daily living part: this means they have been given the standard/enhanced rate</p> -->
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</p> -->
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[X] points for the daily living part - this means the applicant will not be awarded PIP</p>
+<!-- M -->
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the mobility part: this means they have been given the standard/enhanced rate</p> -->
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</p> -->
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[0] points for the mobility part - this means the applicant will not be awarded PIP</p>
+
+
+        {% set firstPaymentDetails %}
+
+        {% if data["system-application-selector"]  == "1" %}
+
+
+
+        {% else %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £2,300.</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This will be paid into your bank account within 3 days.</p>
+
+        {{ govukSummaryList({
+          rows: [
+          {
+                key: {
+                  text: "First payment"
+                },
+                value: {
+                  html: firstPaymentDetails
+                }
+              }
+            ]
+          }) }}
+
+        {% endif %}
+
+
+
+        {% endset %}
+
+        <!------------OUTCOME LEGEND------------>
+
+        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Qualifying period and prospective test</h3>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Daily living qualifying period met"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-3m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Likely to still have daily living restrictions"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-9m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Mobility qualifying period met"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-3m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Likely to still have moblity restrictions"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-9m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+              {% if data["system-application-selector"]  == "1" %}
+
+              <!-- I am Nill award -->
+
+                {% else %}
+
+              <!------------Q2 LEGEND------------>
+                {% set dynamicDateRange %}
+
+
+                [Day] [Month] [Year]
+                <!-- From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
+
+
+                {% if data["application-6-award-period-end-check"]  == "Yes" %}
+                to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
+                {% else %}
+                (there is no end date)
+                {% endif %} -->
+
+                {% endset %}
+
+              <!------------Legend--------------->
+
+              {% if data["entry-home-processing-options"] == "MakeMRNil" %}
+
+              {% else %}
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Review dates</h3>
+
+
+
+
+              <!--DATA LOAD IN-->
+              {% set dataAwardReviewJustification %}
+                {{data["award-dates-review-justification"]}}
+              {% endset %}
+              <!--DATA LOAD IN-->
+
+
+                {{ govukSummaryList({
+                  rows: [
+                  {
+                    key: {
+                      text: "Is this a standard 3-year award?"
+                    },
+                    value: {
+                      text: "Yes/No"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "award-dates-playback",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                    {
+                      key: {
+                        text: "Award start date"
+                      },
+                      value: {
+                        text: "2 March 2024"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Award review date"
+                      },
+                      value: {
+                        text: "1 March 2026"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                      },
+                      {
+                        key: {
+                          text: "Award review period justification"
+                        },
+                        value: {
+                          html: dataAwardReviewJustification
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "award-dates-review-justification",
+                              text: "Change",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
+                      },
+                    {
+                      key: {
+                        text: "Award review period"
+                      },
+                      value: {
+                        text: "3 years"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Award end date"
+                      },
+                      value: {
+                        text: "1 March 2027"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+              {% endif %}
+
+                {% endif %}
+
+
+
+
+                <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Documents used when making the decision </h3>
+
+          {% set DynamicSelectedDocumentsList %}
+
+
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0 ">
+            <li>Information provided by care home</li>
+            <li>Care plan</li>
+            <li>Certificate of Vision Impairment (CVI)</li>
+            <li>Information provided by community mental health team</li>
+          </ul>
+
+              {% endset %}
+
+              {{ govukSummaryList({
+                classes: "govuk-summary-list--no-border",
+                rows: [
+                {
+                  key: {
+                    text: "Selected documents"
+                  },
+                  value: {
+                    html:
+                    DynamicSelectedDocumentsList
+                  },
+                  actions: {
+                    items: [
+                    {
+                      href: "application-evidence-used-b",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                    ]
+                  }
+                }
+                ]
+              }) }}
+
+
+<!------------------ SCORES ------------------------->
+      {% include "another-decision-0-0-8/cya-letter-review_scores.html" %}
+<!------------------ SCORES ------------------------->
+
+
+    </div>
+  </div>
+
+
+<!------------------ PAYABILITY ------------------------->
+{% if data["payability-check"] == "Yes" %}
+{% include "another-decision-0-0-8/cya-letter-review_r2.html" %}
+R2
+{% elif data["payability-check"] == "YesR3" %}
+R3
+{% include "another-decision-0-0-8/cya-letter-review_r3.html" %}
+{% else %}
+{% endif %}
+
+
+<!------------------ PAYABILITY ------------------------->
+
+
+<!------------------ CTA / OUTCOME / NEXT STEPS ------------------------->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    {% set dynamicCheckBoxHintPayment %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The decision letter will be generated based on the information above and sent automatically. The letter will also include payment details. </p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">This is your last opportunity to see the information that will be in the letter, so make sure you have checked it carefully. </p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Do not proceed unless you are completely sure the information is correct.</p>
+
+    {% endset %}
+    <!------------Legend--------------->
+
+    {{ govukCheckboxes({
+    idPrefix: "ConfimLetter",
+    name: "ConfimLetter",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
+      legend: {
+        text: "Send decision letter",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+      }
+    },
+    hint: {
+      html: dynamicCheckBoxHintPayment
+    },
+    items: [
+      {
+        value: "ConfimLetter",
+        text: "I confirm that I have fully checked the information for the decision letter.",
+        checked: (data["dwa-dec-tl-a9-score"] == "0")
+      }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}
