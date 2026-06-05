@@ -1,0 +1,113 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Request overview</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">If you need to contact or get some help here is the space for you</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+
+            <th scope="col" class="govuk-table__header govuk-50-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-50-percent"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Request made</td>
+            <td class="govuk-table__cell">Today</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Pre text sent?</td>
+            <td class="govuk-table__cell">Yes</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Responce recived</td>
+            <td class="govuk-table__cell">None</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Actor</td>
+            <td class="govuk-table__cell">Applicant</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Responce type</td>
+            <td class="govuk-table__cell">Questions</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Responces</h1>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+
+            <th scope="col" class="govuk-table__header govuk-50-percent">Question</th>
+            <th scope="col" class="govuk-table__header govuk-50-percent">Responce</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Its unclear why you struggle with XYZ</td>
+            <td class="govuk-table__cell">No responce yet</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">You said something about work, what does this mean?</td>
+            <td class="govuk-table__cell">No responce yet</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <!--<h1 class="govuk-heading-l govuk-!-margin-bottom-6">Attachments</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Review attachment, you can then grade as normal</p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="eject-download">View attachment</a></p>
+-->
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-6">Follow up request</h1>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you need to contact or get more help here is the space for you</p>
+<p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="request-questions-a1">Make a follow up request</a></p>
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

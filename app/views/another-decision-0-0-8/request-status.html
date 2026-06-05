@@ -1,0 +1,125 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="request-type" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      {% if data["request-3-grade"] and data["request-5-grade"] %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting documents</h2>
+      {% elif data["request-3-grade"] or data["request-5-grade"] %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 1<br>supporting document</h2>
+      {% else %}
+      <!--<h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 2<br>supporting documents</h2>-->
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help with a decison</h2>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">If you need to contact or get more help here is the space for you</p>
+
+      {% endif %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Sending a new request</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you need to contact or get more help here is the space for you</p>
+      <!--<p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="request-questions.html">Make a follow up request</a></p>-->
+
+      {{ govukButton({
+        text: "Send a new request",
+        classes: "govuk-!-margin-bottom-8",
+        classes: "govuk-button--secondary"
+
+      }) }}
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+
+      {% if data["request-question-ap-report"] and data["request-question-1-applicant"] %}      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces (2)</h1>
+      {% elif data["request-question-ap-report"]  %}      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces (1)</h1>
+      {% else %}                                            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces</h1>
+      {% endif %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you need to contact or get more help here is the space for you</p>
+
+
+{% if data["request-3-grade"] and data["request-5-grade"] %}
+{% else %}
+<div><!-- Still to assess start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!--<h3 class="govuk-heading-m govuk-!-margin-bottom-2">Still to assess</h3>-->
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-20-percent">Request type</td>
+        <td class="govuk-table__cell govuk-20-percent">Actor</td>
+        <td class="govuk-table__cell govuk-20-percent">Date requested<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br></td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+
+
+
+      {% if data["request-question-1-applicant"] %}
+
+      {% if data["request-3-grade"] == "Good" %}
+      {% elif data["request-3-grade"] == "Bad" %}
+      {% else %}
+          {% include "another-decision-0-0-8/request-3-status.html" %}
+      {% endif %}
+
+      {% else %}
+      {% endif %}
+
+
+
+      {% if data["request-question-ap-report"] %}
+
+      {% if data["request-5-grade"] == "Good" %}
+      {% elif data["request-5-grade"] == "Bad" %}
+      {% elif data["request-5-grade"] == "Remove" %}
+      {% else %}
+          {% include "another-decision-0-0-8/request-5-status.html" %}
+      {% endif %}
+
+      {% else %}
+      {% endif %}
+
+
+
+
+
+
+
+
+
+      </table>
+
+
+</div><!-- Still to assess end -->
+{% endif %}
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+  </form>
+
+{% endblock %}

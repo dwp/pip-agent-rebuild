@@ -44,20 +44,119 @@
       }) }}
 
 
-      <!-- {{ govukTextarea({
-        name: "call-notes",
-        id: "call-notes",
-  rows: "10",
-  label: {
-    text: "My decision notes",
-    classes: "govuk-label--xl",
-    isPageHeading: true
-  },
-  hint: {
-    text: "Add any notes that will help you when speaking to the person and making your decision."
-  },
-  value: data["call-notes"]
-}) }} -->
+      <h1 class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-6">Provisional activity scores and notes</h1>
+
+      {% set dynamicProvisional %}
+      {% include "another-decision-0-0-8/notes-popout-working.html" %}
+      {% endset %}
+
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+              text: "Perparing food"
+            },
+            content: {
+              html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Taking nutrition"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Managing therapy or monitoring a health condition"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Washing and bathing"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Managing toilet needs or incontinence"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Dressing and undressing"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Communicating verbally"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Reading and understanding signs, symbols and words"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Engaging with other people face to face"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Making budgeting decisions"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Planning and following journeys"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          },
+          {
+            heading: {
+              text: "Moving around"
+            },
+            content: {
+            html: dynamicProvisional
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+
+
 
       <div class="govuk-button-group">
 

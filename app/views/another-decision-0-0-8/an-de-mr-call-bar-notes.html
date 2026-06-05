@@ -1,0 +1,70 @@
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <!------------NOTES LEGEND AND FAKE BUTTONS ------------>
+
+    <style>
+
+        .govuk-details__text {
+          border-left:None;
+          padding-left:0;
+        }
+      }
+    </style>
+
+      {% set legendNumbersDetails %}
+
+      <form method=post action="#">
+        {{ govukTextarea({
+          name: "call-notes",
+          id: "call-notes",
+          label: {
+            text: "",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add any notes that will help you when speaking to the person and making your decision."
+          },
+          value: data["call-notes"]
+        }) }}
+
+
+    <div class="govuk-button-group">
+      <!-- {{ govukButton({
+        text: "Open in a new tab",
+        classes: "govuk-button--secondary",
+        href: "#"
+      }) }} -->
+
+      {{ govukButton({
+        text: "Save",
+        classes: "govuk-button--secondary"
+      }) }}
+      <p class="govuk-body govuk-!-font-size-19 ">Auto saved 1 minute ago</p>
+    </div>
+    <p class="govuk-link govuk-!-margin-bottom-6"><a href="notes-popout" class="govuk-link" rel="noreferrer noopener" target="_blank">Open notes in a new window</a></p>
+
+      </form>
+
+      {% endset %}
+
+
+
+      {{ govukDetails({
+        summaryText: "My decision notes",
+        classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
+        html: legendNumbersDetails
+      }) }}
+
+      <!------------NOTES LEGEND AND FAKE BUTTONS ------------>
+
+
+</div>
+</div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">

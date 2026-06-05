@@ -1,12 +1,10 @@
-{% extends "layouts/layout.html" %}
+{% extends "layouts/main-agent-dwa.html" %}
 
 {% block pageTitle %}
   Process a PIP application
 {% endblock %}
 
-{% block header %}
- {% include "explore-header-global-nav-multi.html" %}
-{% endblock %}
+
 
 {% block content %}
 
@@ -23,7 +21,7 @@
       {% elif data["doc-3-grade"] or data["doc-5-grade"] %}
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 1<br>supporting document</h2>
       {% else %}
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 2<br>supporting documents</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 3<br>supporting documents</h2>
       {% endif %}
 
 
@@ -45,6 +43,13 @@
       </tr>
       </thead>
 
+
+      {% if data["doc-8-grade"] == "Good" %}
+      {% elif data["doc-8-grade"] == "Bad" %}
+      {% elif data["doc-8-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-8-status.html" %}
+      {% endif %}
 
       {% if data["doc-5-grade"] == "Good" %}
       {% elif data["doc-5-grade"] == "Bad" %}
@@ -68,7 +73,7 @@
 {% endif %}
 
 
-{% if data["doc-1-grade"] == "Good" or data["doc-2-grade"] == "Good" or data["doc-3-grade"] == "Good" or data["doc-4-grade"] == "Good" or data["doc-5-grade"] == "Good" or data["doc-6-grade"] == "Good" %}
+{% if data["doc-1-grade"] == "Good" or data["doc-2-grade"] == "Good" or data["doc-3-grade"] == "Good" or data["doc-4-grade"] == "Good" or data["doc-5-grade"] == "Good" or data["doc-6-grade"] == "Good" or data["doc-8-grade"] == "Good"%}
 <div><!-- Supports the decision start -->
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -83,6 +88,14 @@
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
+
+
+            {% if data["doc-8-grade"] == "Good" %}
+              {% include "documents-0-1/doc-8-status.html" %}
+            {% elif data["doc-8-grade"] == "Bad" %}
+            {% elif data["doc-8-grade"] == "Remove" %}
+            {% else %}
+            {% endif %}
 
             {% if data["doc-5-grade"] == "Good" %}
               {% include "documents-0-1/doc-5-status.html" %}

@@ -2362,6 +2362,21 @@ router.post(`/system-pause-ab-router`, (req, res) => {
 })
 
 
+router.post(`/request-type-router`, (req, res) => {
+  const systemAB = req.session.data['request-type']
+
+  if (systemAB == 'a1') {
+    res.redirect(`request-questions-a1`)
+  }
+  else if (systemAB == 'a6') {
+    res.redirect(`request-questions`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 
 

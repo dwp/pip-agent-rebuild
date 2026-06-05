@@ -1,0 +1,68 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="request-type" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help with a decision</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">If you need to contact or get some help here is the space for you</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">You can request help from several actors such as: </p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+         <li>
+          The applicant
+        </li>
+
+        <li>
+          An appointee or representative
+        </li>
+
+        <li>
+          Another PIP agent (peer support)
+        </li>
+
+        <li>
+          A Service Assurance Manager
+        </li>
+
+        <li>
+          An external health professional (such as a GP or consultant)
+        </li>
+
+        <li>
+          An assessment provider (intensive support)
+        </li>
+
+        <li>
+          An assessment provider (light touch support)
+        </li>
+        <li>
+          Request an assessment
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start a request",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

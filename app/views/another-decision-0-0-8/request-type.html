@@ -1,0 +1,85 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="request-type-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      <!--<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help with a decision</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">If you need to contact or get some help here is the space for you</p>
+-->
+
+
+      {{ govukRadios({
+        idPrefix: "request-type",
+        name: "request-type",
+        fieldset: {
+          legend: {
+            html: "Who do you need contact with",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "a1",
+          text: "Applicant",
+          checked: (data["request-type"] == "a1")
+        },
+        {
+          value: "a2",
+          text: "DelAuth",
+          checked: (data["request-type"] == "a2")
+        },
+        {
+          value: "a3",
+          text: "Appointee representative",
+          checked: (data["request-type"] == "a3")
+        },
+        {
+          value: "a4",
+          text: "A service assurance manager",
+          checked: (data["request-type"] == "a4")
+        },
+        {
+          value: "a5",
+          text: "External health professional (such as GP)",
+          checked: (data["request-type"] == "a5")
+        },
+        {
+          value: "a6",
+          text: "Assessment provider (HCP)",
+          checked: (data["request-type"] == "a6")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

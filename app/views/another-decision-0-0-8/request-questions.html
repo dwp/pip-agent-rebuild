@@ -1,0 +1,101 @@
+{% extends "layouts/main-agent-dwa.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="request-status" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-8/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help from an assessment provider</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">If you need to contact or get some help here is the space for you</p>
+
+
+
+      {{ govukRadios({
+        idPrefix: "request-question-ap-report",
+        name: "request-question-ap-report",
+        fieldset: {
+          legend: {
+            html: "Do you need an assessment report?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["request-question-ap-report"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["request-question-ap-report"] == "No")
+        }
+        ]
+      }) }}
+
+      <br>
+
+      {{ govukTextarea({
+        name: "request-question-1-ap",
+        id: "request-question-1-ap",
+        rows: "6",
+        label: {
+          text: "Question 1",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Keep it tight"
+        },
+        value: data["request-question-1-ap"]
+      }) }}
+
+      <br>
+
+      {{ govukTextarea({
+        name: "request-question-2-ap",
+        id: "request-question-2-ap",
+        rows: "6",
+        label: {
+          text: "Question 2",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Keep it tight"
+        },
+        value: data["request-question-2-ap"]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Send request",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
