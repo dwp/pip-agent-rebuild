@@ -28,44 +28,44 @@
         name: "request-type",
         fieldset: {
           legend: {
-            html: "Who do you need contact with",
+            html: "Who do you need to contact?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: ""
+          html: "You can add another person later if you need to."
         },
         classes: "govuk-radios",
         items: [
         {
           value: "a1",
-          text: "Applicant",
+          text: "The applicant",
           checked: (data["request-type"] == "a1")
         },
         {
           value: "a2",
-          text: "DelAuth",
+          text: "The appointee or representative",
           checked: (data["request-type"] == "a2")
         },
         {
           value: "a3",
-          text: "Appointee representative",
+          text: "Another PIP agent (peer support)",
           checked: (data["request-type"] == "a3")
         },
         {
           value: "a4",
-          text: "A service assurance manager",
+          text: "A Service Assurance Manager",
           checked: (data["request-type"] == "a4")
         },
         {
           value: "a5",
-          text: "External health professional (such as GP)",
+          text: "An external health professional (such as a GP or consultant)",
           checked: (data["request-type"] == "a5")
         },
         {
           value: "a6",
-          text: "Assessment provider (HCP)",
+          text: "An assessment provider",
           checked: (data["request-type"] == "a6")
         }
         ]

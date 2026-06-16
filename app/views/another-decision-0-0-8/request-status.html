@@ -22,13 +22,13 @@
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 1<br>supporting document</h2>
       {% else %}
       <!--<h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 2<br>supporting documents</h2>-->
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help with a decison</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Get help with a decision</h2>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">If you need to contact or get more help here is the space for you</p>
 
       {% endif %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Sending a new request</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you need to contact or get more help here is the space for you</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Request help with a decision.</p>
       <!--<p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="request-questions.html">Make a follow up request</a></p>-->
 
       {{ govukButton({
@@ -45,11 +45,11 @@
 
 
       {% if data["request-question-ap-report"] and data["request-question-1-applicant"] %}      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces (2)</h1>
-      {% elif data["request-question-ap-report"]  %}      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces (1)</h1>
-      {% else %}                                            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responces</h1>
+      {% elif data["request-question-ap-report"]  %}      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responses (1)</h1>
+      {% else %}                                            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Requests and responses</h1>
       {% endif %}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you need to contact or get more help here is the space for you</p>
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you need to contact or get more help here is the space for you</p>-->
 
 
 {% if data["request-3-grade"] and data["request-5-grade"] %}
@@ -62,9 +62,9 @@
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-20-percent">Request type</td>
-        <td class="govuk-table__cell govuk-20-percent">Actor</td>
+        <td class="govuk-table__cell govuk-20-percent">Person contacted</td>
         <td class="govuk-table__cell govuk-20-percent">Date requested<br>(Age)</td>
-        <td class="govuk-table__cell govuk-20-percent">Date received<br></td>
+        <td class="govuk-table__cell govuk-20-percent">Date response received<br></td>
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
@@ -112,7 +112,7 @@
 {% endif %}
 
 
-
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="/another-decision-0-0-8/dwa-dec-tasklist">---</a></p>
 
 
 

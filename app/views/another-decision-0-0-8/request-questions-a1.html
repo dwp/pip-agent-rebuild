@@ -18,8 +18,8 @@
 
       {% include "another-decision-0-0-8/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Talk to the citizen about something</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">If you need to contact or get some help here is the space for you</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Contact the applicant</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Record the details of what you need to discuss.</p>
 
 
 
@@ -28,13 +28,13 @@
         name: "request-question-",
         fieldset: {
           legend: {
-            html: "Do you need to end a call text message?",
+            html: "Do you need to send a pre-call text message?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          html: "This will tell the citizen that you will call them with the next 48 hours and the phone number will be an 0845 number"
+          html: "This will let them to know to expect a call from an 0845 number in the next 48 hours."
         },
         classes: "govuk-radios",
         items: [
@@ -63,7 +63,7 @@
           isPageHeading: true
         },
         hint: {
-          html: "Keep it tight"
+          html: "Enter a short summary."
         },
         value: data["request-question-1-applicant"]
       }) }}
@@ -80,7 +80,7 @@
           isPageHeading: true
         },
         hint: {
-          html: "Keep it tight"
+          html: "Enter a short summary."
         },
         value: data["request-question-2-applicant"]
       }) }}

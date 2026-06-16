@@ -1,10 +1,9 @@
-{% extends "layouts/main-agent-dwa.html" %}
+{% extends "layouts/main-agent-notes-bar.html" %}
+
 
 {% block pageTitle %}
   Process a PIP application
 {% endblock %}
-
-
 
 {% block content %}
 
@@ -47,24 +46,24 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Responce recived</td>
+            <td class="govuk-table__header">Responses recived</td>
             <td class="govuk-table__cell">None</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Actor</td>
+            <td class="govuk-table__header">Person contacted</td>
             <td class="govuk-table__cell">Applicant</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Responce type</td>
+            <td class="govuk-table__header">Responses type</td>
             <td class="govuk-table__cell">Questions</td>
           </tr>
 
         </tbody>
       </table>
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Responces</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Responses</h1>
 
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -73,7 +72,7 @@
           <tr class="govuk-table__row">
 
             <th scope="col" class="govuk-table__header govuk-50-percent">Question</th>
-            <th scope="col" class="govuk-table__header govuk-50-percent">Responce</th>
+            <th scope="col" class="govuk-table__header govuk-50-percent">Responses</th>
           </tr>
         </thead>
 
@@ -81,12 +80,12 @@
           <tr class="govuk-table__row">
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Its unclear why you struggle with XYZ</td>
-            <td class="govuk-table__cell">No responce yet</td>
+            <td class="govuk-table__header">{{data["request-question-1-applicant"]}}</td>
+            <td class="govuk-table__cell">No Responses yet</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">You said something about work, what does this mean?</td>
+            <td class="govuk-table__header">{{data["request-question-2-applicant"]}}</td>
             <td class="govuk-table__cell">No responce yet</td>
           </tr>
 

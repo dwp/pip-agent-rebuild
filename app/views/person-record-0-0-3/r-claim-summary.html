@@ -1,0 +1,268 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-3/record-id-base.html" %}
+
+  <form action="record-foundation-application-overview-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-applications"
+        },
+        {
+          text: "Applications and decisions",
+          href: "record-foundation-applications"
+        },
+        {
+          text: "Day Month Year",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-full">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Claim (case) summary</h1>
+      <h3 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">10 January 2020	to 1 January 2025</h3>
+
+      {% set Child1 %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p>.</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Date of decision</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Submission type</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Outcome</p>
+        </div>
+      </div>
+
+      {% endset -%}
+
+
+
+      {{ govukTable({
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Submission type",
+            classes: "govuk-!-width-20-percent"
+          },
+          {
+            text: "Date of submission",
+            classes: "govuk-!-width-20-percent"
+          },
+          {
+            text: "Date of decision",
+            classes: "govuk-!-width-20-percent"
+          },
+          {
+            text: "Outcome",
+            classes: "govuk-!-width-20-percent"
+          }
+        ],
+        rows: [
+          [
+            {
+            text: "Award review (Scheduled)"
+            },
+            {
+              text: "1 December 2024"
+            },
+            {
+              text: "1 January 2025"
+            },
+            {
+              text: "Nil (0) / Nil (0)"
+            }
+          ],
+          [
+            {
+              text: "Award review (Manual)"
+            },
+            {
+            text: "2 February 2023"
+            },
+            {
+            text: "3 February 2023"
+            },
+            {
+              text: "Standard (8) / Nil (0)"
+            }
+          ],
+          [
+            {
+              text: "Mandatory reconsideration"
+            },
+            {
+              text: "10 March 2020"
+            },
+            {
+              text: "20 March 2020"
+            },
+            {
+              text: "Standard (8) / Nil (0)"
+            }
+          ],
+          [
+            {
+              text: "Original application"
+            },
+            {
+              text: "10 January 2020"
+            },
+            {
+              text: "1 February 2020"
+            },
+            {
+              text: "Nil (0) / Nil (0)"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+      <p class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-6">Decision events</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">	1 January 2025</td>
+            <td class="govuk-table__cell">Decision made: Nil award</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">1 December 2024</td>
+            <td class="govuk-table__cell">Award review (Scheduled)</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">3 February 2023</td>
+            <td class="govuk-table__cell">In payment</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">3 February 2023</td>
+            <td class="govuk-table__cell">Decision made: Awarded</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">2 February 2023</td>
+            <td class="govuk-table__cell">Award review (Manual)</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">20 March 2020</td>
+            <td class="govuk-table__cell">In payment</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">20 March 2020</td>
+            <td class="govuk-table__cell">Mandatory reconsideration decision made: Awarded</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">10 March 2020</td>
+            <td class="govuk-table__cell">Mandatory reconsideration registered</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td> <!--View HIG details -->
+          </tr>
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">13 February 2020</td>
+          <td class="govuk-table__cell">Decision made: not awarded</td>
+          <td class="govuk-table__cell "><a class="govuk-aligned-right" href="../person-record-0-0-3/record-applicaion-evidence-decision" target="">View</a></td>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">12 February 2020</td>
+        <td class="govuk-table__cell">Pre-decision checks completed</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">10 February 2020</td>
+        <td class="govuk-table__cell">Returned from assessment provider</td>
+        <td class="govuk-table__cell "><a class="govuk-aligned-right" href="/person-record-0-0-3/record-applicaion-evidence-ap" target="">View</a></td> <!--View assessment report -->
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">11 January 2020</td>
+        <td class="govuk-table__cell">Pre-assessment checks completed</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">10 January 2020</td>
+        <td class="govuk-table__cell">Received health information gather</td>
+
+        {% if data["find-someone-1-offline-return"]  == "YesLinked" %}
+        <td class="govuk-table__cell "><a class="govuk-aligned-right" href="https://supporting-docs-prototype.herokuapp.com/manage-prototype/password?returnURL=%2FvStarling-award%2Fdocument-list" target="">View</a></td>
+        {% else %}
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-3/record-applicaion-evidence-pip2" target="">View</a></td> <!--View HIG details -->
+        {% endif %}
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">10 January 2020</td>
+        <td class="govuk-table__cell">Start of application</td>
+
+        {% if data["find-someone-1-offline-return"]  == "YesLinked" %}
+        <td class="govuk-table__cell "><a class="govuk-aligned-right" href="../person-record-0-0-3/record-applicaion-evidence-pip1" target="">View (C)</a></td>
+        {% else %}
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-3/record-applicaion-evidence-pip1" target="">View</a></td> <!--View registration details -->
+        {% endif %}
+
+      </tr>
+
+
+        </tbody>
+      </table>
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history in Case Manager Review</a></p>-->
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
