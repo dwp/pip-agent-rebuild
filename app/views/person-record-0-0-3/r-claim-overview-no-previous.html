@@ -108,87 +108,9 @@
 
 <!-- ———————————— -->
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-padding-top-8 govuk-!-margin-bottom-4">Previous claims (cases)</h3>
-
-    {% set Case3 %}
-    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
-    {% endset -%}
-
-    {% set Case2 %}
-    <p class="govuk-body"><a class="" href="r-claim-summary" target="">View</a></p>
-    {% endset -%}
-
-    {% set Case1 %}
-    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
-    {% endset -%}
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">No previous claims (cases)</h3>
 
 
-    {{ govukTable({
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: true,
-      head: [
-        {
-          text: "Claim (case) summary",
-          classes: "govuk-!-width-one-third"
-        },
-        {
-          text: "Date of submission",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "End date",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "Status",
-          classes: "govuk-!-width-one-quarter"
-        }
-      ],
-      rows: [
-          [
-            {
-              html: Case3
-            },
-            {
-              text: "10 March 2020"
-            },
-            {
-              text: "—"
-            },
-            {
-              text: "Withdrawn"
-            }
-          ],
-          [
-          {
-            html: Case2
-          },
-          {
-            text: "10 January 2020"
-          },
-          {
-            text: "1 January 2025"
-          },
-          {
-            text: "Ended"
-          }
-        ],
-        [
-          {
-          html: Case2
-          },
-          {
-            text: "1 March 2012"
-          },
-          {
-            text: "2 March 2018"
-          },
-          {
-            text: "Ended"
-          }
-        ]
-      ]
-    }) }}
 
 
 {% include "person-record-0-0-3/r-scenarios.html" %}

@@ -27,8 +27,6 @@
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Chronological view of all applicaitons,<br>MRs, appeals or award reviews</p> -->
-
 
       <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -108,7 +106,11 @@
 
 <!-- ———————————— -->
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-padding-top-8 govuk-!-margin-bottom-4">Previous claims (cases)</h3>
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous claims (cases)</h3>
+
+    {% set Case4 %}
+    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
 
     {% set Case3 %}
     <p class="govuk-body"><a class="" href="#" target="">View</a></p>
@@ -147,16 +149,30 @@
       rows: [
           [
             {
-              html: Case3
+              html: Case4
             },
             {
-              text: "10 March 2020"
+              text: "Today"
             },
             {
               text: "—"
             },
             {
               text: "Withdrawn"
+            }
+          ],
+          [
+            {
+              html: Case3
+            },
+            {
+              text: "2 December 2022"
+            },
+            {
+              text: "3 December 2022"
+            },
+            {
+              text: "Closed"
             }
           ],
           [
