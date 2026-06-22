@@ -25,140 +25,197 @@
     {% include "person-record-0-0-3/r-navigation.html" %}
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
-
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Not yet processed</h3>
-
-    <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-          </tr>
-
-        </thead>
-
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row border-bottom-end-clear">
-              <td class="govuk-table__header border-bottom-end-clear">New application</td>
-              <td class="govuk-table__cell">Start of application</td>
-              <td class="govuk-table__cell">Today</td>
-            </tr>
-
-            <tr class="govuk-table__row border-bottom-end-clear">
-              <td class="govuk-table__header border-bottom-end-clear"></td>
-              <td class="govuk-table__cell">Status</td>
-              <td class="govuk-table__cell">Todo</td>
-            </tr>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications and decisions</h3>
 
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell govuk-!-padding-bottom-6">
-                <a class="" href="r-claim-overview-new-application" target="">View applciation overview </a>
-              </td>
 
-              <td class="govuk-table__cell">
-            </tr>
-
-          </tbody>
-        </table>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Not yet processed</h3>
 
 
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Active (In payment)</h3>
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">New applciation</p>
+
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">Today</td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "Not started",
+                            classes: "govuk-tag--yellow"
+                          })}}
+                        </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-award-review" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Active (In payment)</h3>
 
 
-      <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            </tr>
-
-          </thead>
-
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row border-bottom-end-clear">
-              <td class="govuk-table__header border-bottom-end-clear">Mandatory reconsideration decision</td>
-              <td class="govuk-table__cell">Date of submission</td>
-              <td class="govuk-table__cell">1 January 2025</td>
-            </tr>
-
-            <tr class="govuk-table__row border-bottom-end-clear">
-              <td class="govuk-table__header border-bottom-end-clear"></td>
-              <td class="govuk-table__cell">Status</td>
-              <td class="govuk-table__cell">In payment</td>
-            </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell border-bottom-end-clear"></td>
-              <td class="govuk-table__cell">Outcome</td>
-              <td class="govuk-table__cell">
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8)</p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0)</p>
-              </td>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell govuk-!-padding-bottom-6">
-                <a class="" href="r-ori-dec-overview-nil-becomes-pay" target="">View decision overview </a>
-              </td>
-
-              <td class="govuk-table__cell">
-            </tr>
-
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row border-bottom-end-clear">
-                <td class="govuk-table__header border-bottom-end-clear">Original decision</td>
-                <td class="govuk-table__cell">Start of application</td>
-                <td class="govuk-table__cell">1 January 2025</td>
-              </tr>
-
-              <tr class="govuk-table__row border-bottom-end-clear">
-                <td class="govuk-table__header border-bottom-end-clear"></td>
-                <td class="govuk-table__cell">Status</td>
-                <td class="govuk-table__cell">Superseded</td>
-              </tr>
+          <hr class="govuk-section-break govuk-section-break--visible">
 
 
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell border-bottom-end-clear"></td>
-                <td class="govuk-table__cell">Outcome</td>
-                <td class="govuk-table__cell">
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Nil (4)</p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Nil (0)</p>
-                </td>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Mandatory reconsideration decision</p>
 
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell govuk-!-padding-bottom-6">
-                  <a class="" href="r-ori-dec-overview-pay" target="">View decision overview </a>
-                </td>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
 
-                <td class="govuk-table__cell">
-              </tr>
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">12 January 2026</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "In payment",
+                            classes: "govuk-tag--green"
+                          })}}
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Outcome</td>
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Standard (8)</p>
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Nil (0)</p>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-nil-remains-nil" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
 
-            </tbody>
-          </table>
+            </div>
+          </div>
 
+          <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Orginal decision</p>
+
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "Superseded",
+                            classes: "govuk-tag--grey"
+                          })}}
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Outcome</td>
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Nil (0)</p>
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Nil (0)</p>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-nil" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--visible">
 
 
 <!-- ———————————— -->
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous claims (cases)</h3>
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous claims (cases)</h3>
+
+    {% set Case4 %}
+    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case4status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
 
     {% set Case3 %}
     <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case3status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
     {% endset -%}
 
     {% set Case2 %}
     <p class="govuk-body"><a class="" href="r-claim-summary" target="">View</a></p>
     {% endset -%}
 
+    {% set Case2status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
     {% set Case1 %}
     <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case1status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
     {% endset -%}
 
 
@@ -189,13 +246,13 @@
               html: Case3
             },
             {
-              text: "10 March 2020"
+              text: "2 December 2022"
             },
             {
-              text: "—"
+              text: "3 December 2022"
             },
             {
-              text: "Withdrawn"
+            html: Case3status
             }
           ],
           [
@@ -209,7 +266,7 @@
             text: "1 January 2025"
           },
           {
-            text: "Ended"
+          html: Case2status
           }
         ],
         [
@@ -223,7 +280,7 @@
             text: "2 March 2018"
           },
           {
-            text: "Ended"
+          html: Case1status
           }
         ]
       ]

@@ -31,7 +31,91 @@
 
 
 
-         <hr class="govuk-section-break govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Award review decision</p>
+
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">Today</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "In payment",
+                            classes: "govuk-tag--green"
+                          })}}
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Outcome</td>
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Standard (8)</p>
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Standard (8)</p>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-award-review" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Mandatory reconsideration decision</p>
+
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">12 January 2026</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "Superseded",
+                            classes: "govuk-tag--grey"
+                          })}}
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Outcome</td>
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Standard (8)</p>
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Nil (0)</p>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-nil-remains-nil" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <hr class="govuk-section-break case-stroke govuk-section-break--visible">
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-third">
@@ -50,8 +134,8 @@
                         <td class="govuk-table__cell">Status</td>
                         <td class="govuk-table__cell">
                           {{govukTag({
-                            text: "In payment",
-                            classes: "govuk-tag--green"
+                            text: "Superseded",
+                            classes: "govuk-tag--grey"
                           })}}
                         </td>
                       </tr>
@@ -155,6 +239,20 @@
         }
       ],
       rows: [
+          [
+            {
+              html: Case4
+            },
+            {
+              text: "Today"
+            },
+            {
+              text: "—"
+            },
+            {
+            html: Case4status
+            }
+          ],
           [
             {
               html: Case3

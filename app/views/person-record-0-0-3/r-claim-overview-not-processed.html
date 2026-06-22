@@ -25,52 +25,177 @@
     {% include "person-record-0-0-3/r-navigation.html" %}
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
-
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Chronological view of all applicaitons,<br>MRs, appeals or award reviews</p> -->
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications and decisions</h3>
 
 
-      <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            </tr>
 
-          </thead>
-
-             <tbody class="govuk-table__body">
-              <tr class="govuk-table__row border-bottom-end-clear">
-                <td class="govuk-table__header border-bottom-end-clear">New application</td>
-                <td class="govuk-table__cell">Start of application</td>
-                <td class="govuk-table__cell">1 January 2025</td>
-              </tr>
-
-              <tr class="govuk-table__row border-bottom-end-clear">
-                <td class="govuk-table__header border-bottom-end-clear"></td>
-                <td class="govuk-table__cell">Status</td>
-                <td class="govuk-table__cell">Todo</td>
-              </tr>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Not yet processed</h3>
 
 
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell govuk-!-padding-bottom-6">
-                  <a class="" href="#" target="">View decision overview </a>
-                </td>
+    <hr class="govuk-section-break govuk-section-break--visible">
 
-                <td class="govuk-table__cell">
-              </tr>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">New applciation</p>
 
-            </tbody>
-          </table>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-width-one-half">Date of submission</td>
+                        <td class="govuk-table__cell govuk-!-width-one-half">Today</td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Status</td>
+                        <td class="govuk-table__cell">
+                          {{govukTag({
+                            text: "Not started",
+                            classes: "govuk-tag--yellow"
+                          })}}
+                        </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear">
+                          <a class="" href="r-ori-dec-overview-award-review" target="">View decision overview</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--visible">
 
 
 
 <!-- ———————————— -->
 
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous claims (cases)</h3>
 
+    {% set Case4 %}
+    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case4status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+    {% set Case3 %}
+    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case3status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+    {% set Case2 %}
+    <p class="govuk-body"><a class="" href="r-claim-summary" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case2status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+    {% set Case1 %}
+    <p class="govuk-body"><a class="" href="#" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case1status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+
+    {{ govukTable({
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Claim (case) summary",
+          classes: "govuk-!-width-one-third"
+        },
+        {
+          text: "Date of submission",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "End date",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Status",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+          [
+            {
+              html: Case3
+            },
+            {
+              text: "2 December 2022"
+            },
+            {
+              text: "3 December 2022"
+            },
+            {
+            html: Case3status
+            }
+          ],
+          [
+          {
+            html: Case2
+          },
+          {
+            text: "10 January 2020"
+          },
+          {
+            text: "1 January 2025"
+          },
+          {
+          html: Case2status
+          }
+        ],
+        [
+          {
+          html: Case2
+          },
+          {
+            text: "1 March 2012"
+          },
+          {
+            text: "2 March 2018"
+          },
+          {
+          html: Case1status
+          }
+        ]
+      ]
+    }) }}
 
 
 {% include "person-record-0-0-3/r-scenarios.html" %}
