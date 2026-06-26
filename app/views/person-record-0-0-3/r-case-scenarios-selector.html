@@ -1,0 +1,84 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+<form action="r-overview" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "case-scenario-selector",
+            name: "case-scenario-selector",
+            fieldset: {
+              legend: {
+                text: "Case scenario selector",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: ""
+            },
+            items: [
+            {
+              value: "0",
+              text: "0",
+              checked: (data["case-scenario-selector"] == "0")
+            },
+            {
+              value: "1",
+              text: "1",
+              checked: (data["case-scenario-selector"] == "1")
+            },
+            {
+              value: "2",
+              text: "2",
+              checked: (data["case-scenario-selector"] == "2")
+            },
+            {
+              value: "2a",
+              text: "2a",
+              checked: (data["case-scenario-selector"] == "2a")
+            },
+            {
+              value: "3",
+              text: "3",
+              checked: (data["case-scenario-selector"] == "3")
+            },
+            {
+              value: "3a",
+              text: "3a",
+              checked: (data["case-scenario-selector"] == "3a")
+            }
+            ]
+          }) }}
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

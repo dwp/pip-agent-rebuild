@@ -72,6 +72,68 @@
 
     </div>
 
+
+
+{% elif data["find-someone-1-offline-return"]  == "CaseScenarios" %}
+Case NAV
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-8">
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-overview" class="govuk-link" rel="noreferrer noopener">Overview</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-tasks" class="govuk-link" rel="noreferrer noopener">Tasks</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-1-event-history" class="govuk-link" rel="noreferrer noopener" target="">Event history</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-future-events" class="govuk-link" rel="noreferrer noopener" target="">Future events</a></p>
+
+
+  {% if data["case-scenario-selector"]  == "0" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-0-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 0</p>
+  {% elif data["case-scenario-selector"]  == "1" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-1-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 1</p>
+  {% elif data["case-scenario-selector"]  == "2" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-2-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 2</p>
+  {% elif data["case-scenario-selector"]  == "2a" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-2a-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 2a</p>
+  {% elif data["case-scenario-selector"]  == "3" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-3-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 3</p>
+  {% elif data["case-scenario-selector"]  == "3a" %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-3a-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> 3a</p>
+  {% else %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-case-all-cases-0-sections" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a> (NA</p>
+  {% endif %}
+
+
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="r-payments" class="govuk-link" rel="noreferrer noopener" target="">Payments</a></p>
+
+
+  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Person details</h3>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-flags" class="govuk-link" rel="noreferrer noopener" target="">Flags and markers</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-identity" class="govuk-link" rel="noreferrer noopener" target="">Identity</a>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-name" class="govuk-link" rel="noreferrer noopener" target="">Names</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-age" class="govuk-link" rel="noreferrer noopener" target="">Age and date of birth</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-address" class="govuk-link" rel="noreferrer noopener" target="">Address</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-temp-accom" class="govuk-link" rel="noreferrer noopener" target="">Temporary accommodation</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-appointees" class="govuk-link" rel="noreferrer noopener" target="">Appointees and representatives</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-associated-person" class="govuk-link" rel="noreferrer noopener" target="">Carers</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-motability-scheme" class="govuk-link" rel="noreferrer noopener" target="">Motability Scheme</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-contact" class="govuk-link" rel="noreferrer noopener" target="">Contact details</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="r-bank-details" class="govuk-link" rel="noreferrer noopener" target="">Bank details</a></p>
+
+  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Other actions</h3>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="/documents-0-1/doc-library" class="govuk-link" rel="noreferrer noopener" target="">Document library</a></p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
   {% else %}
 
   <div class="govuk-grid-row">
@@ -119,5 +181,6 @@
 
 
   </div>
+
 
   {% endif %}

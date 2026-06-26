@@ -1,0 +1,135 @@
+
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Archived applications and claims</h3>
+
+    {% set Case4 %}
+    <p class="govuk-body"><a class="" href="r-case-l2-overview-0-application-withdrawn" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case4status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+    {% set Case3 %}
+    <p class="govuk-body"><a class="" href="r-case-l2-overview-0-application-withdrawn" target="">View decision</a></p>
+    {% endset -%}
+
+    {% set Case3status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+    {% set Case2 %}
+    <p class="govuk-body"><a class="" href="r-claim-summary" target="">View summary</a></p>
+    {% endset -%}
+
+    {% set Case2status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+    {% set Case1 %}
+    <p class="govuk-body"><a class="" href="#" target="">View summary</a></p>
+    {% endset -%}
+
+    {% set Case1status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+
+    {{ govukTable({
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Details",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Type",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Submission date",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "End date",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Status",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+          [
+            {
+              html: Case3
+            },
+            {
+              text: "Application"
+            },
+            {
+              text: "2 Oct 2022"
+            },
+            {
+              text: "3 Dec 2022"
+            },
+            {
+            html: Case3status
+            }
+          ],
+          [
+          {
+            html: Case2
+          },
+          {
+            text: "Multiple decisions"
+          },
+          {
+            text: "10 Jan 2020"
+          },
+          {
+            text: "1 Jan 2025"
+          },
+          {
+          html: Case2status
+          }
+        ],
+        [
+          {
+          html: Case2
+          },
+          {
+            text: "Multiple decisions"
+          },
+          {
+            text: "1 Mar 2016"
+          },
+          {
+            text: "2 Mar 2018"
+          },
+          {
+          html: Case1status
+          }
+        ]
+      ]
+    }) }}

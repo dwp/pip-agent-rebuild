@@ -29,7 +29,7 @@
 
 
 
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Not yet processed</h3>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Case not yet processed</h3>
 
 
     <hr class="govuk-section-break govuk-section-break--visible">
@@ -71,7 +71,7 @@
 
           <hr class="govuk-section-break govuk-section-break--visible">
 
-          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Current claim</h3>
+          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Active and in payment</h3>
 
 
           <hr class="govuk-section-break govuk-section-break--visible">
@@ -164,7 +164,7 @@
 
 <!-- ———————————— -->
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous claims</h3>
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous cases</h3>
 
     {% set Case4 %}
     <p class="govuk-body"><a class="" href="#" target="">View</a></p>
@@ -174,7 +174,7 @@
 
     {{govukTag({
       text: "Withdrawn",
-      classes: "govuk-tag--grey"
+      classes: "govuk-tag--red"
     })}}
 
     {% endset -%}
@@ -187,7 +187,7 @@
 
     {{govukTag({
       text: "Closed",
-      classes: "govuk-tag--grey"
+      classes: "govuk-tag--red"
     })}}
 
     {% endset -%}
@@ -200,7 +200,7 @@
 
     {{govukTag({
       text: "Closed",
-      classes: "govuk-tag--grey"
+      classes: "govuk-tag--red"
     })}}
 
     {% endset -%}
@@ -213,7 +213,7 @@
 
     {{govukTag({
       text: "Closed",
-      classes: "govuk-tag--grey"
+      classes: "govuk-tag--red"
     })}}
 
     {% endset -%}
@@ -224,7 +224,7 @@
       firstCellIsHeader: true,
       head: [
         {
-          text: "Claim summary",
+          text: "Case summary",
           classes: "govuk-!-width-one-third"
         },
         {

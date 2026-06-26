@@ -23,15 +23,11 @@
         },
         {
           text: "Applications and decisions",
-          href: "r-claim-all-cases"
+          href: "r-case-all-cases-3-sections"
         },
         {
-          text: "Case summary",
-          href: "r-case-view-single"
-        },
-        {
-          text: "XXX",
-          href: ""
+          text: "Case summary 1",
+          href: "r-case-application-submission-1"
         }
       ]
     }) }}
@@ -39,7 +35,7 @@
     <div class="govuk-grid-column-three-quarters">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Award review decision overview</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Mandatory reconsideration decision overview</h1>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
@@ -53,19 +49,25 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Status</th>
-            <td class="govuk-table__cell">Decision made: awarded</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+              text: "In progress",
+                classes: "govuk-tag--blue"
+              })}}
+            </td>
           </tr>
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Outcome</th>
             <td class="govuk-table__cell">
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8 points)</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8pts)</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
             </td>
           </tr>
 
+
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Start of application</th>
+            <th scope="row" class="govuk-table__header">Submission date</th>
             <td class="govuk-table__cell">X Month Year</td>
           </tr>
           <tr class="govuk-table__row">
@@ -81,6 +83,7 @@
             <th scope="row" class="govuk-table__header">Award end date</th>
             <td class="govuk-table__cell">X Month Year</td>
           </tr>
+
 
         </tbody>
       </table>
@@ -102,28 +105,22 @@
         <tbody class="govuk-table__body">
 
 
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">18 May 2026</td>
-            <td class="govuk-table__cell">Paying claimant</td>
-            <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-application-payment-structure" target="">View</a></td>
-          </tr>
-
           <!-- <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">16 March 2024</td>
-            <td class="govuk-table__cell">Decision made: In payment</td>
+            <td class="govuk-table__cell">Decision made: not awarded</td>
             <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-applicaion-prep-checks" target="">View</a></td>
           </tr> -->
 
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">18 May 2026</td>
-            <td class="govuk-table__cell">Decision made: awarded</td>
+            <td scope="row" class="govuk-table__cell">16 March 2024</td>
+            <td class="govuk-table__cell">XXX</td>
             <td class="govuk-table__cell govuk-aligned-right">
               <ul class="govuk-aligned-right govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="#">Actions<span class="govuk-visually-hidden"></span></a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> contact details</span></a>
+                  <a class="govuk-link" href="r-ori-dec-decision-mr">View<span class="govuk-visually-hidden"> contact details</span></a>
                 </li>
               </ul>
               </td>
@@ -131,17 +128,49 @@
 
 
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">4 May 2026</td>
-            <td class="govuk-table__cell">Award review started</td>
+            <td scope="row" class="govuk-table__cell">15 March 2024</td>
+            <td class="govuk-table__cell">Mandatory reconsideration requested</td>
                 <td class="govuk-table__cell"><a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td> <!--View HIG details -->
           </tr>
 
 
         </tbody>
       </table>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
 
+      <br>
 
+       {{ govukRadios({
+        idPrefix: "r-case-l2-overview-1-man-recon",
+        name: "r-case-l2-overview-1-man-recons",
+        fieldset: {
+          legend: {
+            html: "What would you like to do?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "2",
+          html: "Create Award review based on New applciation data",
+          checked: (data["r-case-l2-overview-1-man-recon"] == "2")
+        },
+        {
+          value: "1m",
+          html: "Withdraw",
+          checked: (data["r-case-l2-overview-1-man-recon"] == "1m")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
 
 
         </div>

@@ -23,15 +23,11 @@
         },
         {
           text: "Applications and decisions",
-          href: "r-claim-all-cases"
+          href: "r-case-all-cases-3-sections"
         },
         {
-          text: "Case summary",
-          href: "r-case-view-single"
-        },
-        {
-          text: "XXX",
-          href: ""
+          text: "Case summary 0",
+          href: "r-case-application-submission-0"
         }
       ]
     }) }}
@@ -53,7 +49,12 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Status</th>
-            <td class="govuk-table__cell">Decision made: awarded</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "In payment",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
           </tr>
 
           <tr class="govuk-table__row">
@@ -139,9 +140,39 @@
 
         </tbody>
       </table>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
 
+      {{ govukRadios({
+       idPrefix: "r-case-l2-overview-0-award-review-actions",
+       name: "r-case-l2-overview-0-award-review-actions",
+       fieldset: {
+         legend: {
+           html: "What would you like to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--l"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "2",
+         html: "End claim and mark to be archived",
+         checked: (data["r-case-l2-overview-0-award-review-actions"] == "1")
+       },
+       {
+         value: "1",
+         html: "Start unplanned review",
+         checked: (data["r-case-l2-overview-0-award-review-actions"] == "2")
+       }
+       ]
+     }) }}
 
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
 
 
         </div>

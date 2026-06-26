@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<form action="r-overview" method="post" class="form">
+<form action="find-someone-1-offline-return-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -92,6 +92,11 @@
                 value: "YesFlags",
                 text: "Yes (Add flag via task)",
                 checked: (data["find-someone-1-offline-return"] == "YesFlags")
+              },
+              {
+                value: "CaseScenarios",
+                text: "Case Scenarios",
+                checked: (data["find-someone-1-offline-return"] == "CaseScenarios")
               },
               {
                 value: "No",

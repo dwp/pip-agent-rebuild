@@ -2241,5 +2241,19 @@ router.post(`/an-de-exit-mr-process-early-router`, (req, res) => {
 })
 
 
+router.post(`/find-someone-1-offline-return-router`, (req, res) => {
+  const findSomeOneReturn = req.session.data['find-someone-1-offline-return']
+
+  if (findSomeOneReturn == 'CaseScenarios') {
+    res.redirect(`r-case-scenarios-selector`)
+  }
+  else {
+    res.redirect(`r-overview`)
+  }
+})
+
+
+
+
 
 module.exports = router
