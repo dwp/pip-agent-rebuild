@@ -156,14 +156,19 @@
         items: [
         {
           value: "2",
-          html: "Create Award review based on New applciation data",
+          html: "Start an unplanned award review",
           checked: (data["r-case-l2-overview-0-man-recon"] == "2")
         },
         {
           value: "1m",
-          html: "Withdraw",
+          html: "Withdraw mandatory reconsideration",
           checked: (data["r-case-l2-overview-0-man-recon"] == "1m")
-        }
+        },
+        {
+          value: "1m",
+          html: "End award and close case",
+          checked: (data["r-case-l2-overview-0-man-recon"] == "1m")
+        },
         ]
       }) }}
 

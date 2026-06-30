@@ -125,7 +125,7 @@
 
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
-        <td class="govuk-table__cell">Pre-assessment checks completed</td>
+        <td class="govuk-table__cell">Application checks completed</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
       </tr>
 
@@ -172,15 +172,15 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "2",
-         html: "End claim and mark to be archived",
+         value: "1",
+         html: "Start an unplanned award review",
          checked: (data["r-case-l2-overview-0-award-review-actions"] == "1")
        },
        {
-         value: "1",
-         html: "Start unplanned review",
+         value: "2",
+         html: "End award and close case",
          checked: (data["r-case-l2-overview-0-award-review-actions"] == "2")
-       }
+       },
        ]
      }) }}
 

@@ -120,33 +120,33 @@
 
       <br>
 
-       {{ govukRadios({
-        idPrefix: "r-case-l2-overview-application-2-actions",
-        name: "r-case-l2-overview-application-2-actions",
-        fieldset: {
-          legend: {
-            html: "What would you like to do?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          html: legendNumbers
-        },
-        classes: "govuk-radios",
-        items: [
-        {
-          value: "2",
-          html: "Create Award review based on New applciation data",
-          checked: (data["r-case-l2-overview-application-2-actions"] == "1")
-        },
-        {
-          value: "1m",
-          html: "Withdraw",
-          checked: (data["r-case-l2-overview-application-2-actions"] == "2")
-        }
-        ]
-      }) }}
+        {{ govukRadios({
+         idPrefix: "r-case-l2-overview-application-2-actions",
+         name: "r-case-l2-overview-application-2-actionss",
+         fieldset: {
+           legend: {
+             html: "What would you like to do?",
+             isPageHeading: true,
+             classes: "govuk-fieldset__legend--l"
+           }
+         },
+         hint: {
+           html: legendNumbers
+         },
+         classes: "govuk-radios",
+         items: [
+         {
+           value: "1m",
+           html: "Withdraw application",
+           checked: (data["r-case-l2-overview-application-2-actions"] == "1m")
+         },
+         {
+           value: "1m",
+           html: "Something else",
+           checked: (data["r-case-l2-overview-application-2-actions"] == "1m")
+         }
+         ]
+       }) }}
 
       {{ govukButton({
         text: "Continue",
