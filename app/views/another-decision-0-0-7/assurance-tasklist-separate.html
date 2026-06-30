@@ -400,7 +400,6 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can move this application to be processed in PIPCS or send it to an assessment provider.</p>
 
 
       {{ govukRadios({
@@ -422,11 +421,6 @@
           value: "ChecksComplete",
           text: "Send application to decision maker",
           checked: (data["assurance-tasklist-separate-outcome"] == "ChecksComplete")
-        },
-        {
-          value: "Pause",
-          text: "Put application on hold",
-          checked: (data["assurance-tasklist-separate-outcome"] == "Pause")
         },
         {
           value: "PIPcs",
@@ -474,11 +468,6 @@
     value: "ChecksComplete",
     text: "Send application to decision maker",
     checked: (data["assurance-tasklist-separate-outcome"] == "ChecksComplete")
-  },
-  {
-    value: "Pause",
-    text: "Put application on hold",
-    checked: (data["assurance-tasklist-separate-outcome"] == "Pause")
   },
   {
     value: "PIPcs",
