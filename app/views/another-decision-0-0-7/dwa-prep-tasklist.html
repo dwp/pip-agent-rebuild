@@ -471,7 +471,7 @@
         },
         {
           value: "SendForAssessment",
-          text: "Send for assessment",
+          text: "Send application to an assessment provider",
           checked: (data["dwa-prep-task-outcome"] == "SendForAssessment")
         },
         {
@@ -515,14 +515,14 @@
   items: [
   {
     value: "Decision",
-    text: "Make a decision",
+    text: "Continue to make a decision",
     checked: (data["dwa-prep-task-outcome"] == "Decision")
   },
-  {
-    value: "setPause",
-    text: "Put application on hold",
-    checked: (data["dwa-prep-task-outcome"] == "setPause")
-  },
+      {
+      value: "SendForAssessment",
+      text: "Send application to an assessment provider",
+      checked: (data["dwa-prep-task-outcome"] == "SendForAssessment")
+    },
   {
     value: "PIPcs",
     text: "Move application to PIPCS",
@@ -567,7 +567,7 @@ checked: (data["dwa-prep-task-outcome"] == "Withdraw")-->
     items: [
     {
       value: "Decision",
-      text: "Make a decision",
+      text: "Continue to make a decision",
       checked: (data["dwa-prep-task-outcome"] == "Decision")
     },
     {
