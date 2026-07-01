@@ -398,7 +398,7 @@
 
     {% if data["assurance-tasklist-item-23"] == "Unexpected"  %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are BIG issues with this application</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
 
 
@@ -419,10 +419,15 @@
         items: [
         {
           value: "ChecksComplete",
-          text: "Send application to decision maker",
+          text: "Send application to a decision maker",
           checked: (data["assurance-tasklist-separate-outcome"] == "ChecksComplete")
         },
         {
+    value: "ChecksComplete",
+    text: "Disallow application",
+    checked: (data["assurance-tasklist-separate-outcome"] == "PIPcs")
+  },
+  {
           value: "PIPcs",
           text: "Move application to PIPCS",
           checked: (data["assurance-tasklist-separate-outcome"] == "PIPcs")
@@ -466,8 +471,13 @@
   items: [
   {
     value: "ChecksComplete",
-    text: "Send application to decision maker",
+    text: "Send application to a decision maker",
     checked: (data["assurance-tasklist-separate-outcome"] == "ChecksComplete")
+  },
+    {
+    value: "ChecksComplete",
+    text: "Disallow application",
+    checked: (data["assurance-tasklist-separate-outcome"] == "PIPcs")
   },
   {
     value: "PIPcs",
