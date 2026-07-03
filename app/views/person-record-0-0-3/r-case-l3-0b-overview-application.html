@@ -19,15 +19,11 @@
       items: [
         {
           text: "Overview",
-          href: "r-applications"
+          href: "r-overview"
         },
         {
           text: "Applications and decisions",
-          href: "r-case-all-cases-3-sections"
-        },
-        {
-          text: "Case summary 1",
-          href: "r-case-application-submission-1"
+          href: "r-case-all-cases-0b-sections"
         }
       ]
     }) }}
@@ -35,7 +31,7 @@
     <div class="govuk-grid-column-three-quarters">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Original decision overview</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
@@ -51,8 +47,8 @@
             <th scope="row" class="govuk-table__header">Status</th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "Closed",
-                classes: "govuk-tag--red"
+                text: "Being processed",
+                classes: "govuk-tag--blue"
               })}}
             </td>
           </tr>
@@ -60,34 +56,34 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Outcome</th>
             <td class="govuk-table__cell">
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: nil (0 points)</p>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Not yet known</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Not yet known</p>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Start of application</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">1 January 2026</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award start date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">Not yet known</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award review date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">Not yet known</td>
           </tr>
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award end date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">Not yet known</td>
           </tr>
 
         </tbody>
       </table>
 
 
-      <p class="govuk-heading-l govuk-!-margin-bottom-6">Decision events</p>
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Application events</p>
 
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -102,44 +98,33 @@
         </thead>
         <tbody class="govuk-table__body">
 
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
-            <td class="govuk-table__cell">Mandatory reconsideration requested</td>
-            <td class="govuk-table__cell"><a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td>
-          </tr>
-
-        <tr class="govuk-table__row">
-          <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
-          <td class="govuk-table__cell">Decision made: [outcome]</td>
-          <td class="govuk-table__cell "><a class="govuk-aligned-right" href="../person-record-0-0-3/record-applicaion-evidence-decision" target="">View</a></td>
-        </tr>
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">Yesterday</td>
         <td class="govuk-table__cell">Pre-decision checks completed</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">Yesterday</td>
         <td class="govuk-table__cell">Returned from assessment provider</td>
         <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-applicaion-evidence-ap" target="">View</a></td> <!--View assessment report -->
       </tr>
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">Yesterday</td>
         <td class="govuk-table__cell">Pre-assessment checks completed</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">1 January 2026</td>
         <td class="govuk-table__cell">Received health information gather</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip2" target="">View</a></td> <!--View HIG details -->
       </tr>
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">1 January 2026</td>
         <td class="govuk-table__cell">Start of application</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip1" target="">View</a></td> <!--View registration details -->
       </tr>
@@ -147,6 +132,40 @@
 
         </tbody>
       </table>
+
+      {{ govukRadios({
+       idPrefix: "XXXX",
+       name: "XXXX",
+       fieldset: {
+         legend: {
+           html: "What would you like to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--l"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "1",
+         html: "Withdraw",
+         checked: (data["XXXX"] == "1")
+       },
+       {
+         value: "2",
+         html: "Something else",
+         checked: (data["XXXX"] == "2")
+       }
+       ]
+     }) }}
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
 
 
         </div>

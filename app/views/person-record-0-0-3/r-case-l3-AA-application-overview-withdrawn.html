@@ -55,7 +55,7 @@
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Start of application</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">13 April 2026</td>
           </tr>
 
         </tbody>
@@ -78,14 +78,24 @@
         <tbody class="govuk-table__body">
 
 
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
-        <td class="govuk-table__cell">Unplanned award review started: information received from new application</td>
-        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
-      </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">3 May 2026</td>
+            <td class="govuk-table__cell">Archived</td>
+            <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target=""></a></td> <!--View registration details -->
+          </tr>
+
+        {% if data["case-scenario-selector"]  == "1b" %}
+        Senario 1b
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">3 May 2026</td>
+          <td class="govuk-table__cell">Unplanned award review started: information received from new application</td>
+          <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+        </tr>
+        {% else %}
+        {% endif %}
 
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
+        <td scope="row" class="govuk-table__cell">13 April 2026</td>
         <td class="govuk-table__cell">Start of application</td>
         <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip1" target="">View</a></td> <!--View registration details -->
       </tr>

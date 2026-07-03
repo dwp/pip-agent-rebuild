@@ -66,7 +66,7 @@
                       </tr>
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell border-bottom-end-clear">
-                          <a class="" href="r-case-application-submission-0" target="">View case summary</a>
+                          <a class="" href="r-case-summary-1b" target="">View case summary</a>
                         </td>
                       </tr>
                     </tbody>
@@ -79,89 +79,50 @@
 
 
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Not yet processed</h3>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Being processed</h3>
 
 
-<hr class="govuk-section-break govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--visible">
 
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">New application 3</p>
-  <!--<p class="govuk-body govuk-!-margin-top-2"><strong>New applciation</strong><br>ID: JB27042026-1214</p>-->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Mandatory reconsideration</p>
+        <!--<p class="govuk-body govuk-!-margin-top-2"><strong>New applciation</strong><br>ID: JB27042026-1214</p>-->
 
-</div>
-<div class="govuk-grid-column-two-thirds">
+      </div>
+      <div class="govuk-grid-column-two-thirds">
 
-      <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
-            <td class="govuk-table__cell govuk-!-width-one-half">27 April 2026 (09:27)</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Status</td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Not started",
-                classes: "govuk-tag--yellow"
-              })}}
-            </td>
-          </tr>
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
+                  <td class="govuk-table__cell govuk-!-width-one-half">13 April 2026</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Status</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "In progress",
+                      classes: "govuk-tag--blue"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell border-bottom-end-clear">
+                    <a class="" href="r-case-summary-2a" target="">View case summary</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell border-bottom-end-clear">
-              <a class="" href="r-case-l2-overview-application-3" target="">View application overview</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      </div>
+    </div>
 
-</div>
-</div>
-
-
-
-<hr class="govuk-section-break case-stroke govuk-section-break--visible">
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">New applicaiton 2</p>
-  <!--<p class="govuk-body govuk-!-margin-top-2"><strong>New applciation</strong><br>ID: JB27042026-1214</p>-->
-
-</div>
-<div class="govuk-grid-column-two-thirds">
-
-      <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
-            <td class="govuk-table__cell govuk-!-width-one-half">27 April 2026 (10:55)</td>
-          </tr>
-          <tr class="govuk-table__row"></tr>
-            <td class="govuk-table__cell">Status</td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Not started",
-                classes: "govuk-tag--yellow"
-              })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell border-bottom-end-clear">
-              <a class="" href="r-case-l2-overview-application-2" target="">View application overview</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-</div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--visible">
-  {% include "person-record-0-0-3/r-case-archives.html" %}
-  <!-- ———————————— -->
-  {% include "person-record-0-0-3/r-case-scenarios.html" %}
-  {% include "person-record-0-0-3/r-scenarios.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible">
+      {% include "person-record-0-0-3/r-case-archives.html" %}
+      <!-- ———————————— -->
+      {% include "person-record-0-0-3/r-case-scenarios.html" %}
+      {% include "person-record-0-0-3/r-scenarios.html" %}
 
   </div>
 

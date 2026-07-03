@@ -23,11 +23,11 @@
         },
         {
           text: "Applications and decisions",
-          href: "r-case-all-cases-3-sections"
+          href: "r-case-all-cases-2a-sections"
         },
         {
-          text: "Case summary 1",
-          href: "r-case-application-submission-1"
+          text: "Case summary",
+          href: "r-case-summary-2a"
         }
       ]
     }) }}
@@ -35,7 +35,7 @@
     <div class="govuk-grid-column-three-quarters">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Mandatory reconsideration decision overview</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Mandatory reconsideration overview</h1>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
@@ -60,28 +60,28 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Outcome</th>
             <td class="govuk-table__cell">
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8pts)</p>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Not yet known</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Not yet known</p>
             </td>
           </tr>
 
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Submission date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">15 March 2024</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award start date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">DD MM YYYY</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award review date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">DD MM YYYY</td>
           </tr>
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Award end date</th>
-            <td class="govuk-table__cell">X Month Year</td>
+            <td class="govuk-table__cell">DD MM YYYY</td>
           </tr>
 
 
@@ -112,18 +112,9 @@
           </tr> -->
 
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">16 March 2024</td>
-            <td class="govuk-table__cell">XXX</td>
-            <td class="govuk-table__cell govuk-aligned-right">
-              <ul class="govuk-aligned-right govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="#">Actions<span class="govuk-visually-hidden"></span></a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="r-ori-dec-decision-mr">View<span class="govuk-visually-hidden"> contact details</span></a>
-                </li>
-              </ul>
-              </td>
+            <td scope="row" class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Assessment report requested</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
           </tr>
 
 
@@ -155,11 +146,6 @@
          classes: "govuk-radios",
          items: [
          {
-           value: "2",
-           html: "Start an unplanned award review",
-           checked: (data["r-case-l2-overview-1-man-recon-actions"] == "2")
-         },
-         {
            value: "1m",
            html: "Withdraw mandatory reconsideration",
            checked: (data["r-case-l2-overview-1-man-recon-actions"] == "1m")
@@ -168,7 +154,7 @@
            value: "1m",
            html: "End award and close case",
            checked: (data["r-case-l2-overview-1-man-recon-actions"] == "1m")
-         },
+         }
          ]
        }) }}
 
