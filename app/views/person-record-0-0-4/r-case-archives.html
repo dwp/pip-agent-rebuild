@@ -1,0 +1,137 @@
+
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous cases</h3>
+<!--<h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Details of applications and decisions that have been closed or withdrawn.</h3>-->
+
+
+    {% set Case4 %}
+    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case4status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+    {% set Case3 %}
+    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case3status %}
+
+    {{govukTag({
+      text: "Withdrawn",
+      classes: "govuk-tag--grey"
+    })}}
+
+    {% endset -%}
+
+    {% set Case2 %}
+    <p class="govuk-body"><a class="" href="r-case-summary-ARC-1" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case2status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+    {% set Case1 %}
+    <p class="govuk-body"><a class="" href="r-case-summary-ARC-2" target="">View</a></p>
+    {% endset -%}
+
+    {% set Case1status %}
+
+    {{govukTag({
+      text: "Closed",
+      classes: "govuk-tag--red"
+    })}}
+
+    {% endset -%}
+
+
+    {{ govukTable({
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          html: "Case<br>summary",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Number of decisions",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Submission date",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "End date",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Status",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+          [
+            {
+              html: Case3
+            },
+            {
+              text: "0"
+            },
+            {
+              text: "12 Dec 2025"
+            },
+            {
+              text: "20 Dec 2025"
+            },
+            {
+            html: Case3status
+            }
+          ],
+          [
+          {
+            html: Case2
+          },
+          {
+            text: "4"
+          },
+          {
+            text: "10 Jan 2020"
+          },
+          {
+            text: "1 Jan 2025"
+          },
+          {
+          html: Case2status
+          }
+        ],
+        [
+          {
+          html: Case1
+          },
+          {
+            text: "2"
+          },
+          {
+            text: "1 Mar 2016"
+          },
+          {
+            text: "2 Mar 2018"
+          },
+          {
+          html: Case1status
+          }
+        ]
+      ]
+    }) }}

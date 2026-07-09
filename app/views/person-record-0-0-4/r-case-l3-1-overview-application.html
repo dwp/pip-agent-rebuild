@@ -1,0 +1,194 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Applications and decisions",
+          href: "r-case-all-cases-1-sections"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Original decision overview</h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Status</th>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "In payment",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Outcome</th>
+            <td class="govuk-table__cell">
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Start of application</th>
+            <td class="govuk-table__cell">1 January 2026</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award start date</th>
+            <td class="govuk-table__cell">DD MM YYYY</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award review date</th>
+            <td class="govuk-table__cell">DD MM YYYY</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award end date</th>
+            <td class="govuk-table__cell">DD MM YYYY</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Decision events</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+            <td class="govuk-table__cell">Paying claimant</td>
+            <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-application-payment-structure" target="">View</a></td>
+          </tr>
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+          <td class="govuk-table__cell">Decision made: [outcome]</td>
+          <td class="govuk-table__cell "><a class="govuk-aligned-right" href="../person-record-0-0-4/record-applicaion-evidence-decision" target="">View</a></td>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+        <td class="govuk-table__cell">Pre-decision checks completed</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+        <td class="govuk-table__cell">Returned from assessment provider</td>
+        <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-applicaion-evidence-ap" target="">View</a></td> <!--View assessment report -->
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+        <td class="govuk-table__cell">Application checks completed</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View </a></td>
+      </tr>
+
+      <!-- <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">1 January 2025</th>
+        <td class="govuk-table__cell">Identity verified</td>
+        <td class="govuk-table__cell govuk-text-aligned-right"><a class="" href="#" target=""></a></td>
+      </tr> -->
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+        <td class="govuk-table__cell">Received health information gather</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip2" target="">View</a></td> <!--View HIG details -->
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">1 January 2026</td>
+        <td class="govuk-table__cell">Start of application</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip1" target="">View</a></td> <!--View registration details -->
+      </tr>
+
+
+        </tbody>
+      </table>
+
+
+        </div>
+      </div>
+
+
+      {{ govukRadios({
+       idPrefix: "XXXX",
+       name: "XXXX",
+       fieldset: {
+         legend: {
+           html: "What would you like to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--l"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "1",
+         html: "Start an unplanned award review",
+         checked: (data["XXXX"] == "1")
+       },
+       {
+         value: "2",
+         html: "End award and close case",
+         checked: (data["XXXX"] == "2")
+       }
+       ]
+     }) }}
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+  </form>
+
+{% endblock %}

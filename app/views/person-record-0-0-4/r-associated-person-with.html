@@ -1,0 +1,76 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="#" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Carers</h3>
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "",
+          classes: "govuk-!-width-one-half"
+
+        },
+        {
+          text: "",
+          classes: "govuk-!-width-one-half"
+
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Name"
+          },
+          {
+            text: "Sam Elliot"
+          }
+        ],
+        [
+          {
+            text: "National Insurance number"
+          },
+          {
+            text: "NA 11 33 22 c"
+          }
+        ]
+      ]
+    }) }}
+
+    <a class="" href="r-associated-person" target=""> (N)</a> <a class="" href="r-associated-person-with" target=""> (Y)</a> <a class="" href="r-associated-person-previous" target=""> (P)</a> <a class="" href="r-associated-person-full" target=""> (F)</a>
+
+
+  </div>
+
+
+
+
+    </form>
+{% endblock %}

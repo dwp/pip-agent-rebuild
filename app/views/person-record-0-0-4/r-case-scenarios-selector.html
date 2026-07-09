@@ -1,0 +1,94 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+<form action="r-overview" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "case-scenario-selector",
+            name: "case-scenario-selector",
+            fieldset: {
+              legend: {
+                text: "Case scenario selector",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: ""
+            },
+            items: [
+            {
+              value: "0",
+              text: "0  / No submissions / No archive",
+              checked: (data["case-scenario-selector"] == "0")
+            },
+            {
+              value: "0a",
+              text: "0a / Application [Not yet processed] / No archive",
+              checked: (data["case-scenario-selector"] == "0a")
+            },
+            {
+              value: "0b",
+              text: "0b / Application [In progress] / No archive",
+              checked: (data["case-scenario-selector"] == "0b")
+            },
+            {
+              value: "1",
+              text: "1 / A single case [In payment] / Single decision / No archive",
+              checked: (data["case-scenario-selector"] == "1")
+            },
+            {
+              value: "1a",
+              text: "1a / A single case [In payment] with [In progress] Award Review / No archive",
+              checked: (data["case-scenario-selector"] == "1a")
+            },
+            {
+              value: "1b",
+              text: "1b / A single case [In payment] / Multiple decisions + archive",
+              checked: (data["case-scenario-selector"] == "1b")
+            },
+            {
+              value: "2",
+              text: "2 / A single case [In payment] / Advanced applicaton [Not started] + archive",
+              checked: (data["case-scenario-selector"] == "2")
+            },
+            {
+              value: "2a",
+              text: "2a / Single case [In payment] / Advanced application [In progress] + Archive",
+              checked: (data["case-scenario-selector"] == "2a")
+            }
+            ]
+          }) }}
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

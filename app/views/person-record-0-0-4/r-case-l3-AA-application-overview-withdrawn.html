@@ -1,0 +1,113 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="record-foundation-application-overview-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Applications and decisions",
+          href: "#"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Status</th>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Withdrawn",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Start of application</th>
+            <td class="govuk-table__cell">12 December 2025</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Application events</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+            <td class="govuk-table__cell">Archived</td>
+            <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target=""></a></td> <!--View registration details -->
+          </tr>
+
+        {% if data["case-scenario-selector"]  == "1b" %}
+        Senario 1b
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+          <td class="govuk-table__cell">Reason for withdrawal</td>
+          <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td> <!--View HIG details -->
+        </tr>
+        {% else %}
+        {% endif %}
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">12 December 2025</td>
+        <td class="govuk-table__cell">Start of application</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip1" target="">View</a></td> <!--View registration details -->
+      </tr>
+
+
+        </tbody>
+      </table>
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

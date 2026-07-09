@@ -37,6 +37,7 @@ router.use('/another-decision-0-0-8', require('./routes/another-decision-0-0-8/r
 router.use('/person-record-0-0-1', require('./routes/person-record-0-0-1/router.js'));
 router.use('/person-record-0-0-2', require('./routes/person-record-0-0-2/router.js'));
 router.use('/person-record-0-0-3', require('./routes/person-record-0-0-3/router.js'));
+router.use('/person-record-0-0-4', require('./routes/person-record-0-0-4/router.js'));
 
 router.use('/documents-0-1', require('./routes/documents-0-1/router.js'));
 

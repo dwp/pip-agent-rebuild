@@ -1,0 +1,42 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+{% block content %}
+
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">There are no applications and<br>decisions for this person</h3>
+
+
+
+          <!--<h3 class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">No active cases</h3>-->
+
+
+            {% include "person-record-0-0-4/r-case-scenarios.html" %}
+            {% include "person-record-0-0-4/r-scenarios.html" %}
+
+  </div>
+
+
+    </form>
+{% endblock %}

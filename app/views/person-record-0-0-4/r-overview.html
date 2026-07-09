@@ -1,0 +1,103 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+
+  {% include "person-record-0-0-4/r-navigation.html" %}
+
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Overview</h3>
+
+    {% include "person-record-0-0-4/r-overview-casestatus.html" %}
+
+
+
+
+    {% if data["r-appointees-add"] %}
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-top-6">Appointees and representatives</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name</th>
+          <td class="govuk-table__cell">Sam Elliot</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Relationship to the applicant</th>
+          <td class="govuk-table__cell">Power of attorney	</td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% else %}
+    {% endif %}
+
+
+    {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes" %}
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-top-6">Flags and markers</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        {% if data["r-flags-add"] == "Flag3" or data["r-flags-task-add-as"] == "Yes" %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Additional support</th>
+          <td class="govuk-table__cell">Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems.</td>
+        </tr>
+        {% else %}
+        {% endif %}
+
+      </tbody>
+    </table>
+
+    {% else %}
+    {% endif %}
+
+
+
+  </div>
+
+
+
+
+
+    </form>
+{% endblock %}

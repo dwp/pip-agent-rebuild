@@ -1,0 +1,296 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="record-foundation-application-overview-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Applications and decisions",
+          href: "#"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-full">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Case summary</h1>
+      <h3 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">10 January 2020	to 1 January 2025</h3>
+
+      {% set Child1 %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p>.</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Date of decision</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Submission type</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Outcome</p>
+        </div>
+      </div>
+
+      {% endset -%}
+
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header table-header-regular govuk-!-20-percent">Submission type</th>
+            <th scope="col" class="govuk-table__header table-header-regular govuk-!-20-percent">Date of submission</th>
+            <th scope="col" class="govuk-table__header table-header-regular govuk-!-20-percent">Date of decision</th>
+            <th scope="col" class="govuk-table__header table-header-regular govuk-!-20-percent">Outcome</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Planned award review</td>
+            <td class="govuk-table__cell">1 December 2024</td>
+            <td class="govuk-table__cell">1 January 2025</td>
+            <td class="govuk-table__cell">Nil (0) / Nil (0)</td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Unplanned award review</td>
+            <td class="govuk-table__cell">2 February 2023</td>
+            <td class="govuk-table__cell">3 February 2023</td>
+            <td class="govuk-table__cell">Standard (8) / Nil (0)</td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Mandatory reconsideration</td>
+            <td class="govuk-table__cell">10 March 2020</td>
+            <td class="govuk-table__cell">20 March 2020</td>
+            <td class="govuk-table__cell">Standard (8) / Nil (0)</td>
+          </tr>
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header">Original decision</td>
+            <td class="govuk-table__cell">10 January 2020</td>
+            <td class="govuk-table__cell">1 February 2020</td>
+            <td class="govuk-table__cell">Nil (0) / Nil (0)</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <p class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-8">Case events</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body govuk-!-margin-top-2"><strong>Planned award <br>review decision</strong></p>
+
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+
+              <table class="govuk-table">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">1 January 2025</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">Decision made: nil award</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="#" target="">View</a>
+                    </td>
+                  </tr>
+
+              <tr class="govuk-table__row ">
+                <td class="govuk-table__cell govuk-!-width-one-quarter border-bottom-end-clear">1 December 2024</td>
+                <td class="govuk-table__cell govuk-!-width-one-half border-bottom-end-clear">Planned award review </td>
+                <td class="govuk-table__cell border-bottom-end-clear">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body govuk-!-margin-top-2"><strong>Unplanned award <br>review decision</strong></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-width-one-quarter">3 February 2023</td>
+                <td class="govuk-table__cell govuk-!-width-one-half">Paying claimant</td>
+                <td class="govuk-table__cell">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-width-one-quarter">3 February 2023</td>
+                <td class="govuk-table__cell govuk-!-width-one-half">Decision made: awarded</td>
+                <td class="govuk-table__cell">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row ">
+                <td class="govuk-table__cell govuk-!-width-one-quarter border-bottom-end-clear">2 February 2023</td>
+                <td class="govuk-table__cell govuk-!-width-one-half border-bottom-end-clear">Unplanned award review</td>
+                <td class="govuk-table__cell border-bottom-end-clear">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body govuk-!-margin-top-2"><strong>Mandatory reconsideration<br>decision</strong></p>
+
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-width-one-quarter">20 March 2020</td>
+                <td class="govuk-table__cell govuk-!-width-one-half">Paying claimant</td>
+                <td class="govuk-table__cell">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-width-one-quarter">20 March 2020</td>
+                <td class="govuk-table__cell govuk-!-width-one-half">Mandatory reconsideration decision made: awarded</td>
+                <td class="govuk-table__cell">
+                  <a class="govuk-aligned-right" href="#" target="">View</a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row ">
+                <td class="govuk-table__cell govuk-!-width-one-quarter border-bottom-end-clear">10 March 2020</td>
+                <td class="govuk-table__cell govuk-!-width-one-half border-bottom-end-clear">Mandatory reconsideration registered</td>
+                <td class="govuk-table__cell border-bottom-end-clear">
+                  <a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body govuk-!-margin-top-2"><strong>Orginal decision</strong></p>
+
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+              <table class="govuk-table">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">13 February 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">Decision made: not awarded</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="../person-record-0-0-4/record-applicaion-evidence-pip1" target="">View</a>
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">12 February 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">Pre-decision checks completed</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View</a>
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">10 February 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">Returned from assessment provider</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="/person-record-0-0-4/record-applicaion-evidence-ap" target="">View</a>
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">11 January 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">Application checks completed</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-prep-checks" target="">View</a>
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter">10 January 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half">	Received health information gather</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-aligned-right" href="../person-record-0-0-4/record-applicaion-evidence-pip2" target="">View</a>
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row ">
+                    <td class="govuk-table__cell govuk-!-width-one-quarter border-bottom-end-clear">10 January 2020</td>
+                    <td class="govuk-table__cell govuk-!-width-one-half border-bottom-end-clear">Start of application</td>
+                    <td class="govuk-table__cell border-bottom-end-clear">
+                      <a class="govuk-aligned-right" href="../person-record-0-0-4/record-applicaion-evidence-pip1" target="">View</a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+        </div>
+      </div>
+
+<br><br><br><br><br><br>
+
+  </form>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="r-claim-summary-id" target="">ID</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="r-claim-summary" target="">Groups</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="r-claim-summary-groups-id" target="">Groups and ID</a></p>
+
+
+{% endblock %}
