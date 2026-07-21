@@ -1,10 +1,10 @@
-        {% if data["case-scenario-selector"]  == "0" %}
+        {% if data["case-scenario-selector"]  == "0" or data["case-scenario-selector"]  == "0c" %}
         <h3 class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-8">There are no active cases for this person</h3>
         {% else %}
         {% endif %}
 
 
-        {% if data["case-scenario-selector"]  == "0" %}
+        {% if data["case-scenario-selector"]  == "0" or data["case-scenario-selector"]  == "0c" %}
         {% else %}
 
         <table class="govuk-table">
@@ -79,6 +79,48 @@
             {{govukTag({
               text: "Being processed",
               classes: "govuk-tag--blue"
+            })}}
+          </td>
+        </tr>
+
+        {% elif data["case-scenario-selector"]  == "0d" %}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Case update</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mandatory reconsideration requested</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row case-stroke">
+          <td class="govuk-table__header govuk-!-width-one-half">Mandatory reconsideration status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "In Progress",
+              classes: "govuk-tag--blue"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: nil (0 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Current status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "Closed",
+              classes: "govuk-tag--red"
             })}}
           </td>
         </tr>

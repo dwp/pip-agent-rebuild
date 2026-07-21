@@ -1,0 +1,91 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+{% block content %}
+
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications and decisions</h3>
+
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-6 govuk-!-margin-bottom-4">No active cases</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">There are no active applications or decisions in payment for this person</p>
+
+
+
+
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Being processed</h3>
+
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Mandatory reconsideration</p>
+        <!--<p class="govuk-body govuk-!-margin-top-2"><strong>New applciation</strong><br>ID: JB27042026-1214</p>-->
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
+                  <td class="govuk-table__cell govuk-!-width-one-half">Yesterday</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Status</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "In progress",
+                      classes: "govuk-tag--blue"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell border-bottom-end-clear">
+                    <a class="" href="r-case-summary-0d" target="">View case summary</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+      </div>
+    </div>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+  {% include "person-record-0-0-4/r-case-archives.html" %}
+  <!-- ———————————— -->
+  {% include "person-record-0-0-4/r-case-scenarios.html" %}
+  {% include "person-record-0-0-4/r-scenarios.html" %}
+
+  </div>
+
+
+    </form>
+{% endblock %}

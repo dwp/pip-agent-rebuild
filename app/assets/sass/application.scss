@@ -4,6 +4,7 @@
 
 
 
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .govuk-60-percent{
@@ -790,4 +791,16 @@ text-align: right!important;
 
 .caseID {
 display: inline;
+}
+
+
+
+// Timeline
+.govuk-frontend-supported .govuk-accordion__section-button {
+  border-top: none !important;
+}
+
+
+.govuk-frontend-supported .govuk-accordion {
+  border-bottom: none !important;
 }

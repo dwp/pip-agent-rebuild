@@ -3,24 +3,45 @@
 <!--<h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Details of applications and decisions that have been closed or withdrawn.</h3>-->
 
 
-    {% set Case4 %}
-    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></p>
+    {% if data["case-scenario-selector"]  == "0c" %}
+
+    {% set CaseX %}
+    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-ftc" target="">View</a></p>
     {% endset -%}
 
-    {% set Case4status %}
+    {% set CaseXDateStart %}
+    <p class="govuk-body">60 days ago</p>
+    {% endset -%}
+
+    {% set CaseXDateEnd %}
+    <p class="govuk-body">Yesterday</p>
+    {% endset -%}
+
+    {% set CaseXstatus %}
 
     {{govukTag({
-      text: "Withdrawn",
-      classes: "govuk-tag--red"
+      text: "FTC",
+      classes: "govuk-tag--yellow"
     })}}
 
     {% endset -%}
 
-    {% set Case3 %}
+
+    {% else %}
+
+    {% set CaseX %}
     <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></p>
     {% endset -%}
 
-    {% set Case3status %}
+    {% set CaseXDateStart %}
+    <p class="govuk-body">12 Dec 2025</p>
+    {% endset -%}
+
+    {% set CaseXDateEnd %}
+    <p class="govuk-body">20 Dec 2025</p>
+    {% endset -%}
+
+    {% set CaseXstatus %}
 
     {{govukTag({
       text: "Withdrawn",
@@ -28,6 +49,8 @@
     })}}
 
     {% endset -%}
+
+    {% endif %}
 
     {% set Case2 %}
     <p class="govuk-body"><a class="" href="r-case-summary-ARC-1" target="">View</a></p>
@@ -69,11 +92,11 @@
           classes: "govuk-!-width-one-quarter"
         },
         {
-          text: "Submission date",
+          text: "Application date",
           classes: "govuk-!-width-one-quarter"
         },
         {
-          text: "End date",
+          text: "End date / last event",
           classes: "govuk-!-width-one-quarter"
         },
         {
@@ -82,21 +105,21 @@
         }
       ],
       rows: [
-          [
+            [
             {
-              html: Case3
+              html: CaseX
             },
             {
               text: "0"
             },
             {
-              text: "12 Dec 2025"
+              html: CaseXDateStart
             },
             {
-              text: "20 Dec 2025"
+              html: CaseXDateEnd
             },
             {
-            html: Case3status
+            html: CaseXstatus
             }
           ],
           [

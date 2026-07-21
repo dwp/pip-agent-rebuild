@@ -39,7 +39,7 @@
 
 
 
-<div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
+<div class="govuk-accordion govuk-!-margin-bottom-0 event-history-top-border " data-module="govuk-accordion" id="accordion-default">
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -112,7 +112,7 @@
           classes: "govuk-checkboxes--small",
           fieldset: {
           legend: {
-          text: ".",
+          text: "Select case/decision",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s "
           }
@@ -388,31 +388,31 @@
 
 
             </table>
-
-            {{ govukPagination({
-              previous: {
-                href: "#"
-              },
-              next: {
-                href: "#"
-              },
-              items: [
-                {
-                  number: 1,
-                  href: "#"
-                },
-                {
-                  number: 2,
-                  current: true,
-                  href: "#"
-                },
-                {
-                  number: 3,
-                  href: "#"
-                }
-              ]
-            }) }}
-
           </div>
+
+
+          {{ govukPagination({
+            previous: {
+              href: "#"
+            },
+            next: {
+              href: "#"
+            },
+            items: [
+              {
+                number: 1,
+                href: "#"
+              },
+              {
+                number: 2,
+                current: true,
+                href: "#"
+              },
+              {
+                number: 3,
+                href: "#"
+              }
+            ]
+          }) }}
               </form>
           {% endblock %}

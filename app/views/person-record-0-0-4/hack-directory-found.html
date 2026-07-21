@@ -1,0 +1,416 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="record-1-event-history-filter-router" method="post" class="form">
+
+      <style>
+      #accordion-default > div.govuk-accordion__controls > button {display: none}
+      /* #accordion-default-heading-1 > span {display: none} */
+      </style>
+
+    </div>
+  </div>
+
+  {% set dynamicLink %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">View</a></p>
+  {% endset %}
+
+
+
+
+
+    <div class="govuk-grid-full govuk-!-margin-bottom-8">
+    <h1 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Find someone</h1>
+
+    <h1 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-4">4 results for "Mark" found</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="hack-directory" class="govuk-link" rel="noreferrer noopener" target="">Search again</a></p>
+
+
+
+<div class="govuk-accordion govuk-!-margin-bottom-0 event-history-top-border " data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Filters
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukCheckboxes({
+          idPrefix: "record-1-event-history-filter",
+          name: "record-1-event-history-filter",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+          legend: {
+          text: "Select filter location",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s "
+          }
+          },
+          items: [
+          {
+          value: "1",
+          text: "Newcastle",
+          checked: (data["record-1-event-history-filter"] == "1")
+          },
+          {
+          value: "1",
+          text: "Thames House",
+          checked: (data["record-1-event-history-filter"] == "1")
+          },
+          {
+          value: "1",
+          text: "Quarry House",
+          checked: (data["record-1-event-history-filter"] == "1")
+          },
+          {
+          value: "1",
+          text: "king's court",
+          checked: (data["record-1-event-history-filter"] == "1")
+          },
+          {
+          value: "2",
+          text: "Newcastle",
+          checked: (data["record-1-event-history-filter"] == "2")
+          },
+          {
+          value: "2",
+          text: "London",
+          checked: (data["record-1-event-history-filter"] == "2")
+          },
+          {
+          value: "2",
+          text: "Shefield",
+          checked: (data["record-1-event-history-filter"] == "2")
+          }
+          ]
+          }) }}
+
+          {{ govukButton({
+          text: "Apply",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+          }) }}
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukCheckboxes({
+          idPrefix: "record-1-event-history-filter",
+          name: "record-1-event-history-filter",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+          legend: {
+          text: "Positions",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s "
+          }
+          },
+          items: [
+          {
+          value: "c2",
+          text: "Associate",
+          checked: (data["record-1-event-history-filter"] == "claim2")
+          },
+          {
+          value: "c2",
+          text: "Senior",
+          checked: (data["record-1-event-history-filter"] == "claim2")
+          },
+          {
+          value: "c2",
+          text: "Lead",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          },
+          {
+          value: "c2",
+          text: "G6",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          },
+          {
+          value: "c2",
+          text: "G7",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          }
+          ]
+          }) }}
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukCheckboxes({
+          idPrefix: "record-1-event-history-filter",
+          name: "record-1-event-history-filter",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+          legend: {
+          text: "Skills",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s "
+          }
+          },
+          items: [
+          {
+          value: "c2",
+          text: "Processing",
+          checked: (data["record-1-event-history-filter"] == "claim2")
+          },
+          {
+          value: "c2",
+          text: "Decision making",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          },
+          {
+          value: "c2",
+          text: "Telephony",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          },
+          {
+          value: "c2",
+          text: "Barista",
+          checked: (data["record-1-event-history-filter"] == "claim1")
+          }
+          ]
+          }) }}
+
+        </div>
+
+
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+          </div>
+
+
+
+          {{ govukTable({
+            attributes: {
+              "data-module": "moj-sortable-table"
+            },
+            caption: "",
+            head: [
+              {
+                text: "Name ▲ ▼",
+                attributes: {
+                  "aria-sort": "ascending"
+                }
+              },
+              {
+                text: "Organisation",
+                attributes: {
+                  "aria-sort": "none"
+                }
+              },
+              {
+                text: "Office",
+                attributes: {
+                  "aria-sort": "none"
+                }
+              },
+              {
+                text: "Location",
+                attributes: {
+                  "aria-sort": "none"
+                },
+                format: "numeric"
+              },
+              {
+                text: "Contact",
+                attributes: {
+                  "aria-sort": "none"
+                },
+                format: "numeric"
+              },
+              {
+                html: "Details",
+                attributes: {
+                  "aria-sort": "none"
+                },
+                format: "numeric"
+              }
+            ],
+
+            rows:
+
+            [
+              [
+                {
+                text: "Mark Bailey"
+                },
+                {
+                  text: "DWP",
+                  attributes: {
+                    "data-sort-value": "6961"
+                  }
+                },
+                {
+                  text: "Quarry House"
+                },
+                {
+                  text: "Leeds",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                  text: "mark.bailey2@dwp.gov.uk",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                html: dynamicLink,
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                }
+              ],
+
+              [
+                {
+                text: "Mark Lee"
+                },
+                {
+                  text: "Appvia",
+                  attributes: {
+                    "data-sort-value": "6961"
+                  }
+                },
+                {
+                  text: "Newcastle"
+                },
+                {
+                  text: "Sunderland",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                  text: "mark.lee@engineering.digital.dwp.gov.uk",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                html: dynamicLink,
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                }
+              ],
+
+              [
+                {
+                text: "Mark McCormick"
+                },
+                {
+                  text: "DWP",
+                  attributes: {
+                    "data-sort-value": "6961"
+                  }
+                },
+                {
+                  text: "Long Benton"
+                },
+                {
+                  text: "Newcastle",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                  text: "mark.mccormick@organisation.com",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                  }
+                },
+                {
+                html: dynamicLink,
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "1897"
+                    }
+                  }
+                ],
+
+
+                [
+                  {
+                  text: "Mark Owen"
+                  },
+                  {
+                    text: "DWP",
+                    attributes: {
+                      "data-sort-value": "6961"
+                    }
+                  },
+                  {
+                    text: "Long Benton"
+                  },
+                  {
+                    text: "Newcastle",
+                    format: "numeric",
+                    attributes: {
+                      "data-sort-value": "1897"
+                    }
+                  },
+                  {
+                    text: "mark.owen@organisation.com",
+                    format: "numeric",
+                    attributes: {
+                      "data-sort-value": "1897"
+                    }
+                  },
+                  {
+                  html: dynamicLink,
+                    format: "numeric",
+                    attributes: {
+                      "data-sort-value": "1897"
+                    }
+                  }
+
+
+                ]
+            ]
+
+
+          }) }}
+
+
+
+
+
+              </form>
+          {% endblock %}

@@ -157,8 +157,8 @@
 
 
       {{ govukRadios({
-       idPrefix: "XXXX",
-       name: "XXXX",
+       idPrefix: "XXX",
+       name: "XXX",
        fieldset: {
          legend: {
            html: "What would you like to do?",
@@ -172,17 +172,22 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "1",
-         html: "Start an unplanned award review",
-         checked: (data["XXXX"] == "1")
+         value: "2",
+         html: "Pause payments",
+         checked: (data["XXX"] == "1")
        },
        {
          value: "2",
-         html: "End award and close case",
-         checked: (data["XXXX"] == "2")
-       }
-       ]
-     }) }}
+         html: "End award and archive case",
+         checked: (data["XXX"] == "1")
+       },
+       {
+         value: "1",
+         html: "Something else",
+         checked: (data["XXX"] == "2")
+         }
+         ]
+       }) }}
 
      {{ govukButton({
        text: "Continue",
