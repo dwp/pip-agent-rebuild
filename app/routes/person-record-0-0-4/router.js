@@ -2252,6 +2252,22 @@ router.post(`/find-someone-1-offline-return-router`, (req, res) => {
   }
 })
 
+router.post(`/r-other-actions-router`, (req, res) => {
+  const otherActions = req.session.data['r-other-actions']
+
+  if (otherActions == 'move-to-PIPCS') {
+    res.redirect(`r-o-a-move-reasons`)
+  }
+  else if (otherActions == 'completed-move-to-PIPCS') {
+    res.redirect(`r-o-a-complete`)
+  }
+  else if (otherActions == 'death') {
+    res.redirect(`r-o-a-death`)
+  }
+  else {
+    res.redirect(`r-o-a-other`)
+  }
+})
 
 
 

@@ -1,0 +1,221 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="r-o-a-move-reason-justification" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Other actions",
+          href: "r-other-actions"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+             {{ govukRadios({
+              idPrefix: "r-other-actions",
+              name: "r-other-actions",
+              fieldset: {
+                legend: {
+                  html: "Why does this need to be rebuilt in PIPcs?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+
+              {
+                value: "XXX",
+                text: "Additional support needed",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Alternative format needed",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Applicant gets other benefits",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Appointee added",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Change of personal details",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Claimant did not receive payment",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Death of applicant or claimant",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Details do not match Searchlight record",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Evidence of fraud",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Health assessment could not be complete",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Claimant did not receive payment",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Death of applicant or claimant",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Details do not match Searchlight record",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Health assessment could not be completed",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Immigration status",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Keep customer interactions safe (KCIS) marker",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Mandatory reconsideration",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "New evidence sent after decision",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "New Motability agreement",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Residence and presence criteria",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Request for split payment",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Special rules for end of life (SREL)",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Stays in prison, hospital or other accommodation",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Withdrawn claim",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                value: "XXX",
+                text: "Working abroad",
+                checked: (data["r-o-a-move-reasons"] == "XXX")
+              },
+
+              {
+                divider: "or"
+              },
+
+              {
+                value: "Other",
+                text: "Other",
+                checked: (data["r-o-a-move-reasons"] == "Other")
+              }
+
+
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+  </form>
+
+{% endblock %}

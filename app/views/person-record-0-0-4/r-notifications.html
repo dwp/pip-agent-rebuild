@@ -161,3 +161,21 @@ attributes: {
   html: DynamicAppointee,
   type: 'success'
 }) }}
+
+
+
+{% if data["r-other-actions"] == "move-to-PIPCS" %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Entry added to timeline, task created</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+
+{% endif %}

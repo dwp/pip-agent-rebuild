@@ -1,0 +1,75 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="r-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Other actions",
+          href: "r-other-actions"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Add a note</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This information will be added to the event history within the person's record so that others can see what's happened.</p>
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set legendTextFieldHeader %}
+              <h1 class="govuk-body govuk-!-margin-bottom-0">Enter details of the event.</h1>
+              {% endset %}
+            <!------------Legend--------------->
+
+
+
+        {{ govukCharacterCount({
+        name: "r-o-a-move-reason-justification-details",
+        id: "r-o-a-move-reason-justification-details",
+        classes: " govukTextarea--overwrite",
+          maxlength: 2000,
+          label: {
+          html: legendTextFieldHeader,
+            classes: "govuk-label--l",
+            isPageHeading: true
+            },
+            hint: {
+              html: ""
+            },
+            value: data["r-o-a-move-reason-justification-details"]
+          }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
