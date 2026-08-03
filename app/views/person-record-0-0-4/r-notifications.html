@@ -168,7 +168,19 @@ attributes: {
 
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Entry added to timeline, task created</p>
+<p class="govuk-body govuk-!-font-size-19">ID Entry added to timeline, task created</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["r-other-actions"] == "completed-move-to-PIPCS" %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Moved entry added to timeline, rebuild comeplete, task completed</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -177,5 +189,4 @@ attributes: {
 }) }}
 
 {% else %}
-
 {% endif %}

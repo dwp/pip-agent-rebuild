@@ -173,7 +173,7 @@
             </tr>
             </thead>
 
-            {% if data["r-other-actions"] == "completed-move-to-PIPCS" %}
+            {% if data["r-other-actions"] == "completed-move-to-PIPCS" or data["case-scenario-selector"]  == "10a" %}
 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell table-spacer">Today</td>
@@ -189,10 +189,28 @@
               </td>
               </tr>
 
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">Today</td>
+
+                <td class="govuk-table__cell table-spacer">
+                 <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">Identified need to move to PIPCS</h2>
+
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reason</p>
+                  <p class="govuk-body govuk-!-margin-bottom-3">Appointee added</p>
+
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+                  <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
+
+                  <p class="govuk-body-s pr-meta-colour">Reported by: Rachel Loughlin (#ID1234)</p>
+
+                </td>
+                </tr>
+
               {% else %}
               {% endif %}
 
-            {% if data["r-other-actions"] == "move-to-PIPCS" %}
+            {% if data["r-other-actions"] == "move-to-PIPCS" or data["case-scenario-selector"]  == "10" %}
 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell table-spacer">Today</td>

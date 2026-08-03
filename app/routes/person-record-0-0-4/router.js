@@ -2259,7 +2259,7 @@ router.post(`/r-other-actions-router`, (req, res) => {
     res.redirect(`r-o-a-move-reasons`)
   }
   else if (otherActions == 'completed-move-to-PIPCS') {
-    res.redirect(`r-o-a-complete`)
+    res.redirect(`r-o-a-move-reason-justification`)
   }
   else if (otherActions == 'death') {
     res.redirect(`r-o-a-death`)
