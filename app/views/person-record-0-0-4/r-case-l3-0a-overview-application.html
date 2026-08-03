@@ -100,11 +100,11 @@
         </thead>
         <tbody class="govuk-table__body">
 
-      <tr class="govuk-table__row">
+      <!--<tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
-        <td class="govuk-table__cell">Received health information gather</td>
-        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip2" target="">View</a></td> <!--View HIG details -->
-      </tr>
+        <td class="govuk-table__cell">Received health information gather (Paper)</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip2" target="">View</a></td>
+      </tr>-->
 
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">DD MMM 2023</td>
@@ -148,6 +148,11 @@
          checked: (data["XXXX"] == "1")
        },
        {
+         value: "1",
+         text: "Send paper 'Health Information Gather' (HIG)",
+         checked: (data["XXXX"] == "1")
+        },
+        {
          value: "2",
          html: "Something else",
          checked: (data["XXXX"] == "2")

@@ -1,160 +1,105 @@
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous cases</h3>
 
-<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Previous cases</h3>
-<!--<h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Details of applications and decisions that have been closed or withdrawn.</h3>-->
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Case summary</th>
+                <th scope="col" class="govuk-table__header">Number of decisions</th>
+                <th scope="col" class="govuk-table__header">Application date</th>
+                <th scope="col" class="govuk-table__header">End date / last event</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
 
+            <tbody class="govuk-table__body">
 
-    {% if data["case-scenario-selector"]  == "0c" %}
+              {% if data["case-scenario-selector"]  == "10a" %}
 
-    {% set CaseX %}
-    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-ftc" target="">View</a></p>
-    {% endset -%}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-l3-10a-overview-application" target="">View</a></td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">12 Dec 2025</td>
+                <td class="govuk-table__cell">Today</td>
+                <td class="govuk-table__cell">
 
-    {% set CaseXDateStart %}
-    <p class="govuk-body">60 days ago</p>
-    {% endset -%}
+                  {{govukTag({
+                    text: "PIPCS",
+                    classes: "govuk-tag--orange"
+                  })}}
 
-    {% set CaseXDateEnd %}
-    <p class="govuk-body">Yesterday</p>
-    {% endset -%}
+                </td>
+              </tr>
 
-    {% set CaseXstatus %}
-
-    {{govukTag({
-      text: "FTC",
-      classes: "govuk-tag--yellow"
-    })}}
-
-    {% endset -%}
-
-
-    {% else %}
-
-    {% set CaseX %}
-    <p class="govuk-body"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></p>
-    {% endset -%}
-
-    {% set CaseXDateStart %}
-    <p class="govuk-body">12 Dec 2025</p>
-    {% endset -%}
-
-    {% set CaseXDateEnd %}
-    <p class="govuk-body">20 Dec 2025</p>
-    {% endset -%}
-
-    {% set CaseXstatus %}
-
-    {{govukTag({
-      text: "Withdrawn",
-      classes: "govuk-tag--grey"
-    })}}
-
-    {% endset -%}
-
-    {% endif %}
-
-    {% set Case2 %}
-    <p class="govuk-body"><a class="" href="r-case-summary-ARC-1" target="">View</a></p>
-    {% endset -%}
-
-    {% set Case2status %}
-
-    {{govukTag({
-      text: "Closed",
-      classes: "govuk-tag--red"
-    })}}
-
-    {% endset -%}
-
-    {% set Case1 %}
-    <p class="govuk-body"><a class="" href="r-case-summary-ARC-2" target="">View</a></p>
-    {% endset -%}
-
-    {% set Case1status %}
-
-    {{govukTag({
-      text: "Closed",
-      classes: "govuk-tag--red"
-    })}}
-
-    {% endset -%}
+              {% else %}
+              {% endif %}
 
 
-    {{ govukTable({
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: true,
-      head: [
-        {
-          html: "Case<br>summary",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "Number of decisions",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "Application date",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "End date / last event",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "Status",
-          classes: "govuk-!-width-one-quarter"
-        }
-      ],
-      rows: [
-            [
-            {
-              html: CaseX
-            },
-            {
-              text: "0"
-            },
-            {
-              html: CaseXDateStart
-            },
-            {
-              html: CaseXDateEnd
-            },
-            {
-            html: CaseXstatus
-            }
-          ],
-          [
-          {
-            html: Case2
-          },
-          {
-            text: "4"
-          },
-          {
-            text: "10 Jan 2020"
-          },
-          {
-            text: "1 Jan 2025"
-          },
-          {
-          html: Case2status
-          }
-        ],
-        [
-          {
-          html: Case1
-          },
-          {
-            text: "2"
-          },
-          {
-            text: "1 Mar 2016"
-          },
-          {
-            text: "2 Mar 2018"
-          },
-          {
-          html: Case1status
-          }
-        ]
-      ]
-    }) }}
+              {% if data["case-scenario-selector"]  == "0c" %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-l3-AA-application-overview-ftc" target="">View</a></td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">60 days ago</td>
+                <td class="govuk-table__cell">Yesterday</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "FTC",
+                    classes: "govuk-tag--yellow"
+                  })}}
+
+                </td>
+              </tr>
+
+              {% else %}
+              {% endif %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-l3-AA-application-overview-withdrawn" target="">View</a></td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">12 Dec 2025</td>
+                <td class="govuk-table__cell">20 Dec 2025</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "Withdrawn",
+                    classes: "govuk-tag--grey"
+                  })}}
+
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-summary-ARC-1" target="">View</a></td>
+                <td class="govuk-table__cell">4</td>
+                <td class="govuk-table__cell">10 Jan 2020</td>
+                <td class="govuk-table__cell">1 Jan 2025</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "Closed",
+                    classes: "govuk-tag--red"
+                  })}}
+
+                </td>
+              </tr>
+
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-summary-ARC-2" target="">View</a></td>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">1 Mar 2016</td>
+                <td class="govuk-table__cell">2 Mar 2018</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "Closed",
+                    classes: "govuk-tag--red"
+                  })}}
+
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>

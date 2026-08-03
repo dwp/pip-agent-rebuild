@@ -47,36 +47,15 @@
             <th scope="row" class="govuk-table__header">Status</th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "In payment",
-                classes: "govuk-tag--green"
+                text: "PIPCS",
+                classes: "govuk-tag--orange"
               })}}
-            </td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Outcome</th>
-            <td class="govuk-table__cell">
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Start of application</th>
             <td class="govuk-table__cell">1 January 2026</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Award start date</th>
-            <td class="govuk-table__cell">DD MM YYYY</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Award review date</th>
-            <td class="govuk-table__cell">DD MM YYYY</td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Award end date</th>
-            <td class="govuk-table__cell">DD MM YYYY</td>
           </tr>
 
         </tbody>
@@ -98,6 +77,12 @@
         </thead>
         <tbody class="govuk-table__body">
 
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Moved to PIPCS</td>
+            <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-application-payment-structure" target="">View</a></td>
+          </tr>
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
@@ -155,49 +140,6 @@
         </div>
       </div>
 
-
-      {{ govukRadios({
-       idPrefix: "XXX",
-       name: "XXX",
-       fieldset: {
-         legend: {
-           html: "What would you like to do?",
-           isPageHeading: true,
-           classes: "govuk-fieldset__legend--l"
-         }
-       },
-       hint: {
-         html: legendNumbers
-       },
-       classes: "govuk-radios",
-       items: [
-       {
-         value: "2",
-         html: "Register mandatory reconsideration",
-         checked: (data["XXX"] == "1")
-       },
-       {
-         value: "2",
-         html: "Pause payments",
-         checked: (data["XXX"] == "1")
-       },
-       {
-         value: "2",
-         html: "End award and archive case",
-         checked: (data["XXX"] == "1")
-       },
-       {
-         value: "1",
-         html: "Something else",
-         checked: (data["XXX"] == "2")
-         }
-         ]
-       }) }}
-
-     {{ govukButton({
-       text: "Continue",
-       classes: "govuk-!-margin-bottom-8"
-     }) }}
 
   </form>
 

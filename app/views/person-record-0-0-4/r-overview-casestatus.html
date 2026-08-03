@@ -3,8 +3,12 @@
         {% else %}
         {% endif %}
 
+        {% if data["case-scenario-selector"]  == "10a" %}
+        <h3 class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-8">There are no active cases for this person within PIPTS</h3>
+        {% else %}
+        {% endif %}
 
-        {% if data["case-scenario-selector"]  == "0" or data["case-scenario-selector"]  == "0c" %}
+        {% if data["case-scenario-selector"]  == "0" or data["case-scenario-selector"]  == "0c" or data["case-scenario-selector"]  == "10a"  %}
         {% else %}
 
         <table class="govuk-table">
@@ -302,7 +306,33 @@
         </tr>
 
 
+        {% elif data["case-scenario-selector"]  == "10" %}
 
+        <!--<tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Record update</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19">Identified move to PIPCS</p>
+          </td>
+        </tr>-->
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8 points)</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+            text: "In payment",
+              classes: "govuk-tag--green"
+            })}}
+
+          </td>
+        </tr>
 
 
         {% else %}

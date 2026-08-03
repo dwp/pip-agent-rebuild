@@ -22,6 +22,15 @@ Scenario 0
  Scenario 3
  {% elif data["case-scenario-selector"]  == "3a" %}
  Scenario 3a
+
+ {% elif data["case-scenario-selector"]  == "10" %}
+ Scenario 10
+ {% elif data["case-scenario-selector"]  == "10a" %}
+ Scenario 10a
+
  {% else %}
  Scenario None
  {% endif %}
+
+
+ {% include "person-record-0-0-4/r-case-scenarios.html" %}

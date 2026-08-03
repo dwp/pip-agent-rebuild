@@ -11,6 +11,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block header %}
 
+
 {{
         dwpHeader({
             serviceName: "Personal Independence Payment",
@@ -21,7 +22,31 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         })
 }}
 
+
+{% if data["case-scenario-selector"] == "10" %}
+
+{{ govukServiceNavigation({
+  serviceName: "Identified move to PIPCS, will soon no be managed within PIPTS",
+  serviceUrl: "#",
+  classes: "id-move-to-pipcs"
+}) }}
+
+{% elif data["case-scenario-selector"] == "10a" %}
+
+{{ govukServiceNavigation({
+  serviceName: "No longer managed within PIPTS, now within PIPCS",
+  serviceUrl: "#",
+  classes: "moved-to-pipcs"
+}) }}
+
+{% else %}
+{% endif %}
+
+
+
 {% endblock %}
+
+
 
 {% block scripts %}
   {{ super() }}

@@ -161,7 +161,7 @@
 
 
 
-      {% if data["r-other-actions"] == "completed-move-to-PIPCS" %}
+      {% if data["r-other-actions"] == "completed-move-to-PIPCS" or data["case-scenario-selector"]  == "10a" %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>
@@ -181,7 +181,7 @@
         {% endif %}
 
 
-      {% if data["r-other-actions"] == "move-to-PIPCS" %}
+      {% if data["r-other-actions"] == "move-to-PIPCS" or data["case-scenario-selector"]  == "10" %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>
