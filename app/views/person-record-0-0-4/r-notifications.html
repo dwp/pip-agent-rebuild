@@ -163,30 +163,29 @@ attributes: {
 }) }}
 
 
+<!-- top Level Notifications -->
+<!-- Colins banner -->
+<!-- Add # to the url on the final return page along with id-->
+<!-- .../url#idname -->
+
+{% set flagContext %}
+
 
 {% if data["r-other-actions"] == "move-to-PIPCS" %}
-
-
-{% set html %}
-<p class="govuk-body govuk-!-font-size-19">ID Entry added to timeline, task created</p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
-
+<p class="govuk-body govuk-!-font-size-19">Move to PIPCS task created. An entry has been added to the event history.</p>
 {% elif data["r-other-actions"] == "completed-move-to-PIPCS" %}
-
-
-{% set html %}
-<p class="govuk-body govuk-!-font-size-19">Moved entry added to timeline, rebuild comeplete, task completed</p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
-
+<p class="govuk-body govuk-!-font-size-19">Move to PIPCS task completed. An entry has been added to the event history.</p>
 {% else %}
 {% endif %}
+
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-PIPCS-move-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}

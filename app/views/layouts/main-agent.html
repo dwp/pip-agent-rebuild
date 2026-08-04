@@ -26,7 +26,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% if data["case-scenario-selector"] == "10" or data["r-other-actions"] == "move-to-PIPCS"  %}
 
 {{ govukServiceNavigation({
-  serviceName: "Identified move to PIPCS, will soon no be managed within PIPTS",
+  serviceName: "Moving to PIPCS. Will no longer be managed in PIPTS.",
   serviceUrl: "#",
   classes: "id-move-to-pipcs"
 }) }}
@@ -34,7 +34,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% elif data["case-scenario-selector"] == "10a" or data["r-other-actions"] == "completed-move-to-PIPCS" %}
 
 {{ govukServiceNavigation({
-  serviceName: "No longer managed within PIPTS, now within PIPCS",
+  serviceName: "Moved to PIPCS.",
   serviceUrl: "#",
   classes: "moved-to-pipcs"
 }) }}
