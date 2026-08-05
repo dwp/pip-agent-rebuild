@@ -2270,6 +2270,21 @@ router.post(`/r-other-actions-router`, (req, res) => {
 })
 
 
+router.post(`/find-third-party-return-router`, (req, res) => {
+  const findThirdParty = req.session.data['find-third-party-return']
+
+  if (findThirdParty == 'Yes') {
+    res.redirect(`find-third-party-return-multi-select`)
+  }
+  else if (findThirdParty == 'No') {
+    res.redirect(`ind-third-party-gather`)
+  }
+  else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 
 module.exports = router

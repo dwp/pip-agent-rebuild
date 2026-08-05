@@ -9,20 +9,18 @@
 
 {% block content %}
 
-
-
-<form action="find-someone-1-offline-return" method="post" class="form">
+<form action="find-third-party-return" method="post" class="form">
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find someone</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find an organisation</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
 
       <!------------H1 LEGEND------------>
         {% set legendNINO %}
-        <h1 class="govuk-body govuk-!-margin-bottom-0">National Insurance number</h1>
+        <h1 class="govuk-body govuk-!-margin-bottom-0">Name of organisation or reference number</h1>
         {% endset %}
       <!------------Legend--------------->
 
@@ -41,7 +39,7 @@
         },
         id: "nino",
         name: "",
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-0",
         value: data["nino"]
       }) }}
 <!--

@@ -1,0 +1,79 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<form action="record-1-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Applicants and claimants representated by Metro Centre Care</h1>
+
+
+      {{ govukRadios({
+        idPrefix: "find-third-party-return",
+        name: "find-third-party-return",
+        fieldset: {
+          legend: {
+            html: "Select which person you want to view?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          html: "Jeff Bridges<br>NA 11 22 33 c<br>DD MM YYYY",
+          checked: (data["find-third-party-return"] == "Yes")
+        },
+        {
+          value: "No",
+          html: "Name<br>NINO<br>DD MM YYYY",
+          checked: (data["find-third-party-return"] == "No")
+        },
+        {
+          value: "No",
+          html: "Name<br>NINO<br>DD MM YYYY",
+          checked: (data["find-third-party-return"] == "No")
+        },
+        {
+          value: "No",
+          html: "Name<br>NINO<br>DD MM YYYY",
+          checked: (data["find-third-party-return"] == "No")
+        },
+        {
+          value: "No",
+          html: "Name<br>NINO<br>DD MM YYYY",
+          checked: (data["find-third-party-return"] == "No")
+        }
+        ]
+      }) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+
+
+{% endblock %}
