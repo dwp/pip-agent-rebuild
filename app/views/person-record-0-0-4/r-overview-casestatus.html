@@ -175,7 +175,7 @@
         {% elif data["case-scenario-selector"]  == "1" %}
 
 
-        {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
+        {% if data["r-case-l3-1-overview-application-controls"] == "MR" %}
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Case update</th>
@@ -188,7 +188,7 @@
           <td class="govuk-table__header govuk-!-width-one-half">Mandatory reconsideration status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
-              text: "Not yet processed",
+              text: "Not started",
               classes: "govuk-tag--yellow"
             })}}
           </td>
@@ -289,11 +289,35 @@
 
         {% elif data["case-scenario-selector"]  == "1b" %}
 
+        {% if data["r-case-l3-1b-overview-award-review-controls"] == "MR" %}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Case update</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mandatory reconsideration requested</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row case-stroke">
+          <td class="govuk-table__header govuk-!-width-one-half">Mandatory reconsideration status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "Not started",
+              classes: "govuk-tag--yellow"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
+        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Current award/outcome</th>
           <td class="govuk-table__cell">
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8pts)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8 points)</p>
           </td>
         </tr>
 
@@ -306,6 +330,29 @@
             })}}
           </td>
         </tr>
+
+
+        {% else %}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8 points)</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "In payment",
+              classes: "govuk-tag--green"
+            })}}
+          </td>
+        </tr>
+
+        {% endif %}
 
 
         {% elif data["case-scenario-selector"]  == "2" %}

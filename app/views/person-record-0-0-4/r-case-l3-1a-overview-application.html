@@ -171,7 +171,7 @@
     <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="pip-letter.pdf" class="govuk-link" rel="noreferrer noopener" target="">Letters sent</a></p> -->
 
 
-      <!-- {{ govukRadios({
+       {{ govukRadios({
         idPrefix: "applicaiton-actions",
         name: "applicaiton-actions",
         fieldset: {
@@ -187,33 +187,28 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "2",
-          html: "Register a mandatory reconsideration (-1m)",
-          checked: (data["applicaiton-actions"] == "2")
-        },
-        {
           value: "1m",
-          html: "Register a mandatory reconsideration (+1m)",
+          html: "Control A",
           checked: (data["applicaiton-actions"] == "1m")
         },
         {
           value: "13m",
-          html: "Register a mandatory reconsideration (+13)",
+          html: "Control B",
           checked: (data["applicaiton-actions"] == "13m")
         },
         {
           value: "4",
-          html: "Close this claim",
+          html: "Control C",
           checked: (data["applicaiton-actions"] == "4")
         }
         ]
-      }) }} -->
+      }) }}
 
 
-      <!-- {{ govukButton({
+       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
-      }) }} -->
+      }) }}
 
         </div>
       </div>
