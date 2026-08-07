@@ -10,7 +10,7 @@
 {% block content %}
 {% include "person-record-0-0-4/record-id-base.html" %}
 
-  <form action="#" method="post" class="form">
+  <form action="r-case-l3-1-overview-application-controls-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -155,10 +155,11 @@
         </div>
       </div>
 
+      {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
 
       {{ govukRadios({
-       idPrefix: "XXX",
-       name: "XXX",
+       idPrefix: "r-case-l3-1-overview-application-controls",
+       name: "r-case-l3-1-overview-application-controls",
        fieldset: {
          legend: {
            html: "What would you like to do?",
@@ -172,27 +173,64 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "2",
-         html: "Register mandatory reconsideration",
-         checked: (data["XXX"] == "1")
-       },
-       {
-         value: "2",
+         value: "Pause",
          html: "Pause payments",
-         checked: (data["XXX"] == "1")
+         checked: (data["r-case-l3-1-overview-application-controls"] == "Pause")
        },
        {
-         value: "2",
+         value: "EndandArchive",
          html: "End award and archive case",
-         checked: (data["XXX"] == "1")
+         checked: (data["r-case-l3-1-overview-application-controls"] == "EndandArchive")
        },
        {
          value: "1",
          html: "Something else",
-         checked: (data["XXX"] == "2")
+         checked: (data["r-case-l3-1-overview-application-controls"] == "2")
          }
          ]
        }) }}
+
+       {% else %}
+
+       {{ govukRadios({
+        idPrefix: "r-case-l3-1-overview-application-controls",
+        name: "r-case-l3-1-overview-application-controls",
+        fieldset: {
+          legend: {
+            html: "What would you like to do?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "MR",
+          html: "Register mandatory reconsideration",
+          checked: (data["r-case-l3-1-overview-application-controls"] == "MR")
+        },
+        {
+          value: "Pause",
+          html: "Pause payments",
+          checked: (data["r-case-l3-1-overview-application-controls"] == "Pause")
+        },
+        {
+          value: "EndandArchive",
+          html: "End award and archive case",
+          checked: (data["r-case-l3-1-overview-application-controls"] == "EndandArchive")
+        },
+        {
+          value: "1",
+          html: "Something else",
+          checked: (data["r-case-l3-1-overview-application-controls"] == "2")
+          }
+          ]
+        }) }}
+
+       {% endif %}
 
      {{ govukButton({
        text: "Continue",

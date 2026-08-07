@@ -2285,6 +2285,44 @@ router.post(`/find-third-party-return-router`, (req, res) => {
 })
 
 
+router.post(`/r-case-l3-1-overview-application-controls-router`, (req, res) => {
+  const casel31controls = req.session.data['r-case-l3-1-overview-application-controls']
+
+  if (casel31controls == 'MR') {
+    res.redirect(`a-d-controls-mr`)
+  }
+  else if (casel31controls == 'Pause') {
+    res.redirect(`1pause`)
+  }
+  else if (casel31controls == 'EndandArchive') {
+    res.redirect(`1eanda`)
+  }
+  else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/r-case-l3-1b-overview-award-review-controls-router`, (req, res) => {
+  const casel31bcontrols = req.session.data['r-case-l3-1b-overview-award-review-controls']
+
+  if (casel31bcontrols == 'MR') {
+    res.redirect(`a-d-controls-mr`)
+  }
+  else if (casel31bcontrols == 'XXX') {
+    res.redirect(`XXX`)
+  }
+  else if (casel31bcontrols == 'Pause') {
+    res.redirect(`1bpause`)
+  }
+  else if (casel31bcontrols == 'EndandArchive') {
+    res.redirect(`1beanda`)
+  }
+  else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 
 module.exports = router

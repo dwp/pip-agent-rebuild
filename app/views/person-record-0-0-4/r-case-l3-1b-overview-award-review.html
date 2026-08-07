@@ -10,7 +10,7 @@
 {% block content %}
 {% include "person-record-0-0-4/record-id-base.html" %}
 
-  <form action="#" method="post" class="form">
+  <form action="r-case-l3-1b-overview-award-review-controls-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -89,7 +89,6 @@
 
       <p class="govuk-heading-l govuk-!-margin-bottom-6">Decision events</p>
 
-
       <table class="govuk-table govuk-!-margin-bottom-8">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
         <thead class="govuk-table__head">
@@ -101,6 +100,15 @@
         </thead>
 
         <tbody class="govuk-table__body">
+
+          {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Mandatory reconsideration registered</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href=record-applicaion-evidence-notes" target="">View</a></td> <!--View HIG details -->
+          </tr>
+          {% else %}
+          {% endif %}
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
@@ -124,9 +132,12 @@
         </tbody>
       </table>
 
+
+      {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
+
       {{ govukRadios({
-       idPrefix: "XXX",
-       name: "XXX",
+       idPrefix: "r-case-l3-1b-overview-award-review-controls",
+       name: "r-case-l3-1b-overview-award-review-controls",
        fieldset: {
          legend: {
            html: "What would you like to do?",
@@ -140,27 +151,67 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "2",
-         html: "Register mandatory reconsideration",
-         checked: (data["XXX"] == "1")
-         },
-         {
-         value: "2",
+         value: "Pause",
          html: "Pause payments",
-         checked: (data["XXX"] == "1")
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "Pause")
        },
        {
-         value: "2",
+         value: "EndandArchive",
          html: "End award and archive case",
-         checked: (data["XXX"] == "1")
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "EndandArchive")
        },
        {
          value: "1",
          html: "Something else",
-         checked: (data["XXX"] == "2")
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "2")
          }
          ]
        }) }}
+
+      {% else %}
+
+      {{ govukRadios({
+       idPrefix: "r-case-l3-1b-overview-award-review-controls",
+       name: "r-case-l3-1b-overview-award-review-controls",
+       fieldset: {
+         legend: {
+           html: "What would you like to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--l"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "MR",
+         html: "Register mandatory reconsideration",
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "MR")
+       },
+       {
+         value: "Pause",
+         html: "Pause payments",
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "Pause")
+       },
+       {
+         value: "EndandArchive",
+         html: "End award and archive case",
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "EndandArchive")
+       },
+       {
+         value: "1",
+         html: "Something else",
+         checked: (data["r-case-l3-1b-overview-award-review-controls"] == "2")
+         }
+         ]
+       }) }}
+
+      {% endif %}
+
+
+
 
      {{ govukButton({
        text: "Continue",

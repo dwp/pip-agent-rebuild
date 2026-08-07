@@ -15,6 +15,23 @@
 
       {% include "documents-0-1/record-id.html" %}
 
+      {{ govukBreadcrumbs({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+        items: [
+          {
+            text: "Decision hub",
+            href: "dwa-dec-tasklist"
+          },
+          {
+            text: "Supporting documents",
+            href: "doc-grading"
+          },
+          {
+            text: "Health assessment report",
+            href: ""
+          }
+        ]
+      }) }}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess this document</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: <strong>19 March 2024</strong></p>

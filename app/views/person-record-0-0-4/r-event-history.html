@@ -147,8 +147,6 @@
   </div>
 </div>
 
-
-
     <table class="govuk-table govuk-!-margin-top-0">
 
     <thead class="govuk-table__head">
@@ -160,6 +158,24 @@
       </thead>
 
 
+      {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+
+        <td class="govuk-table__cell table-spacer">
+         <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">Mandatory reconsideration registered</h2>
+
+          <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-3"><a class="" href="record-applicaion-evidence-notes" target="">View notes</a></p>
+
+
+          <p class="govuk-body-s pr-meta-colour">Reported by: Anna Stuflesser (#ID1234)</p>
+
+        </td>
+        </tr>
+
+        {% else %}
+        {% endif %}
 
       {% if data["r-other-actions"] == "completed-move-to-PIPCS" or data["case-scenario-selector"]  == "10a" %}
 

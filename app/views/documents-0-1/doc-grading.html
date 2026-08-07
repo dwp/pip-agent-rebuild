@@ -16,6 +16,20 @@
 
       {% include "documents-0-1/record-id.html" %}
 
+      {{ govukBreadcrumbs({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+        items: [
+          {
+            text: "Decision hub",
+            href: "dwa-dec-tasklist"
+          },
+          {
+            text: "Supporting documents",
+            href: ""
+          }
+        ]
+      }) }}
+
       {% if data["doc-3-grade"] and data["doc-5-grade"] %}
         <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting documents</h2>
       {% elif data["doc-3-grade"] or data["doc-5-grade"] %}
@@ -196,11 +210,6 @@
 {% endif %}
 
 
-
-
-
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="/another-decision-0-0-8/dwa-dec-tasklist">---</a></p>
 
 
 
