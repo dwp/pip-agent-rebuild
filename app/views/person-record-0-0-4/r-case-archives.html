@@ -36,6 +36,8 @@
 
               {% if data["case-scenario-selector"]  == "0c" %}
 
+              {% if data["r-case-l3-AA-application-overview-ftc-controls"] == "Reactivate" %}
+              {% else %}
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a class="" href="r-case-l3-AA-application-overview-ftc" target="">View</a></td>
                 <td class="govuk-table__cell">0</td>
@@ -50,6 +52,7 @@
 
                 </td>
               </tr>
+              {% endif %}
 
               {% else %}
               {% endif %}

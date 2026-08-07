@@ -1,0 +1,99 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="r-case-all-cases-0c-sections#r-case-reactivated" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Applications and decisions",
+          href: "r-case-all-cases-0c-sections"
+        },
+        {
+          text: "Applications (8 June 2026)",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reactivating at an application</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>reactivating at an application must be requested within one month of the date on the X letter</li>
+        <li>we may still be able to consider the request if they have good reason for contacting us late</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Good cause reasons:</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>Hospital</li>
+        <li>Really ill</li>
+        <li>Something else</li>
+      </ul>
+
+
+
+        {{ govukRadios({
+       idPrefix: "r-case-l3-AA-application-overview-ftc-reactivated",
+       name: "r-case-l3-AA-application-overview-ftc-reactivated",
+       fieldset: {
+         legend: {
+           html: "Why is the requested the to reactiveate the application more than one month after the were notified?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "Reactivate",
+         html: "Applicant has a valid reason for practicing the application",
+         checked: (data["r-case-l3-AA-application-overview-ftc-reactivated"] == "Reactivate")
+       },
+       {
+         value: "#",
+         html: "No reason",
+         checked: (data["r-case-l3-AA-application-overview-ftc-reactivated"] == "#")
+       },
+       {
+         value: "#",
+         html: "Something else",
+         checked: (data["r-case-l3-AA-application-overview-ftc-reactivated"] == "#")
+         }
+         ]
+       }) }}
+
+       {{ govukButton({
+         text: "Continue",
+         classes: "govuk-!-margin-bottom-8"
+       }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

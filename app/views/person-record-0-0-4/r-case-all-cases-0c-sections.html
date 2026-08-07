@@ -28,12 +28,60 @@
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications and decisions</h3>
 
 
+    {% if data["r-case-l3-AA-application-overview-ftc-controls"] == "Reactivate" %}
+
+<h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-6">Not yet processed</h3>
+
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Application</p>
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
+              <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Status</td>
+              <td class="govuk-table__cell">
+                {{govukTag({
+                  text: "Not yet processed",
+                  classes: "govuk-tag--yellow"
+                })}}
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell border-bottom-end-clear">
+                <a class="" href="r-case-l3-0c-overview-application" target="">View application overview</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+  </div>
+</div>
+{% else %}
+
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
 
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-6 govuk-!-margin-bottom-4">No active cases</h3>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">There are no active applications or decisions in payment for this person</p>
 
 
-          <!--<h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">There are no active applications or decisions for this person</h3>-->
+  {% endif %}
+
+
 
 
           <hr class="govuk-section-break govuk-section-break--visible">

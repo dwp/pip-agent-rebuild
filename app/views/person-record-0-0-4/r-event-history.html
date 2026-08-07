@@ -157,8 +157,46 @@
       </tr>
       </thead>
 
+      {% if data["r-case-l3-AA-application-overview-ftc-controls"] == "Reactivate" %}
 
-      {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+
+        <td class="govuk-table__cell table-spacer">
+         <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">Application reactivated</h2>
+
+         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+         <p class="govuk-body govuk-!-margin-bottom-3">Jeff was in hospital</p>
+
+          <p class="govuk-body-s pr-meta-colour">Reported by: David High (#ID1234)</p>
+
+        </td>
+        </tr>
+
+      {% else %}
+      {% endif %}
+
+      {% if data["case-scenario-selector"] == "0c" %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Yesterday</td>
+
+                <td class="govuk-table__cell table-spacer">
+         <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">Application archived</h2>
+
+         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reason</p>
+         <p class="govuk-body govuk-!-margin-bottom-3"> Falure to comply, No Health information gather, timeout (FTC)</p>
+
+          <p class="govuk-body-s pr-meta-colour">Automated process</p>
+
+        </td>
+        </tr>
+
+      {% else %}
+      {% endif %}
+
+
+      {% if data["r-case-l3-1-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-application-controls"] == "MR" or data["r-case-l3-1b-overview-award-review-controls"] == "MR"%}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>

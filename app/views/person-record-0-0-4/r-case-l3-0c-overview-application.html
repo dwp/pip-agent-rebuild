@@ -10,7 +10,7 @@
 {% block content %}
 {% include "person-record-0-0-4/record-id-base.html" %}
 
-  <form action="r-case-l3-AA-application-overview-ftc-reactivated" method="post" class="form">
+  <form action="record-foundation-application-overview-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -23,7 +23,7 @@
         },
         {
           text: "Applications and decisions",
-          href: "#"
+          href: "r-case-all-cases-0a-sections"
         }
       ]
     }) }}
@@ -47,16 +47,39 @@
             <th scope="row" class="govuk-table__header">Status</th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "Failed to comply",
+                text: "Not yet processed",
                 classes: "govuk-tag--yellow"
               })}}
             </td>
           </tr>
 
+          <!--<tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Outcome</th>
+            <td class="govuk-table__cell">
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Not yet known</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Not yet known</p>
+            </td>
+          </tr>-->
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Start of application</th>
-            <td class="govuk-table__cell">60 days ago</td>
+            <td class="govuk-table__cell">1 January 2026</td>
           </tr>
+
+          <!--<tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award start date</th>
+            <td class="govuk-table__cell">Not yet known</td>
+          </tr>-->
+
+          <!--<tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award review date</th>
+            <td class="govuk-table__cell">Not yet known</td>
+          </tr>-->
+
+          <!--<tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award end date</th>
+            <td class="govuk-table__cell">Not yet known</td>
+          </tr>-->
 
         </tbody>
       </table>
@@ -76,6 +99,13 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
+
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Reactivated</td>
+            <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target=""></a></td> <!--View registration details -->
+          </tr>
 
 
           <tr class="govuk-table__row">
@@ -112,8 +142,8 @@
 
 
       {{ govukRadios({
-       idPrefix: "r-case-l3-AA-application-overview-ftc-controls",
-       name: "r-case-l3-AA-application-overview-ftc-controls",
+       idPrefix: "XXXX",
+       name: "XXXX",
        fieldset: {
          legend: {
            html: "What would you like to do?",
@@ -127,27 +157,39 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "Reactivate",
-         html: "Make case active",
-         checked: (data["r-case-l3-AA-application-overview-ftc-controls"] == "Reactivate")
+         value: "1",
+         html: "Failure to attend",
+         checked: (data["XXXX"] == "1")
+       },
+       {
+         value: "1",
+         html: "Failure to comply",
+         checked: (data["XXXX"] == "1")
        },
        {
          value: "1",
          html: "Withdraw",
-         checked: (data["r-case-l3-AA-application-overview-ftc-controls"] == "1")
+         checked: (data["XXXX"] == "1")
        },
        {
          value: "1",
+         text: "Send paper 'Health Information Gather' (HIG)",
+         checked: (data["XXXX"] == "1")
+        },
+        {
+         value: "2",
          html: "Something else",
-         checked: (data["r-case-l3-AA-application-overview-ftc-controls"] == "1")
-         }
-         ]
-       }) }}
+         checked: (data["XXXX"] == "2")
+       }
+       ]
+     }) }}
 
-       {{ govukButton({
-         text: "Continue",
-         classes: "govuk-!-margin-bottom-8"
-       }) }}
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+
 
         </div>
       </div>

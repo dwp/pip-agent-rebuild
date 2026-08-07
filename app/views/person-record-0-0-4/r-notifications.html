@@ -212,3 +212,17 @@ attributes: {
   html: flagContext,
   type: 'success'
 }) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">Applicant has now been reactivated.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-case-reactivated"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
