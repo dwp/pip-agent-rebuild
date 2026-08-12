@@ -1,0 +1,193 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-overview" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Temporary accommodation</h3>
+
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-temp-accom-add" target="">Add another temporary stay</a></p>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          {% if data["payability-tasklist-item-3"] == "Care home" %}
+          Care home
+          {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+          Hospital
+          {% elif data["payability-tasklist-item-3"] == "Prison" %}
+          Prison
+          {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+          Residential school or college summary
+          {% else %}
+          Location
+          {% endif %}
+
+        </h2>
+        <ul class="govuk-summary-card__actions">
+
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="r-temp-accom-cya">View or change details<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+          </li>
+
+          <!--<li class="govuk-summary-card__action">
+            <a class="govuk-link" href="X">Remove<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+          </li>-->
+
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Place name
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date entered
+            </dt>
+            <dd class="govuk-summary-list__value">
+              DD Month YYYY.
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              8
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funded by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              XXX
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </div>
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous stays in temporary accommodation</h3>
+
+
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+          </tr>
+
+        </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear">Care home</td>
+              <td class="govuk-table__cell">Date entered</td>
+              <td class="govuk-table__cell">10 November 2024</td> </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Date left</td>
+              <td class="govuk-table__cell">DD Month YYYY</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Days</td>
+              <td class="govuk-table__cell">8</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Funded by</td>
+              <td class="govuk-table__cell">NHS</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell govuk-!-padding-bottom-6"><a class="" href="r-temp-accom-cya" target="">View details</a></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear">Hospital</td>
+              <td class="govuk-table__cell">Date entered</td>
+              <td class="govuk-table__cell">1 January 2020</td> </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Date left</td>
+              <td class="govuk-table__cell">1 January 2024</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Days</td>
+              <td class="govuk-table__cell">2</td>
+            </tr>
+
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__cell border-bottom-end-clear"></td>
+              <td class="govuk-table__cell">Funded by</td>
+              <td class="govuk-table__cell">NHS</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell govuk-!-padding-bottom-6"><a class="" href="r-temp-accom-cya" target="">View details</a></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+          </tbody>
+
+      </table>
+
+
+      {% include "person-record-0-0-4/r-temp-accom-scenarios.html" %}
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

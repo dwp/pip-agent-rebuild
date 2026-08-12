@@ -1,0 +1,84 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "payability-tasklist"
+    },
+    {
+      text: "Flags and markers",
+      href: "r-flags-indicated"
+    }
+  ]
+}) }}
+
+  <form action="r-flags" method="post" class="form">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There is an indication of additional support needs</h1>
+
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">Evidence to for additional support:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+        <li>a severe mental health or behavioural condition</li>
+        <li>learning difficulties</li>
+        <li>a developmental disorder</li>
+        <li>memory problems</li>
+        </ul>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"></p>
+
+
+      {{ govukRadios({
+        idPrefix: "r-flags-indicated-change",
+        name: "r-flags-indicated-change",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Is there evidence the person needs additional support?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["r-flags-indicated-change"] == "Yes")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-flags-indicated-change"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+  </form>
+
+{% endblock %}

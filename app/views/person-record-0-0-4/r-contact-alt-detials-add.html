@@ -1,0 +1,130 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-contact" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Contact details",
+          href: "r-contact-details"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-inset-text govuk-inset-text--action-notifications govuk-!-margin-top-0">
+            <p class="govuk-body govuk-!-font-size-24"><b>This could be SRA journey<b></p>
+              <p class="govuk-body govuk-!-font-size-19">If this is SRA, then we would zero control on how data is captured, however we can add addional questions once the SRA part is compelted. <br> Example path: (SRA Page 1,2,3,4 > Local 5,6,7 > Overview)</p>
+          </div>
+
+
+      {{ govukCheckboxes({
+        idPrefix: "r-contact-alt-detials-add",
+        name: "r-contact-alt-detials-add",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Add alt format options?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: "Select all that apply."
+        },
+        items: [
+        {
+          value: "1",
+          text: "Audio format",
+          checked: (data["r-contact-alt-detials-add"] == "1")
+        },
+
+          {
+            value: "2",
+            text: "Braille format",
+            checked: (data["r-contact-alt-detials-add"] == "2")
+          },
+
+          {
+            value: "3",
+            text: "British Sign Language Video",
+            checked: (data["r-contact-alt-detials-add"] == "3"),
+            conditional: {
+              html: 1Html
+            }
+          },
+          {
+            value: "4",
+            text: "Email",
+            checked: (data["r-contact-alt-detials-add"] == "4"),
+            conditional: {
+              html: 2Html
+            }
+          },
+          {
+            value: "5",
+            text: "Paper colour options",
+            checked: (data["r-contact-alt-detials-add"] == "5"),
+            conditional: {
+              html: 3Html
+            }
+          },
+          {
+            value: "6",
+            text: "Text size (Large format)",
+            checked: (data["r-contact-alt-detials-add"] == "6"),
+            conditional: {
+              html: 3Html
+            }
+          },
+          {
+            value: "7",
+            text: "Coloured paper",
+            checked: (data["r-contact-alt-detials-add"] == "7"),
+            conditional: {
+              html: 3Html
+            }
+          },
+          {
+            value: "All",
+            text: "All formats",
+            checked: (data["r-contact-alt-detials-add"] == "All"),
+            conditional: {
+              html: 3Html
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-overview" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Address</h3>
+
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-4">Where they live</h3>
+
+
+        <!------------H1 LEGEND------------>
+          {% set legendAddress %}
+
+        {% if data["r-address-add"] %}
+
+        Leazes Park<br> Richardson Road <br>Newcastle upon <br>Tyne NE2 4BJ
+
+        {% else %}
+        St James Park<br> Barrack Road <br>Newcastle upon Tyne <br>NE1 4ST
+
+        {% endif %}
+
+          {% endset %}
+        <!------------Legend--------------->
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Address type"
+            },
+            value: {
+              html: "Home address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-address-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: legendAddress
+              },
+              actions: {
+                items: [
+                  {
+                    href: "r-address-add",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Address for letters</h3>
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Address type"
+            },
+            value: {
+              html: "Home address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-address-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: legendAddress
+              },
+              actions: {
+                items: [
+                  {
+                    href: "r-address-add",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+        {% include "person-record-0-0-4/r-address-scenarios.html" %}
+
+  </div>
+
+
+    </form>
+{% endblock %}

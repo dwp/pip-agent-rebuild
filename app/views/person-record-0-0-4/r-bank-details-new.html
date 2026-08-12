@@ -8,27 +8,28 @@
 
 {% block content %}
 
-{% include "person-record-0-0-4/r-notifications.html" %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "r-overview"
+    },
+    {
+      text: "Bank details",
+      href: "r-bank-details-encrypted"
+    }
+  ]
+}) }}
 
 <form action="r-bank-details#r-bank-details" method="post" class="form">
-  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
-  {% include "person-record-0-0-4/record-id.html" %}
 
   <div class="govuk-grid-row">
 
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Overview",
-          href: "r-applications"
-        },
-        {
-          text: "Bank detials",
-          href: ""
-        }
-      ]
-    }) }}
+
 
     <div class="govuk-grid-column-two-thirds">
 

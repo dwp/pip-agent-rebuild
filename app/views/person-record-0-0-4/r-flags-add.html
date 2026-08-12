@@ -11,7 +11,7 @@
 
 {% include "person-record-0-0-4/record-id-base.html" %}
 
-<form action="r-flags#r-flags-add-marker" method="post" class="form">
+<form action="r-flags-added#r-flags-added-banner" method="post" class="form">
   <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
 
   <div class="govuk-grid-row">
@@ -35,7 +35,7 @@
 
 
 
-      {{ govukCheckboxes({
+      {{ govukRadios({
         idPrefix: "r-flags-add",
         name: "r-flags-add",
         classes: "govuk-checkboxes",

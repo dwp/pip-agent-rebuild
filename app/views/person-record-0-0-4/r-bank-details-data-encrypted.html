@@ -1,0 +1,126 @@
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on account
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-name-on-account"] %}
+            {{data["bank-name-on-account"]}}
+
+          {% else %}
+            Jeff Bridges
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="r-bank-details-amend">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account type
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-roll-number"] %}
+            Building society
+
+          {% else %}
+            Bank
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bank name
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-name"] %}
+            {{data["bank-name"]}}
+
+          {% else %}
+            Monzo
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-sort-code"] %}
+            {{data["bank-sort-code"]}}
+
+          {% else %}
+            ** ** 33
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="r-bank-details-view-encrypted">View<span class="govuk-visually-hidden"> view</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-account-number"] %}
+            {{data["bank-account-number"]}}
+
+          {% else %}
+            ** ** ** 55
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="r-bank-details-view-encrypted">View<span class="govuk-visually-hidden"> view</span></a>
+        </dd>
+      </div>
+
+      {% if data["bank-roll-number"] %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Roll or reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data["bank-roll-number"] %}
+            {{data["bank-roll-number"]}}
+
+          {% else %}
+            ** ** ** ** 66
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="r-bank-details-view-encrypted">View<span class="govuk-visually-hidden"> view</span></a>
+        </dd>
+      </div>
+
+      {% else %}
+      {% endif %}
+
+
+
+
+    </dl>

@@ -1,0 +1,71 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "payability-tasklist"
+    },
+    {
+      text: "Flags and markers",
+      href: "r-flags-indicated"
+    }
+  ]
+}) }}
+
+  <form action="r-flags-remove-note" method="post" class="form">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        idPrefix: "r-flags-indicated-remove",
+        name: "r-flags-indicated-remove",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Are you sure you want to remove the additional support maker from this person's record?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["r-flags-indicated-remove"] == "Yes")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-flags-indicated-remove"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+  </form>
+
+{% endblock %}

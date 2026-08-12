@@ -28,6 +28,13 @@
 
         <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-4">Where they live</h3>
 
+        {% if data["r-temp-accom-add"] %}
+        {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel govuk-!-margin-bottom-4" }) %}
+        <p class="govuk-body">This person is in <a class="" href="r-temp-accom" target="">temporary accommodation</a></p>
+        {% endcall %}
+        {% else %}
+        {% endif %}
+
 
         <!------------H1 LEGEND------------>
           {% set legendAddress %}
@@ -88,6 +95,17 @@
 
         {% if data["r-appointees-add"] %}
 
+        {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel govuk-!-margin-bottom-4" }) %}
+        <p class="govuk-body">This person has an <a class="" href="r-appointees" target="">appointees or representatives</a></p>
+        {% endcall %}
+
+        {% if data["r-temp-accom-add"] %}
+        {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel govuk-!-margin-bottom-4" }) %}
+        <p class="govuk-body">This person has <a class="" href="r-contact" target="">alternative format requests</a></p>
+        {% endcall %}
+        {% else %}
+        {% endif %}
+
         {{ govukSummaryList({
           rows: [
             {
@@ -146,20 +164,36 @@
 
         {% else %}
 
-
         {{ govukSummaryList({
           rows: [
-            {
+          {
+            key: {
+              text: "Address type"
+            },
+            value: {
+              html: "Home address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-address-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
               key: {
-                text: "Postal address"
+                text: "Address"
               },
               value: {
-                html: 'Same as home address'
+                html: legendAddress
               },
               actions: {
                 items: [
                   {
-                    href: "#",
+                    href: "r-address-add",
                     text: "Change",
                     visuallyHiddenText: "contact details"
                   }
@@ -172,7 +206,7 @@
         {% endif %}
 
 
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="#" target="">Add a temporary address</a></p> -->
+        {% include "person-record-0-0-4/r-address-scenarios.html" %}
 
   </div>
 

@@ -8,23 +8,24 @@
 
 {% block content %}
 
-{% include "person-record-0-0-4/r-notifications.html" %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
 
 {{ govukBreadcrumbs({
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Temporary accommodation",
-      href: "payability-tasklist"
+      text: "Overview",
+      href: "r-overview"
     },
     {
-      text: "XXX",
-      href: "payability-tasklist-item-X"
+      text: "Temporary accommodation",
+      href: "r-temp-accom"
     }
   ]
 }) }}
 
-<form action="payability-tasklist-item-3-details" method="post" class="form">
+<form action="r-temp-accom-add-details" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -43,8 +44,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "payability-tasklist-item-3",
-        name: "payability-tasklist-item-3",
+        idPrefix: "r-temp-accom-add",
+        name: "r-temp-accom-add",
         fieldset: {
           legend: {
             html: "Where did the stay in temporary accommodation take place?",
@@ -59,32 +60,32 @@
         {
           value: "Care home",
           text: "Care or nursing home",
-          checked: (data["payability-tasklist-item-3"] == "Care home")
+          checked: (data["r-temp-accom-add"] == "Care home")
         },
         {
           value: "Hospital",
           text: "Hospital or similar institution",
-          checked: (data["payability-tasklist-item-3"] == "Hospital")
+          checked: (data["r-temp-accom-add"] == "Hospital")
         },
         {
           value: "Prison",
           text: "Prison",
-          checked: (data["payability-tasklist-item-3"] == "Prison")
+          checked: (data["r-temp-accom-add"] == "Prison")
         },
         {
           value: "Residential school or college",
           text: "Residential school or college",
-          checked: (data["payability-tasklist-item-3"] == "Residential school or college")
+          checked: (data["r-temp-accom-add"] == "Residential school or college")
         },
         {
           value: "Supported accommodation",
           text: "Supported accommodation",
-          checked: (data["payability-tasklist-item-3"] == "Supported accommodation")
+          checked: (data["r-temp-accom-add"] == "Supported accommodation")
         },
         {
           value: "Other",
           text: "Other",
-          checked: (data["payability-tasklist-item-3"] == "Other")
+          checked: (data["r-temp-accom-add"] == "Other")
         }
         ]
         }) }}

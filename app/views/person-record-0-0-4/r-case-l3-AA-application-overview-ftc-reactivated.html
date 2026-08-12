@@ -34,13 +34,12 @@
 
     <div class="govuk-grid-column-three-quarters">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reactivating at an application</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reactivating a case</h1>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:</p>
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
 
-        <li>reactivating at an application must be requested within one month of the date on the X letter</li>
-        <li>we may still be able to consider the request if they have good reason for contacting us late</li>
+        <li>Advise the person we may be able to reopen their case if they have a good reason for contacting us late. This includes things like worsening health, hospitalisation, personal trauma or postal delays.</li>
       </ul>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Good cause reasons:</p>
@@ -58,7 +57,7 @@
        name: "r-case-l3-AA-application-overview-ftc-reactivated",
        fieldset: {
          legend: {
-           html: "Why is the requested the to reactiveate the application more than one month after the were notified?",
+           html: "Does the person have a good reason for reactivating their case?",
            isPageHeading: true,
            classes: "govuk-fieldset__legend--m"
          }
@@ -70,12 +69,12 @@
        items: [
        {
          value: "Reactivate",
-         html: "Applicant has a valid reason for practicing the application",
+         html: "Yes",
          checked: (data["r-case-l3-AA-application-overview-ftc-reactivated"] == "Reactivate")
        },
        {
          value: "#",
-         html: "No reason",
+         html: "No",
          checked: (data["r-case-l3-AA-application-overview-ftc-reactivated"] == "#")
        },
        {

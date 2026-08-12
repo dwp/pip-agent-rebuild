@@ -1,0 +1,249 @@
+
+<dl class="govuk-summary-list">
+
+
+  {% if data["r-contact-alt-detials-add"] == "1" or data["r-contact-alt-detials-add"] == "2" or data["r-contact-alt-detials-add"] == "3" or data["r-contact-alt-detials-add"] == "4" or data["r-contact-alt-detials-add"] == "5" or data["r-contact-alt-detials-add"] == "6" or data["r-contact-alt-detials-add"] == "7" or data["r-contact-alt-detials-add"] == "All"%}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Alternative format
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% else %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Alternative format
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No, standard letter (12-point Arial text on white paper)
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+
+
+{% if data["r-contact-alt-detials-add"] == "1" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Audio format
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          CD
+        </li>
+        <li>
+          MP3 by email
+        </li>
+        <li>
+          Casette tape
+        </li>
+        <li>
+          DVD
+        </li>
+      </ul>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+  {% if data["r-contact-alt-detials-add"] == "2" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Braille format
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Uncontracted braille (grade 1)
+        </li>
+        <li>
+          Contracted braille (grade 2)
+        </li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+  {% if data["r-contact-alt-detials-add"] == "3" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      British Sign Language Video
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          DVD,
+        </li>
+        <li>
+          MPEG file by email
+        </li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+    {% else %}
+    {% endif %}
+
+    {% if data["r-contact-alt-detials-add"] == "4" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      hello@email.com
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+  {% if data["r-contact-alt-detials-add"] == "5" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Paper colour options
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          CD
+        </li>
+        <li>
+          MP3 by email
+        </li>
+        <li>
+          Casette tape
+        </li>
+        <li>
+          No
+        </li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+  {% if data["r-contact-alt-detials-add"] == "6" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Text size (Large format)
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list">
+        <li>
+          16 point
+        </li>
+        <li>
+          18 point
+        </li>
+        <li>
+          25 point
+        </li>
+      </ul>
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+  {% if data["r-contact-alt-detials-add"] == "7" or data["r-contact-alt-detials-add"] == "All" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Coloured paper
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list govuk-list">
+        <li>
+          Primary yellow
+        </li>
+        <li>
+          Pastel yellow
+        </li>
+        <li>
+          Primary green
+        </li>
+        <li>
+          Pastel green
+        </li>
+        <li>
+          Orange
+        </li>
+        <li>
+          Peach
+        </li>
+        <li>
+          Primary blue
+        </li>
+        <li>
+          Light blue
+        </li>
+        <li>
+          Bright pink
+        </li>
+        <li>
+          Pastel pink
+        </li>
+        <li>
+          Purple
+        </li>
+        <li>
+          Lilac
+        </li>
+        <li>
+          Light grey
+        </li>
+        <li>
+          Cream
+        </li>
+        <li>
+          Red
+        </li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  {% else %}
+  {% endif %}
+
+
+</dl>

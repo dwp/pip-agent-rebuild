@@ -1,0 +1,70 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+<form action="r-bank-details" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-applications"
+        },
+        {
+          text: "Bank detials",
+          href: "r-bank-details-encrypted"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukRadios({
+         idPrefix: "r-bank-details-view-encrypted",
+         name: "r-bank-details-view-encrypted",
+         fieldset: {
+           legend: {
+             html: "Why do you need to see these details?",
+             isPageHeading: true,
+             classes: "govuk-fieldset__legend--xl"
+           }
+         },
+         hint: {
+           html: legendNumbers
+         },
+         classes: "govuk-radios",
+         items: [
+         {
+           value: "1",
+           html: "Good reason",
+           checked: (data["r-bank-details-view-encrypted"] == "1")
+         },
+         {
+           value: "2",
+           html: "Other",
+           checked: (data["r-bank-details-view-encrypted"] == "2")
+           }
+           ]
+         }) }}
+
+       {{ govukButton({
+         text: "Continue",
+         classes: "govuk-!-margin-bottom-8"
+       }) }}
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

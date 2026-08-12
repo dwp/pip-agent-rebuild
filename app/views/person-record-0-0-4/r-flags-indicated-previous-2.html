@@ -1,0 +1,161 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "payability-tasklist"
+    },
+    {
+      text: "Flags and markers",
+      href: "r-flags-indicated"
+    }
+  ]
+}) }}
+
+  {% if data["find-someone-1-offline-return"] == "Yes" %}
+  data["find-someone-1-offline-return"] == "Yes"
+
+  <form action="r-temp-accom-summary" method="post" class="form">
+  {% else %}
+  <form action="payability-tasklist-item-3-summary" method="post" class="form">
+  {% endif %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          {% if data["flagXXX"] == "flagXXX" %}
+          Flag Other
+          {% elif data["flagXXX"] == "flagXXX" %}
+          Flag Other
+          {% elif data["flagXXX"] == "flagXXX" %}
+          Flag Other
+          {% elif data["flagXXX"] == "flagXXX" %}
+          Flag Other
+          {% else %}
+          Flag type 2
+          {% endif %}
+          </h2>
+
+
+{% set flagDateAdded %}     DD Month Year    {% endset %}
+{% set flagDateRemoved %}   DD Month Year   {% endset %}
+{% set flagDescription %}   Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems.    {% endset %}
+{% set flagRemovalNote %}   {{ data['r-flags-remove-note']}}    {% endset %}
+{% set flagRemovalAgent %}  Rachel Loughlin (#ID1234)   {% endset %}
+
+
+
+          {{ govukSummaryList({
+            classes: "govuk-!-margin-bottom-8",
+            rows: [
+              {
+                key: {
+                  html: "Date added"
+                },
+                value: {
+                  html: flagDateAdded
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Date removed"
+                },
+                value: {
+                  html: flagDateRemoved
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Description"
+                },
+                value: {
+                  html: flagDescription
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Removal note"
+                },
+                value: {
+                  html: flagRemovalNote
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Removed by"
+                },
+                value: {
+                  html: flagRemovalAgent
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+
+</form>
+
+
+
+    {% endblock %}

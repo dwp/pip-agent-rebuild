@@ -226,3 +226,30 @@ attributes: {
   html: flagContext,
   type: 'success'
 }) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">The additional support marker has been removed from this person's record.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-remove-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">The additional support marker has been added to this person's record.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-added-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
