@@ -1,0 +1,54 @@
+{% extends "layouts/main-agent-feedback.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+
+<form action="#" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "pip-base-ui/t-record-id.html" %}
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-full">
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+          {
+            title: {
+              text: "Task list item"
+            },
+            href: "t-dec-task-list-item",
+            status: {
+              text: "Completed"
+            }
+          },
+          {
+            title: {
+            text: "Task list item"
+            },
+            href: "t-dec-task-list-item",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

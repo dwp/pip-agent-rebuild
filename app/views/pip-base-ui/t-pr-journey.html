@@ -1,0 +1,56 @@
+{% extends "layouts/main-agent-feedback.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+
+<form action="r-address-add-outcomes" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "pip-base-ui/t-record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "t-pr-base"
+        },
+        {
+          text: "Nav link",
+          href: "t-pr-base"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-full surface-block">
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: ""
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
