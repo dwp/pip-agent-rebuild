@@ -63,10 +63,23 @@
                 checked: (data["r-other-actions"] == "completed-move-to-PIPCS")
               },
               {
+                value: "cancel-move-to-PIPCS",
+                text: "Cancel move to PIPCS (Is this a thing?)",
+                      hint: {
+                        text: ""
+                      },
+                checked: (data["r-other-actions"] == "#")
+              },
+              {
                 value: "death",
                 text: "Claimant has died",
                 checked: (data["r-other-actions"] == "death")
               },
+                {
+                  value: "audit",
+                  text: "View audit logs",
+                  checked: (data["r-other-actions"] == "audit")
+                },
               {
                 value: "Something else",
                 text: "Something else",

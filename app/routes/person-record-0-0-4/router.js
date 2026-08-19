@@ -2264,6 +2264,9 @@ router.post(`/r-other-actions-router`, (req, res) => {
   else if (otherActions == 'death') {
     res.redirect(`r-o-a-death`)
   }
+  else if (otherActions == 'audit') {
+    res.redirect(`r-other-actions-audit-logs`)
+  }
   else {
     res.redirect(`r-o-a-other`)
   }

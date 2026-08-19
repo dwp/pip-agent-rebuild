@@ -24,6 +24,8 @@
     </dd>
   </div>
 
+  {% if data["r-contact-alt-detials-add"] == "0" or data["r-contact-alt-detials-add"] == "All"%}
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Landline telephone
@@ -35,5 +37,8 @@
       <a class="govuk-link" href="r-contact-alt-detials-add">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
+
+  {% else %}
+  {% endif %}
 
   </dl>

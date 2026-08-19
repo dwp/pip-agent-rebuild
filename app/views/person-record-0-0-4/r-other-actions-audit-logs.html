@@ -1,0 +1,168 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block content %}
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+  <form action="r-other-actions-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Audit",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Audit logs</h1>
+
+      {{ govukTable({
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date",
+            classes: "app-custom-class"
+          },
+          {
+            text: "Time",
+            classes: "app-custom-class"
+          },
+          {
+            text: "Agent",
+            classes: "app-custom-class"
+          },
+          {
+            text: "Area",
+            classes: "app-custom-class"
+          },
+          {
+            text: "Changed",
+            classes: "app-custom-class"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "DD Month YYYY"
+            },
+            {
+              text: "09:45:01"
+            },
+            {
+              text: "#1248765"
+            },
+            {
+              text: "Appointees and representatives"
+            },
+            {
+              text: "Added appointees"
+            }
+          ],
+          [
+            {
+              text: "DD Month YYYY"
+            },
+            {
+              text: "09:45:01"
+            },
+            {
+              text: "#1248765"
+            },
+            {
+              text: "Bank detials"
+            },
+            {
+              text: "Account detials"
+            }
+          ],
+            [
+              {
+                text: "DD Month YYYY"
+              },
+              {
+                text: "09:45:01"
+              },
+              {
+                text: "#1248765"
+              },
+              {
+                text: "Area"
+              },
+              {
+                text: "Item / action"
+              }
+            ],
+            [
+              {
+                text: "DD Month YYYY"
+              },
+              {
+                text: "09:45:01"
+              },
+              {
+                text: "#1248765"
+              },
+              {
+                text: "Area"
+              },
+              {
+                text: "Item / action"
+              }
+            ],
+            [
+              {
+                text: "DD Month YYYY"
+              },
+              {
+                text: "09:45:01"
+              },
+              {
+                text: "#1248765"
+              },
+              {
+              text: "Area"
+              },
+              {
+              text: "Item / action"
+              }
+            ],
+            [
+              {
+                text: "DD Month YYYY"
+              },
+              {
+                text: "09:45:01"
+              },
+              {
+                text: "#1248765"
+              },
+              {
+                text: "Area"
+              },
+              {
+                text: "Item / action"
+              }
+            ]
+        ]
+      }) }}
+
+  </form>
+
+{% endblock %}

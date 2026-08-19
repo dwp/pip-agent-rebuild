@@ -32,14 +32,9 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-          <div class="govuk-inset-text govuk-inset-text--action-notifications govuk-!-margin-top-0">
-            <p class="govuk-body govuk-!-font-size-24"><b>This could be SRA journey<b></p>
-              <p class="govuk-body govuk-!-font-size-19">If this is SRA, then we would zero control on how data is captured, however we can add addional questions once the SRA part is compelted. <br> Example path: (SRA Page 1,2,3,4 > Local 5,6,7 > Overview)</p>
-          </div>
-
 
       {% set LegendH1 %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Full postcode lookup</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find an address</h1>
       {% endset -%}
 
       {{ govukInput({
@@ -47,13 +42,28 @@
           html: LegendH1
         },
           hint: {
-            text: "Pretend this is the full address pattern."
+            text: "For example, AA3 1AB."
           },
         id: "r-address-add",
         name: "r-address-add",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
         value: data["r-address-add"]
         }) }}
+
+        {{ govukInput({
+          label: {
+            html: "Building number or name"
+          },
+            hint: {
+              text: "For example, 15 or Prospect Cottage."
+            },
+          id: "r-address-add",
+          name: "r-address-add",
+          classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+          value: data["r-address-add"]
+          }) }}
+
+
 
 
       {{ govukButton({

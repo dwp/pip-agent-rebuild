@@ -1,0 +1,106 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Tasks</h1>
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date created</th>
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+
+
+        {% if data["r-other-actions"]  == "completed-move-to-PIPCS" %}
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Today</td>
+          <td class="govuk-table__cell">Completed move to PIPCS</td>
+          <td class="govuk-table__cell">Unallocated</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Yesterday</td>
+          <td class="govuk-table__cell">Identified need to move to PIPCS</td>
+          <td class="govuk-table__cell">Unallocated</td>
+        </tr>
+        {% else %}
+        {% endif %}
+
+        {% if data["r-other-actions"] == "move-to-PIPCS" or data["case-scenario-selector"]  == "10a" %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Yesterday</td>
+          <td class="govuk-table__cell">Identified need to move to PIPCS</td>
+          <td class="govuk-table__cell">Unallocated</td>
+        </tr>
+        {% else %}
+        {% endif %}
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">DD Month YYYY</td>
+          <td class="govuk-table__cell">Name/type of task</td>
+          <td class="govuk-table__cell">Unallocated</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">DD Month YYYY</td>
+          <td class="govuk-table__cell">Name/type of task</td>
+          <td class="govuk-table__cell">Allocated</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">DD Month YYYY</td>
+          <td class="govuk-table__cell">Name/type of task</td>
+          <td class="govuk-table__cell">Active</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">DD Month YYYY</td>
+          <td class="govuk-table__cell">Name/type of task</td>
+          <td class="govuk-table__cell">On hold</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+
+  </div>
+
+
+  {% include "person-record-0-0-4/r-tasks-scenarios.html" %}
+
+
+
+    </form>
+{% endblock %}

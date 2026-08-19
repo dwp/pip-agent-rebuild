@@ -33,21 +33,26 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      {{ govukCheckboxes({
+      {{ govukRadios({
         idPrefix: "r-contact-alt-detials-add",
         name: "r-contact-alt-detials-add",
-        classes: "govuk-checkboxes",
+        classes: "govuk-radios",
         fieldset: {
           legend: {
-            text: "THIS IS JUST A TOGGLE TO VIEW ALT OPTIONS Add alt format options?",
+            text: "Add a method of contact?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "Select all that apply."
+          html: "X"
         },
         items: [
+        {
+          value: "0",
+          text: "Landline telephone",
+          checked: (data["r-contact-alt-detials-add"] == "0")
+        },
         {
           value: "1",
           text: "Audio format",
@@ -96,14 +101,6 @@
             value: "7",
             text: "Coloured paper",
             checked: (data["r-contact-alt-detials-add"] == "7"),
-            conditional: {
-              html: 3Html
-            }
-          },
-          {
-            value: "All",
-            text: "All formats",
-            checked: (data["r-contact-alt-detials-add"] == "All"),
             conditional: {
               html: 3Html
             }

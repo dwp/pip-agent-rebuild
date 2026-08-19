@@ -253,3 +253,17 @@ attributes: {
   html: flagContext,
   type: 'success'
 }) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">The temporary accommodation has been removed from this person's record.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-temp-accom-remove-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}

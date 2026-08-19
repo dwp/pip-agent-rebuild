@@ -29,34 +29,26 @@
         {% if data["case-scenario-selector"]  == "0a" %}
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Current award/outcome</th>
-          <td class="govuk-table__cell">
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not yet known</p>
-
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Not yet processed",
               classes: "govuk-tag--yellow"
             })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not yet known</p>
+
           </td>
         </tr>
 
         {% elif data["case-scenario-selector"]  == "0a" %}
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Current award/outcome</th>
-          <td class="govuk-table__cell">
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not yet known</p>
-
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
@@ -66,16 +58,16 @@
           </td>
         </tr>
 
-
-
-        {% elif data["case-scenario-selector"]  == "0b" %}
-
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Current award/outcome</th>
           <td class="govuk-table__cell">
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not yet known</p>
+
           </td>
         </tr>
+
+
+        {% elif data["case-scenario-selector"]  == "0b" %}
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
@@ -86,6 +78,15 @@
             })}}
           </td>
         </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not yet known</p>
+          </td>
+        </tr>
+
+
 
         {% elif data["case-scenario-selector"]  == "0d" %}
 
@@ -106,10 +107,6 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
-          <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
-        </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
@@ -148,10 +145,10 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
+        <!--<tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
           <td class="govuk-table__cell govuk-!-width-one-half">12 April 2026</td>
-        </tr>
+        </tr>-->
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
@@ -170,6 +167,48 @@
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
           </td>
         </tr>
+
+        {% elif data["case-scenario-selector"]  == "0f" %}
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "Decision made",
+              classes: "govuk-tag--red"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: nil (0 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+          </td>
+        </tr>
+
+        {% elif data["case-scenario-selector"]  == "0g" %}
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "Decision made",
+              classes: "govuk-tag--red"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Disallowed</p>
+          </td>
+        </tr>
+
 
 
         {% elif data["case-scenario-selector"]  == "1" %}
@@ -194,10 +233,10 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
+        <!--<tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
           <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
-        </tr>
+        </tr>-->
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
@@ -219,20 +258,20 @@
         {% else %}
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Current award/outcome</th>
-          <td class="govuk-table__cell">
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
               classes: "govuk-tag--green"
             })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
           </td>
         </tr>
 
@@ -261,10 +300,10 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
+        <!--<tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
           <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
-        </tr>
+        </tr>-->
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
@@ -305,10 +344,10 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
+        <!--<tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Date of application</td>
           <td class="govuk-table__cell govuk-!-width-one-half">1 January 2026</td>
-        </tr>
+        </tr>-->
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header govuk-!-width-one-half">Case status</td>

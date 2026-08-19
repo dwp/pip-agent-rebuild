@@ -1,0 +1,42 @@
+{{ govukSummaryList({
+  card: {
+    title: {
+      html: "Sam Elliott"
+    },
+    actions: {
+      items: [
+        {
+          href: "r-appointees-cya",
+          text: "View or change details",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Relationship to the applicant"
+      },
+      value: {
+        html: "Charity helper"
+      }
+    },
+    {
+      key: {
+        text: "Telephone"
+      },
+      value: {
+        html: "0796 009 4452"
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: 'PO BOX <br>Newcastle upon Tyne <br>NE1 4ST'
+      }
+    }
+  ]
+}) }}

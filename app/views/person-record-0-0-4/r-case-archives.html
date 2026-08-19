@@ -7,11 +7,52 @@
                 <th scope="col" class="govuk-table__header">Number of decisions</th>
                 <th scope="col" class="govuk-table__header">Application date</th>
                 <th scope="col" class="govuk-table__header">End date / last event</th>
-                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Status or Outcome</th>
               </tr>
             </thead>
 
             <tbody class="govuk-table__body">
+
+              {% if data["case-scenario-selector"]  == "0f" %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-l3-0f-overview-application" target="">View</a></td>
+                <td class="govuk-table__cell">1</td>
+                <td class="govuk-table__cell">12 Dec 2025</td>
+                <td class="govuk-table__cell">Today</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "Nil award",
+                    classes: "govuk-tag--red"
+                  })}}
+
+                </td>
+              </tr>
+
+              {% else %}
+              {% endif %}
+
+              {% if data["case-scenario-selector"]  == "0g" %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="" href="r-case-l3-0f-overview-application" target="">View</a></td>
+                <td class="govuk-table__cell">1</td>
+                <td class="govuk-table__cell">12 Dec 2025</td>
+                <td class="govuk-table__cell">Today</td>
+                <td class="govuk-table__cell">
+
+                  {{govukTag({
+                    text: "Disallowed",
+                    classes: "govuk-tag--red"
+                  })}}
+
+                </td>
+              </tr>
+
+              {% else %}
+              {% endif %}
+
 
               {% if data["case-scenario-selector"]  == "10a" %}
 

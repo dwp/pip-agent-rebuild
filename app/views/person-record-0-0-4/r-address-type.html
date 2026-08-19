@@ -54,6 +54,23 @@
         {{ govukSummaryList({
           rows: [
           {
+            key: {
+              text: "Address type"
+            },
+            value: {
+              html: "Address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-address-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
               key: {
                 text: "Address"
               },
@@ -149,6 +166,23 @@
 
         {{ govukSummaryList({
           rows: [
+          {
+            key: {
+              text: "Address type"
+            },
+            value: {
+              html: "Address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-address-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
           {
               key: {
                 text: "Address"
