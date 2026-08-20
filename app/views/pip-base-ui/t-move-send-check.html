@@ -1,0 +1,57 @@
+{% extends "layouts/main-agent.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block content %}
+
+<form action="t-move-send-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "pip-base-ui/t-record-id.html" %}
+
+      {{ govukRadios({
+        idPrefix: "t-move-send-check",
+        name: "t-move-send-check",
+        fieldset: {
+          legend: {
+            html: "What do you want to do now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "1",
+          text: "Put application on hold",
+          checked: (data["t-move-send-check"] == "1")
+        },
+        {
+          value: "2",
+          text: "Move application to PIPCS",
+          checked: (data["t-move-send-check"] == "2")
+        }
+        ]
+      }) }}
+
+      <!--checked: (data["move-send-check"] == "Disallow")-->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

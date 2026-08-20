@@ -2327,7 +2327,7 @@ router.post(`/r-case-l3-1b-overview-award-review-controls-router`, (req, res) =>
 
 
 
-router.post(`t-move-send-check-router`, (req, res) => {
+router.post(`/t-move-send-check-router`, (req, res) => {
   const templateMove = req.session.data['t-move-send-check']
 
   if (templateMove == '1') {
@@ -2341,20 +2341,6 @@ router.post(`t-move-send-check-router`, (req, res) => {
   }
 })
 
-
-router.post(`t-move-send-check-reason-router`, (req, res) => {
-  const templateMoveReason = req.session.data['t-move-send-check-reason']
-
-  if (templateMoveReason == '1') {
-    res.redirect(`t-pr-base`)
-  }
-  else if (templateMoveReason == '2') {
-    res.redirect(`t-pr-base`)
-  }
-  else {
-    res.redirect(`XXX`)
-  }
-})
 
 
 

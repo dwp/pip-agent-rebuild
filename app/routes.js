@@ -39,6 +39,8 @@ router.use('/person-record-0-0-2', require('./routes/person-record-0-0-2/router.
 router.use('/person-record-0-0-3', require('./routes/person-record-0-0-3/router.js'));
 router.use('/person-record-0-0-4', require('./routes/person-record-0-0-4/router.js'));
 
+router.use('/pip-base-ui', require('./routes/pip-base-ui/router.js'));
+
 router.use('/documents-0-1', require('./routes/documents-0-1/router.js'));
 
 
