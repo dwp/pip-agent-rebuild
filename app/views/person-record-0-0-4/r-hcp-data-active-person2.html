@@ -1,0 +1,42 @@
+{{ govukSummaryList({
+  card: {
+    title: {
+      html: "Sam Elliott"
+    },
+    actions: {
+      items: [
+        {
+          href: "r-hcp-cya",
+          text: "View or change details",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Relationship to the applicant"
+      },
+      value: {
+        html: "Physiotherapist"
+      }
+    },
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Sam Ellot"
+      }
+    },
+    {
+      key: {
+        text: "Telephone"
+      },
+      value: {
+        html: "0796 009 4452"
+      }
+    }
+  ]
+}) }}

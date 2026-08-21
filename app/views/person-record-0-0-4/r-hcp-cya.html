@@ -1,0 +1,156 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "r-overview"
+    },
+    {
+      text: "Health Care Professionals",
+      href: "r-hcp"
+    }
+  ]
+}) }}
+
+  <form action="r-temp-accom" method="post" class="form">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            Health Care Professionals <br>Sam Elliot
+          </h2>
+
+
+{% set appointeesType %}        Doctor / General Practitioner (DO)    {% endset %}
+{% set appointeesName %}        Mr Steven Strange   {% endset %}
+{% set appointeesAddress %}     PO BOX <br>Newcastle upon Tyne<br>NE1 4ST    {% endset %}
+{% set appointeesTelephone %}   0796 009 4452    {% endset %}
+{% set appointeesLPACode %}   V-ABC123XYZ789P    {% endset %}
+{% set appointeesStarted %}     DD Month YYYY    {% endset %}
+{% set appointeesEnded %}         {% endset %}
+
+
+
+{% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-year"]}}   {% endset %}
+
+{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}     {% endset %}
+{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}     {% endset %}
+
+
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: "Relationship to the applicant"
+                },
+                value: {
+                  html: appointeesType
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  html: appointeesName
+                },
+                actions: {
+                  items: [
+                    {
+                    href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Address"
+                },
+                value: {
+                  html: appointeesAddress
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "[Type] telephone"
+                },
+                value: {
+                  html: appointeesTelephone
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Started"
+                },
+                value: {
+                  html: appointeesStarted
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+
+              }
+            ]
+          }) }}
+
+
+<h3 class="govuk-body govuk-!-margin-bottom-6"><a class="govuk-link" href="r-hcp-remove">End consent<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a></h3>
+
+
+</form>
+
+
+
+    {% endblock %}

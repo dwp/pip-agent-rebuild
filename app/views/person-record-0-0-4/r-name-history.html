@@ -1,0 +1,142 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-overview" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Names</h3>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "First name"
+              },
+              value: {
+                html: "Jeff"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Last name"
+              },
+              value: {
+                html: 'Bridges'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+       <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous names</h3>
+
+
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+              </tr>
+
+            </thead>
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__header border-bottom-end-clear">Second name</td>
+                  <td class="govuk-table__cell">Date</td>
+                  <td class="govuk-table__cell">10 November 2024</td> </tr>
+
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__cell border-bottom-end-clear"></td>
+                  <td class="govuk-table__cell">Change from</td>
+                  <td class="govuk-table__cell">Leon</td>
+                </tr>
+
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__cell border-bottom-end-clear"></td>
+                  <td class="govuk-table__cell">Change to</td>
+                  <td class="govuk-table__cell">Bridges</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell "></td>
+                  <td class="govuk-table__cell">Reason</td>
+                  <td class="govuk-table__cell">Married</td>
+                </tr>
+
+              </tbody>
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__header border-bottom-end-clear">First name</td>
+                  <td class="govuk-table__cell">Date</td>
+                  <td class="govuk-table__cell">12 March 2000</td> </tr>
+
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__cell border-bottom-end-clear"></td>
+                  <td class="govuk-table__cell">Change from</td>
+                  <td class="govuk-table__cell">Jeffrey</td>
+                </tr>
+
+                <tr class="govuk-table__row border-bottom-end-clear">
+                  <td class="govuk-table__cell border-bottom-end-clear"></td>
+                  <td class="govuk-table__cell">Change to</td>
+                  <td class="govuk-table__cell">Jeff</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell "></td>
+                  <td class="govuk-table__cell">Reason</td>
+                  <td class="govuk-table__cell">Typo</td>
+                </tr>
+
+              </tbody>
+
+          </table>
+
+          {% include "person-record-0-0-4/r-name-scenarios.html" %}
+
+  </div>
+
+    </form>
+{% endblock %}

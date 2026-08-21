@@ -1,0 +1,125 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-hcp-add-details" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Health Care Professionals",
+          href: "r-hcp"
+        },
+        {
+          text: "Adding a Health Care Professionals",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukRadios({
+        idPrefix: "r-hcp-add",
+        name: "r-hcp-add",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Which type of Health Care Professionals do you need to add?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "Select all that apply."
+        },
+        items: [
+          {
+            value: "1",
+            text: "Doctor / General Practitioner (DO)",
+            checked: (data["r-hcp-add"] == "1")
+          },
+          {
+            value: "2",
+            text: "Hospital Doctor",
+            checked: (data["r-hcp-add"] == "2")
+          },
+          {
+            value: "3",
+            text: "Specialist nurse",
+            checked: (data["r-hcp-add"] == "3")
+          },
+          {
+            value: "4",
+            text: "Community psychiatric nurse",
+            checked: (data["r-hcp-add"] == "4")
+          },
+          {
+            value: "5",
+            text: "Occupational therapist",
+            checked: (data["r-hcp-add"] == "5")
+          },
+          {
+            value: "6",
+            text: "Physiotherapist",
+            checked: (data["r-hcp-add"] == "6")
+          },
+          {
+            value: "7",
+            text: "Social worker",
+            checked: (data["r-hcp-add"] == "7")
+          },
+          {
+            value: "8",
+            text: "counsellor",
+            checked: (data["r-hcp-add"] == "8")
+          },
+          {
+            value: "9",
+            text: "Support worker",
+            checked: (data["r-hcp-add"] == "9")
+          },
+          {
+            value: "10",
+            text: "Other",
+            checked: (data["r-hcp-add"] == "10")
+          }
+        ]
+      }) }}
+
+
+      <!--GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.-->
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-hcp#r-hcp-added-banner" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Health Care Professionals",
+        href: "r-hcp"
+      },
+      {
+        text: "Adding a Health Care Professionals",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find an address</h1>
+
+  {{ govukInput({
+    label: {
+      html: "Postcode"
+    },
+      hint: {
+        text: "For example, AA3 1AB."
+      },
+    id: "r-address-add",
+    name: "r-address-add",
+    classes: "govuk-input--width-10",
+    value: data["r-address-add"]
+    }) }}
+
+    {{ govukInput({
+      label: {
+        html: "Building number or name"
+      },
+        hint: {
+          text: "For example, 15 or Prospect Cottage."
+        },
+      id: "r-address-add",
+      name: "r-address-add",
+      classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+      value: data["r-address-add"]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

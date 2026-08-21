@@ -33,20 +33,18 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      {% set LegendH1 %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find an address</h1>
-      {% endset -%}
 
       {{ govukInput({
         label: {
-          html: LegendH1
+          html: "Postcode"
         },
           hint: {
             text: "For example, AA3 1AB."
           },
         id: "r-address-add",
         name: "r-address-add",
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        classes: "govuk-input--width-10",
         value: data["r-address-add"]
         }) }}
 
@@ -59,7 +57,7 @@
             },
           id: "r-address-add",
           name: "r-address-add",
-          classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
           value: data["r-address-add"]
           }) }}
 

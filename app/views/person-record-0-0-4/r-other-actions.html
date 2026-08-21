@@ -50,7 +50,7 @@
                 value: "move-to-PIPCS",
                 text: "Identify need to move to PIPCS / PIPcs rebuild identified",
                       hint: {
-                        text: "This will create a 'Move to PIPCS' task"
+                        text: "This will create a 'Move to PIPCS' task and disable functions"
                       },
                 checked: (data["r-other-actions"] == "move-to-PIPCS")
               },
@@ -61,14 +61,6 @@
                         text: "This will close the 'Move to PIPcs Task'"
                       },
                 checked: (data["r-other-actions"] == "completed-move-to-PIPCS")
-              },
-              {
-                value: "cancel-move-to-PIPCS",
-                text: "Cancel move to PIPCS (Is this a thing?)",
-                      hint: {
-                        text: ""
-                      },
-                checked: (data["r-other-actions"] == "#")
               },
               {
                 value: "death",

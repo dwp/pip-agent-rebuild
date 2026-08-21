@@ -1,0 +1,143 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-hcp-add-address" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Health Care Professionals",
+          href: "r-hcp"
+        },
+        {
+          text: "Adding a Health Care Professionals",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Details for your {{[data["r-hcp-add"]]}}</h1>
+
+
+      {{ govukInput({
+        label: {
+          html: "Name"
+        },
+          hint: {
+            text: ""
+          },
+        id: "r-hcp-add-name",
+        name: "r-hcp-add-name",
+        classes: "govuk-input--width-20",
+        value: data["r-hcp-add-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: "Telephone number"
+          },
+            hint: {
+              text: "Phone number, including dialling code"
+            },
+          id: "r-hcp-add-telephone",
+          name: "r-hcp-add-telephone",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+          value: data["r-hcp-add-telephone"]
+          }) }}
+
+          {{ govukRadios({
+            idPrefix: "r-hcp-consent",
+            name: "r-hcp-consent",
+            classes: "govuk-checkboxes",
+            fieldset: {
+              legend: {
+                text: "When did you last speak to them?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: "Still okay for consent"
+            },
+            items: [
+              {
+                value: "1",
+                text: "Yes",
+                checked: (data["r-hcp-add"] == "1")
+              },
+              {
+                value: "2",
+                text: "No",
+                checked: (data["r-hcp-add"] == "2")
+              }
+            ]
+          }) }}
+
+      {{ govukRadios({
+        idPrefix: "r-hcp-add",
+        name: "r-hcp-add",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "When did you last speak to them?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: "This can be approximate – for example, March 2021 or 18 months ago."
+        },
+        items: [
+          {
+            value: "1",
+            text: "This week",
+            checked: (data["r-hcp-add"] == "1")
+          },
+          {
+            value: "2",
+            text: "Last week",
+            checked: (data["r-hcp-add"] == "2")
+          },
+          {
+            value: "3",
+            text: "Other",
+            checked: (data["r-hcp-add"] == "3")
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
