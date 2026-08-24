@@ -41,6 +41,9 @@ router.use('/person-record-0-0-4', require('./routes/person-record-0-0-4/router.
 
 router.use('/pip-base-ui', require('./routes/pip-base-ui/router.js'));
 
+router.use('/citizen-record-0-0-1', require('./routes/citizen-record-0-0-1/router.js'));
+
+
 router.use('/documents-0-1', require('./routes/documents-0-1/router.js'));
 
 

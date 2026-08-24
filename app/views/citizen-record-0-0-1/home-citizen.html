@@ -1,0 +1,61 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Your application is being processed</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="#" target="">Review what you sent us</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Things you need todo next</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Nothing yet</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2"><a class="" href="find-someone-return-multi" target="">Tell us about a change</a></h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Changes such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Your ability to live indipendltiy has changed</li>
+        <li>You have documents to send us</li>
+        <li>You have moved</li>
+        <li>You have new contact details</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2"><a class="" href="find-someone-return-multi" target="">View your previous decisions</a></h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Actions such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Get help with understanding a decision</li>
+        <li>See what you submitted at the time</li>
+        <li>Register a manditory reconcideration</li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

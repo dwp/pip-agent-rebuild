@@ -1,0 +1,66 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-del-auth.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are a registered Power of Attorney for Sam Elliot</h1>
+
+      {{ govukRadios({
+        idPrefix: "find-someone-1-offline-return",
+        name: "find-someone-1-offline-return",
+        fieldset: {
+          legend: {
+            html: "What record do you want to access?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yours",
+          checked: (data["find-someone-1-offline-return"] == "Yes")
+        },
+        {
+          value: "YesLinked",
+          text: "Sam Elliot",
+          checked: (data["find-someone-1-offline-return"] == "YesLinked")
+        }
+        ]
+      }) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

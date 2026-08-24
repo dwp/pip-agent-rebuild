@@ -1,0 +1,77 @@
+{% extends "layouts/main-agent-process-mr.html" %}
+
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+<form action="system-citizen-record-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-citizen-record-selector",
+  name: "system-citizen-record-selector",
+  fieldset: {
+    legend: {
+      text: "Select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "1",
+    text: "Citzen",
+    checked: (data["system-citizen-record-selector"] == "1")
+  },
+  {
+    value: "2",
+    text: "Del Auth: POA",
+    checked: (data["system-citizen-record-selector"] == "2")
+  },
+  {
+    value: "3",
+    text: "Del Auth: DWP appointee",
+    checked: (data["system-citizen-record-selector"] == "3")
+  },
+  {
+    value: "4",
+    text: "Organisation",
+    checked: (data["system-citizen-record-selector"] == "4")
+  },
+  {
+      value: "5",
+      text: "XXX",
+      checked: (data["system-citizen-record-selector"] == "5")
+    }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

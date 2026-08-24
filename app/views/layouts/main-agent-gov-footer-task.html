@@ -1,0 +1,75 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{% block header %}
+
+
+{{
+        dwpHeader({
+            serviceName: "Personal Independence Payment",
+            serviceHref: "../index",
+            action: "My Home page",
+            actionHref: "./entry-home",
+            container: true
+        })
+}}
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+  <p class="govuk-!-margin-bottom-6"><a class="ovuk-body govuk-body-s" href="/another-decision-0-0-8/dwp-task-allocated-overview">(Bail controls) Can not process this application</a></p>
+</div>
+</div>
+
+<div class="govuk-grid-row agent-feedback">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+        <h6 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-1">Help us improve this service.</h6>
+        <p class="govuk-body govuk-!-margin-bottom-6">Tell us about your experience using this service.
+        <a class="" href="https://forms.office.com/pages/responsepage.aspx?id=6fbxllcQF0GsKIDN_ob4w2PgrD0CVpdNsFLlJiLTLRlUREhTSlhKQVBLQjczTjZBWk0yMjFRUEdYQSQlQCN0PWcu&route=shorturl" target="_blank">Give us your feedback</a>
+        </p>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<footer class="dwp-footer dwp-footer-override">
+  <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden">About this website</h2>
+    <ul class="dwp-footer__inline-list">
+      <li class="dwp-footer__inline-list-item">
+        <a class="dwp-footer__link" href="">Accessibility statement</a>
+      </li>
+      <li class="dwp-footer__inline-list-item">
+        <a class="dwp-footer__link" href="">Privacy</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/explore-header.js"></script>
+{% endblock %}

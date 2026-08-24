@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form action="t-dwa-set-task-reminder-date" method="post" class="form">
+<form action="/another-decision-0-0-8/dwp-task-allocated-overview" method="post" class="form">
 
   {% include "pip-base-ui/t-record-id-base.html" %}
 
@@ -17,11 +17,11 @@
       classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
       items: [
         {
-          text: "Area",
+          text: "Task list",
           href: "t-dec-task-list"
         },
         {
-          text: "Putting a task hold",
+          text: "DMF",
           href: ""
         }
       ]
@@ -56,44 +56,44 @@
         name: "t-move-send-check-reason",
         fieldset: {
           legend: {
-            text: "What is the on-hold reason? " ,
+            text: "What do you want todo now?" ,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: ""
+          text: "This will put this applciaiton on hold"
         },
         classes: "govuk-radios",
         items: [
         {
           value: "Yes",
-          text: "Standard reason 1",
+          text: "Contact the applicant",
           checked: (data["t-move-send-check-reason"] == "1")
         },
         {
           value: "Yes",
-          text: "Standard reason 2",
+          text: "Get support from a service assurance manager (SAM)",
           checked: (data["t-move-send-check-reason"] == "2")
         },
         {
           value: "Yes",
-          text: "Standard reason 3",
+          text: "Get support from another DWP agent",
           checked: (data["t-move-send-check-reason"] == "3")
         },
         {
           value: "Yes",
-          text: "Standard reason 4",
+          text: "Get advice from a healthcare professional (HCP)",
           checked: (data["t-move-send-check-reason"] == "4")
         },
         {
           value: "Yes",
-          text: "Standard reason 5",
+          text: "Have a collaboration all with a HCP",
           checked: (data["t-move-send-check-reason"] == "5")
         },
         {
           value: "No",
-          text: "Other",
+          text: "Refer the application for an assessment",
           checked: (data["doc-5-name"] == "No"),
                 conditional: {
                   html: OtherOverwite

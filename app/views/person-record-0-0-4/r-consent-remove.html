@@ -1,0 +1,71 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "payability-tasklist"
+    },
+    {
+      text: "Consent",
+      href: "r-consent"
+    }
+  ]
+}) }}
+
+  <form action="r-consent-history" method="post" class="form">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        idPrefix: "r-consent-remove",
+        name: "r-consent-remove",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Are you sure you want to remove consent for the NHS data share?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["r-consent-remove"] == "Yes")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-consent-remove"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+  </form>
+
+{% endblock %}

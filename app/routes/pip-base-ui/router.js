@@ -2334,7 +2334,7 @@ router.post(`/t-move-send-check-router`, (req, res) => {
     res.redirect(`t-move-send-check-reason`)
   }
   else if (templateMove == '2') {
-    res.redirect(`t-pr-base`)
+    res.redirect(`/person-record-0-0-4/r-o-a-move-reasons`)
   }
   else {
     res.redirect(`XXX`)

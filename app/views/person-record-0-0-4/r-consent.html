@@ -27,7 +27,7 @@
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Consent</h3>
 
 
-    {% if data["r-consent-add"] %}
+    {% if data["r-consent-add"]%}
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-consent-add" target="">Add another consent type </a></p>
 
     {{ govukSummaryList({
@@ -42,24 +42,7 @@
           actions: {
             items: [
               {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "contact details"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Care home database"
-          },
-          value: {
-            html: 'Active'
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
+                href: "r-consent-remove",
                 text: "Change",
                 visuallyHiddenText: "contact details"
               }

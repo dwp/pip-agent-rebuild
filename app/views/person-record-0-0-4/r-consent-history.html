@@ -28,44 +28,6 @@
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-consent-add" target="">Add another consent type </a></p>
 
 
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "NHS data share"
-          },
-          value: {
-            html: "Active"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "contact details"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Care home database"
-          },
-          value: {
-            html: 'Active'
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "contact details"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
 
         {% include "person-record-0-0-4/r-consent-data-history.html" %}
         {% include "person-record-0-0-4/r-consent-scenarios.html" %}
