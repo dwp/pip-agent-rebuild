@@ -1,0 +1,66 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="home-del-auth-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-del-auth.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are a registered Power of Attorney for Jeff Bridges</h1>
+
+      {{ govukRadios({
+        idPrefix: "home-del-auth-check",
+        name: "home-del-auth-check",
+        fieldset: {
+          legend: {
+            html: "What record do you want to access?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "DelAuth",
+          text: "Yours",
+          checked: (data["home-del-auth-check"] == "DelAuth")
+        },
+        {
+          value: "Citizen",
+          text: "Jeff Bridges",
+          checked: (data["home-del-auth-check"] == "Citizen")
+        }
+        ]
+      }) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

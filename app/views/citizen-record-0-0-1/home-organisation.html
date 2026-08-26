@@ -11,7 +11,7 @@
 /* #accordion-default-heading-1 > span {display: none} */
 </style>
 
-<form action="XXX" method="post" class="form">
+<form action="#" method="post" class="form">
 
 
 
@@ -30,7 +30,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">People who you look after</h1>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Things you need todo next</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Things you organisation needs todo next</h1>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Nothing yet</p>
 
 <!---->      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -41,7 +41,7 @@
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Filter by event type
+          Filter
         </span>
       </h2>
     </div>
@@ -51,8 +51,8 @@
         <div class="govuk-grid-column-one-half">
 
           {{ govukCheckboxes({
-          idPrefix: "record-1-event-history-filter",
-          name: "record-1-event-history-filter",
+          idPrefix: "home-organisation-filter",
+          name: "home-organisation-filter",
           classes: "govuk-checkboxes--small",
           fieldset: {
           legend: {
@@ -63,34 +63,34 @@
           },
           items: [
           {
+          value: "All",
+          text: "All",
+          checked: (data["home-organisation-filter"] == "All")
+          },
+          {
           value: "1",
           text: "Action needed",
-          checked: (data["record-1-event-history-filter"] == "1")
+          checked: (data["home-organisation-filter"] == "1")
           },
           {
           value: "2",
           text: "Not started",
-          checked: (data["record-1-event-history-filter"] == "2")
+          checked: (data["home-organisation-filter"] == "2")
           },
           {
           value: "3",
           text: "Being processed",
-          checked: (data["record-1-event-history-filter"] == "3")
+          checked: (data["home-organisation-filter"] == "3")
           },
           {
           value: "4",
           text: "In Payment",
-          checked: (data["record-1-event-history-filter"] == "4")
-          },
-          {
-          value: "4",
-          text: "Closed",
-          checked: (data["record-1-event-history-filter"] == "4")
+          checked: (data["home-organisation-filter"] == "4")
           },
           {
           value: "5",
-          text: "FTA",
-          checked: (data["record-1-event-history-filter"] == "4")
+          text: "Closed",
+          checked: (data["home-organisation-filter"] == "5")
           }
           ]
           }) }}
@@ -110,203 +110,18 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
 
+
+
       </div>
 
     </div>
   </div>
 </div>
 
+{% include "citizen-record-0-0-1/data-organisation-list.html" %}
 
 
 
-
-
-      <!---->
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Action needed</h1>
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">National insurance number</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action needed</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Vincent Vega</a></td>
-            <td class="govuk-table__cell">NA 11 22 33 c</td>
-            <td class="govuk-table__cell">Change of cicumstances information request</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "In payment",
-                classes: "govuk-tag--green"
-              })}}
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Jules Winnfield</a></td>
-            <td class="govuk-table__cell">No contact</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "Closed",
-                classes: "govuk-tag--red"
-              })}}
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Mia Wallace</a></td>
-            <td class="govuk-table__cell">Failed to attend timeout</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "Disallowed",
-                classes: "govuk-tag--yellow"
-              })}}
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <h1 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-2">Not yet started</h1>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action needed</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Butch Coolidge</a></td>
-            <td class="govuk-table__cell">£109.80 per week</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "Not started",
-                classes: "govuk-tag--yellow"
-              })}}
-
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      <h1 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-2">In progress</h1>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action needed</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Winston Wolfe</a></td>
-            <td class="govuk-table__cell">None</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "In progress",
-                classes: "govuk-tag--blue"
-              })}}
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h1 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-2">In payment</h1>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action needed</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Lance Jody</a></td>
-            <td class="govuk-table__cell">None</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "In payment",
-                classes: "govuk-tag--green"
-              })}}
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Marvin Brett</a></td>
-            <td class="govuk-table__cell">None</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "In payment",
-                classes: "govuk-tag--green"
-              })}}
-
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      <h1 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-2">Closed</h1>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action needed</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Jimmie Dimmick</a></td>
-            <td class="govuk-table__cell">None</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "Closed",
-                classes: "govuk-tag--red"
-              })}}
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="" href="#" target="">Maynard Trudi</a></td>
-            <td class="govuk-table__cell">None</td>
-            <td class="govuk-table__cell">
-
-              {{govukTag({
-                text: "Closed",
-                classes: "govuk-tag--red"
-              })}}
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
     </div>
   </div>

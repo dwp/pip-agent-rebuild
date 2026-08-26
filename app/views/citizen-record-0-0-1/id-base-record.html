@@ -5,16 +5,16 @@
       <section class="dwp-quick-reference govuk-!-margin-bottom-8" aria-label="Case information">
       <dl class="dwp-quick-reference__block">
       <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
-    {% if data["search"] %}
-      <dd class="dwp-quick-reference__primary">{{ data ["search"]}}</dd>
-    {% elif data["application-selector"] == "4" %}
-      <dd class="dwp-quick-reference__primary">Sam Elliot</dd>
+    {% if data["home-del-auth-check"] == "DelAuth" %}
+      <dd class="dwp-quick-reference__primary">Thomas Crown</dd>
+      <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary govuk-visually-hidden">National Insurance number:</dt>
+      <dd class="dwp-quick-reference__secondary">NA 00 44 55 A</dd>
     {% else %}
       <dd class="dwp-quick-reference__primary">Jeff Bridges</dd>
-    {% endif %}
-
       <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary govuk-visually-hidden">National Insurance number:</dt>
       <dd class="dwp-quick-reference__secondary">NA 11 22 33 C</dd>
+    {% endif %}
+
       </dl>
       </section>
 
