@@ -33,9 +33,25 @@ router.post(`/system-citizen-record-selector-router`, (req, res) => {
     res.redirect(`home-organisation`)
   }
   else {
+    res.redirect(`home-del-auth-check`)
+  }
+})
+
+router.post(`/home-del-auth-check-router`, (req, res) => {
+  const delAuthCheck = req.session.data['home-del-auth-check']
+
+  if (delAuthCheck == 'DelAuth') {
+    res.redirect(`home-del-auth`)
+  }
+  else if (delAuthCheck == 'Citizen') {
+    res.redirect(`home-citizen`)
+  }
+  else {
     res.redirect(`home-del-auth`)
   }
 })
+
+
 
 
 

@@ -82,23 +82,8 @@
               classes: "govuk-radios",
               items: [
               {
-                value: "Yes",
-                text: "Yes (Local / advanced)",
-                checked: (data["find-someone-1-offline-return"] == "Yes")
-              },
-              {
-                value: "YesLinked",
-                text: "Yes (Linked CMR)",
-                checked: (data["find-someone-1-offline-return"] == "YesLinked")
-              },
-              {
-                value: "YesFlags",
-                text: "Yes (Add flag via task)",
-                checked: (data["find-someone-1-offline-return"] == "YesFlags")
-              },
-              {
                 value: "CaseScenarios",
-                text: "Case Scenarios",
+                text: "Yes (Case Scenarios)",
                 checked: (data["find-someone-1-offline-return"] == "CaseScenarios")
               },
               {
@@ -124,3 +109,20 @@
   <p class="govuk-body-s"><a class="" href="find-someone-return-not-found" target="">Not found</a>
 
 {% endblock %}
+
+
+<!--{
+  value: "Yes",
+  text: "Yes (Local / advanced)",
+  checked: (data["find-someone-1-offline-return"] == "Yes")
+},
+{
+  value: "YesLinked",
+  text: "Yes (Linked CMR)",
+  checked: (data["find-someone-1-offline-return"] == "YesLinked")
+},
+{
+  value: "YesFlags",
+  text: "Yes (Add flag via task)",
+  checked: (data["find-someone-1-offline-return"] == "YesFlags")
+},-->
