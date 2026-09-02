@@ -1,0 +1,18 @@
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Tell us about a change</h1>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You must contact us if there is a change to your circumstances<br>while you are getting PIP. This includes changes to:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>your daily living or mobility needs</li>
+    <li>your ability to live independently</li>
+    <li>your address</li>
+    <li>your contact details</li>
+  </ul>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can also tell us about supporting evidence you want to send us</p>
+
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-changes-01" target="">Tell us about a change</a></p>
+
+{% if data["case-changes-01"] == "Yes" %}
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-changes-submitted" target="">Changes you have told us about</a></p>
+{% else %}
+{% endif %}

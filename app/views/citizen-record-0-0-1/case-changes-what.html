@@ -1,0 +1,74 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-docs" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Tell us more about the change</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Changes such as:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>XXX</li>
+        <li>XXX</li>
+        <li>XXX</li>
+        <li>XXX</li>
+      </ul>
+
+
+
+      {{ govukTextarea({
+        name: "case-changes-what",
+        id: "case-changes-what",
+        classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+        label: {
+          text: "Details of change",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: legendCanned
+        },
+        value: data["case-changes-what"]
+      }) }}
+
+
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

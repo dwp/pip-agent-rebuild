@@ -1,0 +1,26 @@
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You have told us about a change to your circumstances and your supporting evidence has been received. We will review the change and make a decision on whether it affects your PIP. You might not need to start a new application. </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "ch-uploaded-doc-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You have asked us to check if you can extend you PIP. We will do a bunch of stuff</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "ch-advanced-application-submission-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}

@@ -1,0 +1,144 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="XXX" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-nil-mr"
+      },
+      {
+        text: "All applications and decisions",
+        href: "case-applications-decisions-overview-1f"
+      }
+    ]
+  }) }}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4 caseID">Case summary</h1> <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8 caseID"></h3>
+      <br><br>
+      <h3 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">1 January 2026 – Today</h3>
+
+      {% set Child1 %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p>.</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Date of decision</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Submission type</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>Outcome</p>
+        </div>
+      </div>
+
+      {% endset -%}
+
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+
+      <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Mandatory reconsideration<br>decision</p>
+
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+
+                    <table class="govuk-table">
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-width-one-half">Submission date</td>
+                          <td class="govuk-table__cell govuk-!-width-one-half">Two weeks ago</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">Status</td>
+                          <td class="govuk-table__cell">
+                            {{govukTag({
+                              text: "Being processed",
+                              classes: "govuk-tag--blue"
+                            })}}
+                          </td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell border-bottom-end-clear">
+                            <a class="" href="case-l3-1f-overview-man-recon" target="">View details about this decision</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+              </div>
+            </div>
+
+            <hr class="govuk-section-break case-stroke govuk-section-break--visible">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2">Original decision</p>
+
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+
+                    <table class="govuk-table">
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-width-one-half">Date of application</td>
+                          <td class="govuk-table__cell govuk-!-width-one-half">May 2026</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">Status</td>
+                          <td class="govuk-table__cell">
+                            {{govukTag({
+                              text: "Decision made",
+                              classes: "govuk-tag--red"
+                            })}}
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">Outcome</td>
+                          <td class="govuk-table__cell">
+                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: nil (0 points)</p>
+                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell border-bottom-end-clear">
+                            <a class="" href="case-l3-1f-overview-ori-app" target="">View details about this decision</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+              </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+            <br><br><br><br><br>
+
+  </form>
+{% endblock %}

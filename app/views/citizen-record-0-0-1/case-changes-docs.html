@@ -1,0 +1,92 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-docs-upload" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Sending us supporting evidence</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">It's important you provide evidence or information about how your health conditions or disabilities affect your daily life, if you can.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Providing evidence may mean:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>we can make a quicker decision on your claim</li>
+        <li>we can make an accurate decision and pay you the right amount</li>
+        <li>you may not need to attend an assessment with a health professional</li>
+      </ul>
+
+      {{ govukRadios({
+       idPrefix: "case-changes-01",
+       name: "case-changes-01",
+       fieldset: {
+         legend: {
+           html: "Do you have any supporting evidence you want to send us?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "Yes",
+         html: "Yes",
+         checked: (data["case-changes-01"] == "Yes")
+       },
+       {
+         value: "1",
+         html: "Yes, but I need to post them",
+         checked: (data["case-changes-01"] == "1")
+         },
+         {
+           divider: "or"
+         },
+         {
+         value: "1",
+         html: "No",
+         checked: (data["case-changes-01"] == "1")
+       }
+       ]
+     }) }}
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

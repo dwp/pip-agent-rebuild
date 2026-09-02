@@ -35,7 +35,7 @@
          name: "r-bank-details-view-encrypted",
          fieldset: {
            legend: {
-             html: "Why do you need to see these details?",
+             html: "Are you sure you want to see bank details?",
              isPageHeading: true,
              classes: "govuk-fieldset__legend--xl"
            }
@@ -47,12 +47,12 @@
          items: [
          {
            value: "1",
-           html: "Good reason",
+           html: "Yes",
            checked: (data["r-bank-details-view-encrypted"] == "1")
          },
          {
            value: "2",
-           html: "Other",
+           html: "No",
            checked: (data["r-bank-details-view-encrypted"] == "2")
            }
            ]

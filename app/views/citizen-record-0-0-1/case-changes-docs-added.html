@@ -1,0 +1,93 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+  {% if data["system-citizen-record-selector"] == "1d"  %}
+  <form action="home-citizen-ip#ch-uploaded-doc-banner" method="post" class="form">
+  {% elif data["system-citizen-record-selector"] == "1f"  %}
+  <form action="home-citizen-ip#ch-uploaded-doc-banner" method="post" class="form">
+  {% elif data["system-citizen-record-selector"] == "1i"  %}
+  <form action="home-citizen-ip-fixed#ch-uploaded-doc-banner" method="post" class="form">
+  {% else %}
+  <form action="home-citizen-ip#ch-uploaded-doc-banner" method="post" class="form">
+  {% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have uploaded 1 file</h1>
+
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">We can have lots of document types for exmaple:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>XXX</li>
+        <li>XXX</li>
+        <li>XXX</li>
+        <li>XXX</li>
+      </ul>-->
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "doctors_note.jpg (25kb)"
+            },
+            value: {
+              html: ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+     <div class="govuk-button-group">
+       {{ govukButton({
+         text: "Continue"
+       }) }}
+
+       {{ govukButton({
+         text: "Upload another file",
+         classes: "govuk-button--secondary"
+       }) }}
+     </div>
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

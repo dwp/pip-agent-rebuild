@@ -1,0 +1,18 @@
+
+  {% if data["system-citizen-record-selector"] == "1d"  %}
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-4"><a class="" href="case-applications-decisions-overview-01" target="">View all applications and decisions</a></h1>
+  {% elif data["system-citizen-record-selector"] == "1f"  %}
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-4"><a class="" href="case-summary-1f" target="">View all applications and decisions</a></h1>
+  {% elif data["system-citizen-record-selector"] == "1i"  %}
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-4"><a class="" href="case-summary-1i" target="">View all applications and decisions</a></h1>
+  {% else %}
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-4"><a class="" href="case-applications-decisions-overview-01" target="">View all applications and decisions</a></h1>
+  {% endif %}
+
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Here you can:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>see what you submitted</li>
+    <li>get help with understanding a decision</li>
+    <li>request a mandatory consideration</li>
+  </ul>

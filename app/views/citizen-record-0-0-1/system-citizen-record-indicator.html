@@ -1,0 +1,31 @@
+{% if data["system-citizen-record-selector"] == "1"  %}
+1 Citzen (All options)
+{% elif data["system-citizen-record-selector"] == "1a"  %}
+1a Citzen (Never applied)
+{% elif data["system-citizen-record-selector"] == "1b"  %}
+1b Citzen (Application part submission)
+{% elif data["system-citizen-record-selector"] == "1c"  %}
+1c Citzen (Being processed)
+{% elif data["system-citizen-record-selector"] == "1d"  %}
+1d Citzen (In payment)
+{% elif data["system-citizen-record-selector"] == "1e"  %}
+1e Citzen (Nil)
+{% elif data["system-citizen-record-selector"] == "1f"  %}
+1f Citzen (Nil + MR in submitted)
+{% elif data["system-citizen-record-selector"] == "1g"  %}
+1g Citzen (No active / with Previous)
+{% elif data["system-citizen-record-selector"] == "1h"  %}
+1h
+{% elif data["system-citizen-record-selector"] == "1i"  %}
+1i Citzen (Fixed term due to end)
+{% elif data["system-citizen-record-selector"] == "2"  %}
+2 Del Auth: POA (Thomas Crown)
+{% elif data["system-citizen-record-selector"] == "3"  %}
+3 Del Auth: POA (Empty)
+{% elif data["system-citizen-record-selector"] == "4"  %}
+4 Organisation
+{% elif data["system-citizen-record-selector"] == "5"  %}
+5
+{% else %}
+None
+{% endif %}

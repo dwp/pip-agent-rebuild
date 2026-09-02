@@ -13,32 +13,40 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "#"
+  homepageUrl: "/index"
 }) }}
 
 {{ govukServiceNavigation({
   serviceName: "Personal Independence Payment (PIP)",
-  serviceUrl: "#",
+  serviceUrl: "/index-archive-5",
   navigation: [
     {
-      href: "#",
+      href: "system-citizen-record-selector",
       text: "Home",
       active: true
     },
     {
       href: "system-citizen-record-selector",
-      text: "Switch"
+      text: "X"
     },
     {
-      href: "#",
+      href: "home-help-contact",
       text: "Help and contact"
     },
     {
       href: "/manage-prototype/clear-data",
       text: "Clear prototype"
+    },
+    {
+      href: "#",
+      text: "English | Cymraeg"
     }
+
   ]
 }) }}
+
+{% include "citizen-record-0-0-1/system-citizen-record-indicator.html" %}
+
 
 {% endblock %}
 

@@ -13,7 +13,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-
       {% include "citizen-record-0-0-1/id-base-record.html" %}
 
     </div>
@@ -26,14 +25,8 @@
 
       {% include "citizen-record-0-0-1/block-outcome-in-payment.html" %}
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-4"><a class="" href="find-someone-return-multi" target="">View your payments</a></h1>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your last payment was:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Daily living: £295.60</li>
-        <li>Mobility: £0.00</li>
-      </ul>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          {% include "citizen-record-0-0-1/block-payments.html" %}
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
         {% include "citizen-record-0-0-1/block-changes.html" %}
@@ -41,8 +34,8 @@
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
       {% include "citizen-record-0-0-1/block-previous-decisions.html" %}
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      {% include "citizen-record-0-0-1/block-contact.html" %}
+      <!--<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
+      <!--{% include "citizen-record-0-0-1/block-contact.html" %}-->
 
 
     </div>

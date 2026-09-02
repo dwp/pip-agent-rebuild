@@ -1,0 +1,85 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-advanced-application-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Advanced applicaiton"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Start your new PIP application</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your PIP will end on DD Month YYYY</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Applying in advance will mean that a new decision can be made earlier and reduce the chance of there being a delay to your payments.</p>
+
+
+      {{ govukRadios({
+       idPrefix: "case-advanced-application-overview",
+       name: "case-advanced-application-overview",
+       fieldset: {
+         legend: {
+           html: "Would you like to start a new PIP application?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "Yes",
+         html: "Yes",
+         checked: (data["case-advanced-application-overview"] == "Yes")
+       },
+       {
+         value: "No",
+         html: "No, I no longer need PIP",
+         checked: (data["case-advanced-application-overview"] == "No")
+       }
+       ]
+     }) }}
+
+
+
+
+
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="XXX" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Payments"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payments</h1>
+
+     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Scheduled</h3>
+
+       <table class="govuk-table govuk-!-margin-bottom-8">
+
+       <thead class="govuk-table__head">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell govuk-30-percent">Payment type</td>
+       <td class="govuk-table__cell govuk-25-percent">Period</td>
+       <td class="govuk-table__cell govuk-25-percent">Date due</td>
+           <td class="govuk-table__cell govuk-20-percent">Amount due</td>
+         </tr>
+         </thead>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell table-spacer">Regular</td>
+           <td class="govuk-table__cell table-spacer">X Month 2025 to <br>X Month 2025</td>
+           <td class="govuk-table__cell table-spacer">Today</td>
+           <td class="govuk-table__cell table-spacer">
+             <p class="govuk-body govuk-!-margin-bottom-3">£295.60</p>
+
+             <!-- <a class="" href="r-payment-reg-breakdown" target="">View payment breakdown</a> -->
+
+           </td>
+           </tr>
+
+
+ </table>
+
+ <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Paid</h3>
+
+
+     <table class="govuk-table">
+
+     <thead class="govuk-table__head">
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell govuk-30-percent">Payment type</td>
+     <td class="govuk-table__cell govuk-25-percent">Period</td>
+     <td class="govuk-table__cell govuk-25-percent">Date paid</td>
+         <td class="govuk-table__cell govuk-20-percent">Paid</td>
+       </tr>
+       </thead>
+
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Regular</a></td>
+           <td class="govuk-table__cell table-spacer">X Month 2025 to <br>X Month 2025</td>
+           <td class="govuk-table__cell table-spacer">2 Sept 2025</td>
+
+           <td class="govuk-table__cell table-spacer">
+             <p class="govuk-body govuk-!-margin-bottom-2">£295.60</p>
+           </td>
+           </tr>
+
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Regular</a></td>
+         <td class="govuk-table__cell table-spacer">X Month 2025 to <br>X Month 2025</td>
+         <td class="govuk-table__cell table-spacer">2 August 2025</td>
+
+         <td class="govuk-table__cell table-spacer">
+             <p class="govuk-body govuk-!-margin-bottom-2">£295.60</p>
+         </td>
+         </tr>
+
+           <tr class="govuk-table__row">
+             <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Regular</a></td>
+             <td class="govuk-table__cell table-spacer">X Month 2025 to <br>X Month 2025</td>
+             <td class="govuk-table__cell table-spacer">2 July 2025</td>
+
+             <td class="govuk-table__cell table-spacer">
+               <p class="govuk-body govuk-!-margin-bottom-2">£295.60</p>
+             </td>
+             </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Arrears</a></td>
+                 <td class="govuk-table__cell table-spacer">X Month 2025 to <br>X Month 2025</td>
+                 <td class="govuk-table__cell table-spacer">2 June 2025</td>
+
+
+                 <td class="govuk-table__cell table-spacer">
+                   <p class="govuk-body govuk-!-margin-bottom-3">£1,935.44</p>
+                 </td>
+                 </tr>
+
+
+
+
+     </table>
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

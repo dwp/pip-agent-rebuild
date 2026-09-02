@@ -1,0 +1,51 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+  {% include "citizen-record-0-0-1/ch-notifications.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You still have some things to do to<br>complete your PIP application</h1>
+
+      <ul class="govuk-list govuk-list--no-bullet govuk-!-margin-bottom-8">
+        <li><a class="" href="#" target="">Tell us how your health condition or disability affects you</a></li>
+        <li><a class="" href="#" target="">Confirm your identity</a></li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Review your application</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You can still:</p>
+      <ul class="govuk-list govuk-list--no-bullet">
+        <li><a class="" href="#" target="">Review what you have told us so far
+        <li><a class="" href="#" target="">See what supporting evidence you have sent us</a></li>
+        <li><a class="" href="case-changes-docs" target="">Send us more supporting evidence</a></li>
+      </ul>
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+  {% include "citizen-record-0-0-1/ch-notifications.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
+
+      {% include "citizen-record-0-0-1/block-outcome-nil.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You have requested a mandatory reconsideration</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This means that we will look at what you have told us again and make another decision.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">We will be in touch if we need anything more from you.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-l3-1f-overview-man-recon" target="">View what you have submitted as part of your mandatory reconsideration</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-changes-docs" target="">You can send us more documents to support your mandatory reconsideration</a></p>
+
+       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+       {% include "citizen-record-0-0-1/block-previous-decisions.html" %}
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

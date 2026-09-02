@@ -267,3 +267,16 @@ attributes: {
   html: flagContext,
   type: 'success'
 }) }}
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">Bank details are now visible. This has created an audit event</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-bank-details-view-encrypted-banner"
+},
+  html: flagContext,
+  type: 'information'
+}) }}

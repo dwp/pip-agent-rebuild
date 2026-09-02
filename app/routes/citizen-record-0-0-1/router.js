@@ -29,13 +29,42 @@ router.post(`/system-citizen-record-selector-router`, (req, res) => {
   if (systemCitizenRecordSelector == '1') {
     res.redirect(`home-citizen`)
   }
+  else if (systemCitizenRecordSelector == '1a') {
+    res.redirect(`home-citizen-na`)
+  }
+  else if (systemCitizenRecordSelector == '1b') {
+    res.redirect(`home-citizen-ns`)
+  }
+  else if (systemCitizenRecordSelector == '1c') {
+    res.redirect(`home-citizen-bp`)
+  }
+  else if (systemCitizenRecordSelector == '1d') {
+    res.redirect(`home-citizen-ip`)
+  }
+  else if (systemCitizenRecordSelector == '1e') {
+    res.redirect(`home-citizen-nil`)
+  }
+  else if (systemCitizenRecordSelector == '1f') {
+    res.redirect(`home-citizen-nil-mr`)
+  }
+  else if (systemCitizenRecordSelector == '1g') {
+    res.redirect(`home-citizen-naa`)
+  }
+  else if (systemCitizenRecordSelector == '1i') {
+    res.redirect(`home-citizen-ip-fixed`)
+  }
   else if (systemCitizenRecordSelector == '4') {
     res.redirect(`home-organisation`)
+  }
+  else if (systemCitizenRecordSelector == '3') {
+    res.redirect(`home-del-auth-empty`)
   }
   else {
     res.redirect(`home-del-auth-check`)
   }
 })
+
+
 
 router.post(`/home-del-auth-check-router`, (req, res) => {
   const delAuthCheck = req.session.data['home-del-auth-check']

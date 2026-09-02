@@ -1,0 +1,111 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-what" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Telling us about a change</h1>
+
+
+
+
+
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You must contact us if there is a change to your circumstances  while you are getting PIP. This includes changes to:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+        <li>your daily living or mobility needs</li>
+        <li>your ability to live independently</li>
+        <li>your address</li>
+        <li>your contact details</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can also tell us about additional documents you want to send us.</p>
+
+
+      {{ govukRadios({
+       idPrefix: "case-changes-01",
+       name: "case-changes-01",
+       fieldset: {
+         legend: {
+           html: "What would you like to tell us?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "1",
+         html: "My condition has improved",
+         checked: (data["case-changes-01"] == "1")
+       },
+       {
+         value: "1",
+         html: "My condition has got worse",
+         checked: (data["case-changes-01"] == "1")
+       },
+       {
+         value: "X",
+         html: "I have moved house",
+         checked: (data["case-changes-01"] == "X")
+       },
+       {
+         value: "X",
+         html: "I have moved into temporary accommodation",
+         checked: (data["case-changes-01"] == "X")
+       },
+       {
+         value: "1",
+         html: "My contact details have changed",
+         checked: (data["case-changes-01"] == "1")
+       }
+       ]
+     }) }}
+
+
+
+
+
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-docs-added" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Sending us supporting evidence</h1>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">What to upload</h1>
+
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">Do upload:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>care or treatment plans</li>
+        <li>information from your health or care professionals about your condition or disability and how it affects you</li>
+        <li>test results</li>
+        <li>a repeat prescription list</li>
+        <li>a statement or diary from a carer or family member about your condition or disability and how it affects you</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If a document is on paper you can take a photo of it or scan it. If a document is digital you can take a screenshot.</p>
+
+
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not upload:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>physical proof of your condition or disability. For example a photo of your prosthetic limb</li>
+        <li>appointment cards or letters</li>
+        <li>general information or fact sheets about your condition or medication</li>
+      </ul>
+
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "fileUpload1",
+        label: {
+          text: "Upload a file"
+        }
+      }) }}
+
+
+
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+  {% include "citizen-record-0-0-1/ch-notifications.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
+
+      {% include "citizen-record-0-0-1/block-outcome-in-payment.html" %}
+
+      {% if data["case-advanced-application-overview"] == "Yes" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Your PIP is a fixed term award is ending on DD Month YYYY</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have sent us some new information</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This means that we will look at what you have told us again and make another decision.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">We will be in touch if we need anything more from you.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-l3-1i-overview-advanced-app" target="">View what you have submitted</a></p>
+
+      {% else %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Your PIP will end on DD Month YYYY</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This means you will no longer get paid PIP from this date. </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">If you think you will still need help with your daily living or mobility needs<br>after this date, you can start a new application now.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-advanced-application-overview" target="">Start a new application</a></p>
+
+
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        {% include "citizen-record-0-0-1/block-changes.html" %}
+
+       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+       {% include "citizen-record-0-0-1/block-previous-decisions.html" %}
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}
