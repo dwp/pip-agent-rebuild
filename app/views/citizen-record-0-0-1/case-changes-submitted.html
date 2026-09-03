@@ -1,0 +1,93 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-what" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Change status"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Changes you have told us about</h1>
+
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>your daily living or mobility needs</li>
+        <li>your ability to live independently</li>
+        <li>your address</li>
+        <li>your contact details</li>
+      </ul>-->
+
+
+          <table class="govuk-table govuk-!-margin-bottom-8">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-30-percent">Date submitted</td>
+          <td class="govuk-table__cell govuk-25-percent">About</td>
+          <td class="govuk-table__cell govuk-25-percent">Status</td>
+              <td class="govuk-table__cell govuk-20-percent">Submission details</td>
+            </tr>
+            </thead>
+
+            {% if data["case-changes-01"] == "Yes" %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">Today</td>
+                <td class="govuk-table__cell table-spacer">My condition has got worse</td>
+                <td class="govuk-table__cell table-spacer">
+                  {{govukTag({
+                    text: "Not started",
+                    classes: "govuk-tag--yellow"
+                  })}}
+                </td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="case-changes-submitted-details-01" target="">View</a></td>
+                </tr>
+
+                {% else %}
+                {% endif %}
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer">Three weeks ago</td>
+                  <td class="govuk-table__cell table-spacer">My contact details have changed</td>
+                  <td class="govuk-table__cell table-spacer">
+                    {{govukTag({
+                      text: "Done",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
+                  <td class="govuk-table__cell table-spacer"><a class="" href="case-changes-submitted-details-01" target="">View</a></td>
+                  </tr>
+
+          </table>
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

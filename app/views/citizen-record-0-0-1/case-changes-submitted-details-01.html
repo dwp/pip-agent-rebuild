@@ -1,0 +1,99 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-what" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-1/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+      text: "Change status",
+      href: "case-changes-submitted"
+      },
+      {
+        text: "Change details"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Details of the change</h1>
+
+
+{% set changeDate %}        Today   {% endset %}
+{% set changeDetails %}
+
+{% if data["case-changes-what"] %}
+{{ data['case-changes-what']}}
+{% else %}
+  This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. <br><br>This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+{% endif %}
+{% endset %}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "Date submitted"
+            },
+            value: {
+              html: changeDate
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Details"
+            },
+            value: {
+              html: changeDetails
+            },
+            actions: {
+              items: [
+                {
+                href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+  </form>
+
+{% endblock %}
