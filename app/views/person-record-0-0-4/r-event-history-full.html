@@ -112,6 +112,8 @@
                 ]
                 }) }}
 
+                <br><br>
+
                 {{ govukButton({
                 text: "Apply",
                 classes: "govuk-button--secondary govuk-!-margin-bottom-4"
@@ -149,6 +151,11 @@
                 },
                 {
                 value: "7",
+                text: "Identity update",
+                checked: (data["record-1-event-history-filter"] == "4")
+                },
+                {
+                value: "7",
                 text: "Something else",
                 checked: (data["record-1-event-history-filter"] == "4")
                 },
@@ -156,9 +163,15 @@
                 value: "8",
                 text: "Manual entry",
                 checked: (data["record-1-event-history-filter"] == "4")
+                },
+                {
+                value: "9",
+                text: "Put on hold",
+                checked: (data["record-1-event-history-filter"] == "4")
                 }
                 ]
                 }) }}
+
 
 
 

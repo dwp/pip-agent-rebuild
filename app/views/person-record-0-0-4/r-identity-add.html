@@ -1,0 +1,102 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-identity-active-manual" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Identity",
+          href: "r-identity"
+        },
+        {
+          text: "Change identity status",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Update identity status</h1>
+
+
+
+        {{ govukRadios({
+          idPrefix: "r-identity-notes-check",
+          name: "r-identity-notes-check",
+          classes: "govuk-checkboxes govuk-!-margin-bottom-2",
+          fieldset: {
+            legend: {
+              text: "Did they pass IDV",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: "Might be more radios, just an example"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["r-identity-notes-check"] == "Yes")
+            },
+
+            {
+              value: "No",
+              text: "No",
+              checked: (data["r-identity-notes-check"] == "No")
+            }
+          ]
+        }) }}
+
+
+          {{ govukTextarea({
+          name: "r-identity-add-notes",
+            id: "r-identity-add-notes",
+            value: data["r-identity-add-notes"],
+            classes: "govuk-!-margin-bottom-8",
+
+            label: {
+              text: "Can you provide more detail about this action?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              text: "XXX"
+            }
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

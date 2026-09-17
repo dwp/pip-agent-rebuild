@@ -26,6 +26,8 @@
   <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Identity</h3>
 
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><p><a class="" href="r-identity-add" target="">Start identity status update</a></p>
+
 
         <table class="govuk-table">
             <thead class="govuk-table__head">
@@ -41,31 +43,8 @@
 
                 <tr class="govuk-table__row">
                   <td class="govuk-table__header">Status</td>
-                  <td class="govuk-table__cell">Active</td>
+                  <td class="govuk-table__cell">Not started</td>
                 </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">Date verified</td>
-                  <td class="govuk-table__cell">DD Month YYYY</td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">Method</td>
-                  <td class="govuk-table__cell">OneLogin (Apply)</td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">Notes</td>
-                  <td class="govuk-table__cell">
-
-                    {% if data["r-identity-update-notes"] %}
-                      {{data["r-identity-update-notes"]}}
-                    {% else %}
-                      Something about the call.
-                    {% endif %}
-                  </td>
-                </tr>
-
 
               </tbody>
 
