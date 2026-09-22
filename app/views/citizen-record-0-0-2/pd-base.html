@@ -1,0 +1,49 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-flgs" method="post" class="form">
+
+      {% include "person-record-0-0-4/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-x1"
+      },
+      {
+        text: "View your personal details and preferences"
+      }
+    ]
+  }) }}
+
+
+
+    {% include "citizen-record-0-0-2/ch-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">View your personal details<br>and preferences</h3>
+
+    <h3 class="govuk-body govuk-!-font-size-24  govuk-!-margin-top-8 govuk-!-margin-bottom-4">There is a bunch of stuff you can do here but not all of it.<br>Some things we will have to do on our end.</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="case-changes-01" target="">Tell us about a change </a>if you cant edit it yourself here and we will get it sorted.</p>
+
+
+
+  </div>
+
+
+    </form>
+{% endblock %}

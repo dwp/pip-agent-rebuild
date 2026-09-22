@@ -1,0 +1,93 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="XXX" method="post" class="form">
+  {% include "citizen-record-0-0-2/ch-notifications.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-2/id-base-record.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
+
+      {% include "citizen-record-0-0-2/block-outcome-in-payment.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
+
+
+      {% if data["case-advanced-application-overview"] == "Yes" %}
+
+      {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel" }) %}
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Your PIP will end on DD Month YYYY</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have reapplied for PIP.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">We will be in touch if we need any further information.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-l3-1i-overview-advanced-app" target="">View your application</a></p>
+
+      {% endcall %}
+
+
+
+      {% else %}
+
+
+      {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel" }) %}
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Your PIP will end on DD Month YYYY</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This means you will no longer get paid PIP from this date. </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">If you think you will still need help with your daily living or mobility needs<br>after this date, you can start a new application now.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-advanced-application-overview" target="">Reapply for PIP</a></p>
+
+      {% endcall %}
+
+
+
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
+        {% include "citizen-record-0-0-2/block-payments.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% include "citizen-record-0-0-2/block-previous-decisions.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% include "citizen-record-0-0-2/block-personal-details.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% include "citizen-record-0-0-2/block-changes.html" %}
+
+
+
+
+       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+       {% include "citizen-record-0-0-2/block-evidence.html" %}
+
+
+
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

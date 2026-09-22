@@ -1,0 +1,120 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-docs-upload" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-2/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-nil-mr-reg"
+      },
+      {
+        text: "Help with decision"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Help with understanding your decision</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">We looked at all the information available to us.</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>We used this information to look at whether you can carry out 12 activities and the amount of help you need.</li>
+        <li>You are given points for each of the 12 activities, depending on your ability and how much help you need to do it.</li>
+        <li>There are 10 activities for the daily living part of PIP and 2 for the mobility part.</li>
+        <li>You need to get 8 or more points for either part of PIP to be given that
+        part</li>
+
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">The outcome of your decision</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Somethign about viewing the decision and the decision letter that is the same information</p>
+
+      <ul class="govuk-list govuk-list--no-bullet">
+        <li><a class="" href="../person-record-0-0-4/record-applicaion-evidence-decision" target="">View the decision in full</a></li>
+        <li><a class="" href="nil-award-letter.pdf" target="">View the decision letter that was sent to you in the post</a></li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You decision timeline</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Something about how we make decisions and the information we used to make it.</p>
+
+      <ul class="govuk-list govuk-list--no-bullet">
+        <li><a class="" href="case-l3-1h-overview-ori-app" target="">Application and decision summary</a></li>
+        <li><a class="" href="case-docs-submitted" target="">See what supporting evidence you have sent us</a></li>
+
+      </ul>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">If you think outcome isnt correct</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"> You, or someone who has the authority to act for you, can phone or write to us within one month of the date on this letter to ask us to
+      explain our decision.</p>
+
+
+
+      <ul class="govuk-list govuk-list--no-bullet">
+        <li><a class="" href="#" target="">Request a call back</a></li>
+        <li><a class="" href="case-mr-reg-overview" target="">Register a mandatory reconsideration</a></li>
+      </ul>
+
+<br><br><br><br>
+
+      <!--{{ govukRadios({
+       idPrefix: "case-help-with-decision",
+       name: "case-help-with-decision",
+       fieldset: {
+         legend: {
+           html: "Do you need more help with understanding your decision?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: legendNumbers
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "Yes",
+         html: "Yes",
+         checked: (data["case-help-with-decision"] == "Yes")
+       },
+       {
+        value: "1",
+        html: "No",
+        checked: (data["case-help-with-decision"] == "1")
+        }
+       ]
+     }) }}
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}-->
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

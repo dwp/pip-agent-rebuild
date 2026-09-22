@@ -854,6 +854,12 @@ display: inline;
 }
 
 .govuk-inset-text-light {
-  border-left: 2px solid #e7e7e7 !important;
+  border-left: 2px solid #1d70b8 !important;
   margins:0 0 20px
+}
+
+
+.guidance-panel {
+    border-left-color: govuk-colour('blue');
+    background-color: #f4f8fb;
 }

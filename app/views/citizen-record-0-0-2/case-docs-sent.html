@@ -1,0 +1,78 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-what" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-2/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-x1"
+      },
+      {
+        text: "What we sent you"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">What we have sent you</h1>
+
+      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>your daily living or mobility needs</li>
+        <li>your ability to live independently</li>
+        <li>your address</li>
+        <li>your contact details</li>
+      </ul>-->
+
+
+          <table class="govuk-table govuk-!-margin-bottom-8">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-20-percent">Date sent</td>
+          <td class="govuk-table__cell govuk-50-percent">About</td>
+          <td class="govuk-table__cell govuk-20-percent">Type</td>
+              <td class="govuk-table__cell govuk-20-percent">Details</td>
+            </tr>
+            </thead>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer">Last week</td>
+                  <td class="govuk-table__cell table-spacer">Decicion letter</td>
+                  <td class="govuk-table__cell table-spacer">PDF</td>
+                  <td class="govuk-table__cell table-spacer"><a class="" href="./nil-award-letter.pdf" target="">View</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer">DD Month YYYY</td>
+                    <td class="govuk-table__cell table-spacer">Request for more information</td>
+                    <td class="govuk-table__cell table-spacer">PDF</td>
+                    <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View</a></td>
+                  </tr>
+
+          </table>
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

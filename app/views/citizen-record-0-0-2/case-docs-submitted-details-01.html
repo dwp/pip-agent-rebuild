@@ -1,0 +1,142 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-what" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-2/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+      text: "Supporting evidence supplied",
+      href: "case-docs-submitted"
+      },
+      {
+        text: "Document name"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting evidence [item]</h1>
+
+
+{% set changeDate %}        Today   {% endset %}
+{% set changeDetails %}
+
+{% if data["case-changes-what"] %}
+{{ data['case-changes-what']}}
+{% else %}
+  This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. <br><br>This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+{% endif %}
+{% endset %}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "Date submitted"
+            },
+            value: {
+              html: "Today"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "About"
+            },
+            value: {
+              html: "Care plan"
+            },
+            actions: {
+              items: [
+                {
+                href: "#",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "File name"
+            },
+            value: {
+              html: "care-plan.jpg"
+            },
+            actions: {
+              items: [
+                {
+                href: "#",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Type"
+            },
+            value: {
+              html: "PDF"
+            },
+            actions: {
+              items: [
+                {
+                href: "#",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+            }
+
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+    <br><br>
+
+  <iframe src="pip-doc3.pdf" width="100%" height="1350px" style="border:0;"></iframe>
+
+  <br><br>
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc3.pdf" target="_blank">You can also view this document in a new tab or window</a></p>
+
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<style>
+#accordion-default > div.govuk-accordion__controls > button {display: none}
+/* #accordion-default-heading-1 > span {display: none} */
+</style>
+
+<form action="#" method="post" class="form">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "citizen-record-0-0-2/id-base-organisation.html" %}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">People represented by your organisation </h1>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Outstanding actions </h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Nothing yet</p>
+
+<!---->      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<div class="govuk-accordion govuk-!-margin-bottom-0 event-history-top-border " data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Filter
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+
+          {{ govukCheckboxes({
+          idPrefix: "home-organisation-filter",
+          name: "home-organisation-filter",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+          legend: {
+          text: "Select filter type",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s "
+          }
+          },
+          items: [
+          {
+          value: "All",
+          text: "All",
+          checked: (data["home-organisation-filter"] == "All")
+          },
+          {
+          value: "1",
+          text: "Action needed",
+          checked: (data["home-organisation-filter"] == "1")
+          },
+          {
+          value: "2",
+          text: "Not started",
+          checked: (data["home-organisation-filter"] == "2")
+          },
+          {
+          value: "3",
+          text: "Being processed",
+          checked: (data["home-organisation-filter"] == "3")
+          },
+          {
+          value: "4",
+          text: "In Payment",
+          checked: (data["home-organisation-filter"] == "4")
+          },
+          {
+          value: "5",
+          text: "Closed",
+          checked: (data["home-organisation-filter"] == "5")
+          }
+          ]
+          }) }}
+
+          {{ govukButton({
+          text: "Apply",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+          }) }}
+
+        </div>
+        <div class="govuk-grid-column-one-half">
+
+        </div>
+
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% include "citizen-record-0-0-2/data-organisation-list.html" %}
+
+
+
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

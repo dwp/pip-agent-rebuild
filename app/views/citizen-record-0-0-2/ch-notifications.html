@@ -1,0 +1,40 @@
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You have told us about a change to your circumstances and your supporting evidence has been received. We will review the change and make a decision on whether it affects your PIP. You might not need to start a new application. </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "ch-uploaded-doc-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">New application for PIP submitted. We will review your application and make a new decision. </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "ch-advanced-application-submission-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">MR submitted. We will review your application and make a new decision. </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "ch-mr-submission-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
