@@ -57,6 +57,9 @@ router.post(`/system-citizen-record-selector-router`, (req, res) => {
   else if (systemCitizenRecordSelector == '1h') {
     res.redirect(`home-citizen-nil-mr-reg`)
   }
+  else if (systemCitizenRecordSelector == '1j') {
+    res.redirect(`home-citizen-multi-action`)
+  }
   else if (systemCitizenRecordSelector == '1i') {
     res.redirect(`home-citizen-ip-fixed`)
   }

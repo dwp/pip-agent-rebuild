@@ -24,22 +24,20 @@
         href: "home-citizen-bp"
       },
       {
-        text: "Supporting evidence supplied"
+        text: "Supporting evidence you've sent us"
       }
     ]
   }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting evidence you<br>have told us about</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting evidence you've sent us</h1>
 
-      <!--<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>your daily living or mobility needs</li>
-        <li>your ability to live independently</li>
-        <li>your address</li>
-        <li>your contact details</li>
-      </ul>-->
+
+      {% if data["system-citizen-record-selector"] == "1b"  %}
+      {% else %}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can send us more supporting evidence by <a class="" href="case-changes-01" target=""> telling us about a change</a>.</p>
+      {% endif %}
 
 
           <table class="govuk-table govuk-!-margin-bottom-8">
@@ -47,7 +45,7 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-20-percent">Date submitted</td>
-          <td class="govuk-table__cell govuk-20-percent">About</td>
+          <td class="govuk-table__cell govuk-20-percent">Description</td>
           <td class="govuk-table__cell govuk-40-percent">File name</td>
           <td class="govuk-table__cell govuk-20-percent">Type</td>
               <td class="govuk-table__cell govuk-20-percent">Details</td>

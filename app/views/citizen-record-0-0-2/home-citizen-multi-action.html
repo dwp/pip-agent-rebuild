@@ -24,7 +24,7 @@
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My PIP home</h1>
 
-      {% include "citizen-record-0-0-2/block-outcome-nil.html" %}
+      {% include "citizen-record-0-0-2/block-outcome-multi.html" %}
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
 
       {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel" }) %}
@@ -38,6 +38,23 @@
         <li><a class="" href="case-l3-1f-overview-man-recon" target="">View what you have submitted as part of your mandatory reconsideration</a></li>
         <li><a class="" href="case-changes-docs" target="">Send us more supporting evidence</a></li>
       </ul>
+      {% endcall %}
+
+      <br>
+
+      {% call govukInsetText({ classes: "govuk-!-margin-0 guidance-panel-new-application" }) %}
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You have reapplied for PIP</h1>
+
+      <ul class="govuk-list govuk-list--no-bullet">
+        <p><a class="" href="case-l3-1b-overview-ori-app" target="">View progress and review what you told us</a></p>
+      </ul>
+
+      <ul class="govuk-list govuk-list--no-bullet">
+        <li><a class="" href="#" target="">Tell us how your health condition or disability affects you</a></li>
+        <li><a class="" href="case-changes-docs" target="">Send us more supporting evidence</a></li>
+      </ul>
+
       {% endcall %}
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">

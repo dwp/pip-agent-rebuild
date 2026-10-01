@@ -9,11 +9,13 @@
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Your total score for the mobility part of PIP is <b>0 points</b>.<br>This means you have not got enough points for this part.</p>
 
 {% if data["system-citizen-record-selector"] == "1d"  %}
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-01" target="">View case summary</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-help-with-decision" target="">Get help with understanding this decision</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-1d" target="">View claim summary</a></p>
+
 {% elif data["system-citizen-record-selector"] == "1f"  %}
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-1f" target="">View case summary</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-1f" target="">View claim summary</a></p>
 {% elif data["system-citizen-record-selector"] == "1i"  %}
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-1i" target="">View case summary</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-1i" target="">View claim summary</a></p>
 {% else %}
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-01" target="">View case summary</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="case-summary-01" target="">View claim summary</a></p>
 {% endif %}

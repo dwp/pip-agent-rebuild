@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <form action="case-mr-reg-overview" method="post" class="form">
+  <form action="#" method="post" class="form">
     {% include "citizen-record-0-0-2/id-base-record.html" %}
 
   <div class="govuk-grid-row">
@@ -16,11 +16,11 @@
       items: [
         {
           text: "My Home",
-          href: "home-citizen-nil-mr"
+          href: "home-citizen-ns"
         },
         {
-          text: "Active case summary",
-          href: "case-summary-1f"
+          text: "Applicaiton overview",
+          href: ""
         }
       ]
     }) }}
@@ -28,7 +28,7 @@
     <div class="govuk-grid-column-three-quarters">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Orignal decision overview</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
@@ -44,30 +44,22 @@
             <th scope="row" class="govuk-table__header">Status</th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "Decision made",
-                classes: "govuk-tag--red"
+                text: "Incomplete",
+                classes: "govuk-tag--yellow"
               })}}
             </td>
           </tr>
 
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Outcome</th>
-            <td class="govuk-table__cell">
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: nil (0 points)</p>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: nil (0 points)</p>
-            </td>
-          </tr>
-
-          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Start of application</th>
-            <td class="govuk-table__cell">May 2026</td>
+            <td class="govuk-table__cell">DD Month YYYY</td>
           </tr>
 
         </tbody>
       </table>
 
 
-      <p class="govuk-heading-l govuk-!-margin-bottom-6">Your decision history</p>
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Your application progress</p>
 
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -82,25 +74,11 @@
         </thead>
         <tbody class="govuk-table__body">
 
-
-
-        <tr class="govuk-table__row">
-          <td scope="row" class="govuk-table__cell">June 2026</td>
-          <td class="govuk-table__cell">Decision made</td>
-          <td class="govuk-table__cell "><a class="govuk-aligned-right" href="../person-record-0-0-4/record-applicaion-evidence-decision" target="">View</a></td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
-          <td class="govuk-table__cell">Supporting evidence uploaded</td>
-          <td class="govuk-table__cell"><a class="govuk-aligned-right" href="/citizen-record-0-0-2/case-docs-submitted" target="">View</a></td> <!--View HIG details -->
-        </tr>
-
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
-        <td class="govuk-table__cell">Tell us how your health condition or disability affects you (Stage 2)</td>
-        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="../person-record-0-0-2/record-applicaion-evidence-pip2" target="">View</a></td> <!--View HIG details -->
-      </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">DD MM YYYY</td>
+            <td class="govuk-table__cell">Supporting evidence uploaded</td>
+            <td class="govuk-table__cell"><a class="govuk-aligned-right" href="/citizen-record-0-0-2/case-docs-submitted" target="">View</a></td> <!--View HIG details -->
+          </tr>
 
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">1 January 2026</td>
@@ -114,8 +92,8 @@
 
 
       {{ govukRadios({
-       idPrefix: "case-l3-1h-overview-ori-app",
-       name: "case-l3-1h-overview-ori-app",
+       idPrefix: "applicaiton-actions",
+       name: "applicaiton-actions",
        fieldset: {
          legend: {
            html: "What would you like to do?",
@@ -129,23 +107,33 @@
        classes: "govuk-radios",
        items: [
        {
-         value: "1",
-         html: "Register mandatory reconsideration",
-         checked: (data["case-l3-1h-overview-ori-app"] == "1")
+         value: "1m",
+         html: "Request a paper HIG",
+         checked: (data["applicaiton-actions"] == "1m")
        },
        {
-         value: "2",
-         html: "Something else",
-         checked: (data["case-l3-1h-overview-ori-app"] == "2")
+         value: "1m",
+         html: "Request more time",
+         checked: (data["applicaiton-actions"] == "1m")
+         },
+         {
+           value: "1m",
+           html: "Rearrange my assessment",
+           checked: (data["applicaiton-actions"] == "1m")
+         },
+         {
+         value: "4",
+         html: "Withdraw",
+         checked: (data["applicaiton-actions"] == "4")
        }
        ]
      }) }}
 
+     {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
 
-      {{ govukButton({
-       text: "Continue",
-       classes: "govuk-!-margin-bottom-8"
-     }) }}
 
         </div>
       </div>

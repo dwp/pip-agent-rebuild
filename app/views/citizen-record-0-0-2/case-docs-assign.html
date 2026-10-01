@@ -1,0 +1,91 @@
+{% extends "layouts/main-citizen-base.html" %}
+
+{% block pageTitle %}
+  Citizen (PIP)
+{% endblock %}
+
+{% block content %}
+
+<form action="case-changes-docs-upload" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "citizen-record-0-0-2/id-base-record.html" %}
+
+    </div>
+  </div>
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "My Home",
+        href: "home-citizen-ip"
+      },
+      {
+        text: "Tell us about a change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+       idPrefix: "case-docs-assign",
+       name: "case-docs-assign",
+       fieldset: {
+         legend: {
+           html: "What do you want us to use this evidence for?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--xl"
+         }
+       },
+       hint: {
+         html: "We need to make sure we use the right evidence when making a decision."
+       },
+       classes: "govuk-radios",
+       items: [
+       {
+         value: "MR",
+         html: "Mandatory reconsideration",
+         checked: (data["case-docs-assign"] == "MR"),
+               hint: {
+                 text: "Submission date: Two weeks ago"
+               }
+             },
+       {
+         value: "NA",
+         html: "New PIP application",
+         checked: (data["case-docs-assign"] == "NA"),
+               hint: {
+               text: "Submission date: Today"
+               }
+             },
+         {
+           divider: "or"
+         },
+         {
+         value: "Both",
+         html: "Both",
+         checked: (data["case-docs-assign"] == "Both")
+       }
+       ]
+     }) }}
+
+
+
+     {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-bottom-8"
+     }) }}
+
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}

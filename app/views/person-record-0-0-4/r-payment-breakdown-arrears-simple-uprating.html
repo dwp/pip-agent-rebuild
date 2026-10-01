@@ -1,0 +1,127 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+
+{% include "person-record-0-0-4/record-id-base.html" %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Payments",
+          href: "r-payments"
+        }
+      ]
+    }) }}
+
+
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Arrears payment summary</h1>
+
+
+                 <!--<p class="govuk-body govuk-!-margin-bottom-0">This payment includes money owed from the award start date of 1 May 2026.</p>-->
+                 <h3 class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6"><b>Payment date:</b> X Month 2026</h3>
+
+                  <!--{% include "person-record-0-0-4/cya-payment-rates.html" %}-->
+                  <p class="govuk-body govuk-!-margin-bottom-0">The rates of PIP are looked at every year and any changes will take place from early April. This means the person's might be different.</p>
+
+                  <br>
+
+                  <table class="govuk-table govuk-!-margin-bottom-0">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Period</th>
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Days</th>
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Amount</th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body noborder">
+
+                      <tr class="govuk-table__row">
+                      <td class="govuk-table__cell ">4 Apr 2025 to<br>4 May 2026</td>
+                      <td class="govuk-table__cell">30</td>
+
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                        <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                      </td>
+
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body govuk-!-margin-bottom-2">£2,301.00<br><br></p>
+                        <p class="govuk-body govuk-!-margin-bottom-1">£909.00</p>
+                      </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                    <td class="govuk-table__cell ">3 Mar 2026 to<br>3 Apr 2026</td>
+                    <td class="govuk-table__cell">30</td>
+
+                    <td class="govuk-table__cell">
+                      <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                      <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                    </td>
+
+                    <td class="govuk-table__cell">
+                      <p class="govuk-body govuk-!-margin-bottom-2">£2,217.00<br><br></p>
+                      <p class="govuk-body govuk-!-margin-bottom-1">£876.00</p>
+                    </td>
+                  </tr>
+
+                    </tbody>
+                  </table>
+
+
+                  <hr class="govuk-section-break govuk-section-break--visible-seperator">
+
+
+                  <table class="govuk-table govuk-!-padding-top-0">
+
+                    <tbody class="govuk-table__body">
+
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-20-percent"><strong>Total days</strong></td>
+                        <td class="govuk-table__cell govuk-20-percent"><strong>60</strong></td>
+                        <td class="govuk-table__cell govuk-20-percent"></td>
+                        <td class="govuk-table__cell govuk-20-percent"></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-20-percent"><strong>Total paid</strong></td>
+                        <td class="govuk-table__cell govuk-20-percent"></td>
+                        <td class="govuk-table__cell govuk-20-percent"></td>
+                        <td class="govuk-table__cell govuk-20-percent"><strong>£6,303.00</strong></td>
+                      </tr>
+
+
+
+                    </tbody>
+                  </table>
+
+
+                  {% include "person-record-0-0-4/r-payment-scenarios.html" %}
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}
