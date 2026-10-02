@@ -11,19 +11,23 @@
 
 {% include "person-record-0-0-4/record-id-base.html" %}
 
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Overview",
-          href: "r-overview"
-        },
-        {
-          text: "Payments",
-          href: "r-payments"
-        }
-      ]
-    }) }}
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "r-overview"
+    },
+    {
+      text: "Payments",
+      href: "r-payments"
+    },
+    {
+      text: "Regular payment DD Month YYYY",
+      href: ""
+    }
+  ]
+}) }}
 
 
 

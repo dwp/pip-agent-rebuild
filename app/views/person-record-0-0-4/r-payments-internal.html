@@ -8,39 +8,29 @@
 
 {% block content %}
 
+{% include "person-record-0-0-4/r-notifications.html" %}
 
-{% include "person-record-0-0-4/record-id-base.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
 
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Overview",
-          href: "r-overview"
-        },
-        {
-          text: "Payments",
-          href: "r-payments"
-        }
-      ]
-    }) }}
+      {% include "person-record-0-0-4/record-id-base.html" %}
 
 
-    <form action="entry-home" method="post" class="form">
+    </div>
+  </div>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
 
-          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Payments</h3>
+  {% include "person-record-0-0-4/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Payments</h3>
 
      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">The payments shown may be different to the amount paid into their bank account.
      Check the Central Payment Systsem (CPS) to understand any differences.</p>
 
 
-    <!--Scheduled-->
-    <!--
-    <div>
-      <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Scheduled</h3>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Scheduled</h3>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
 
@@ -62,10 +52,7 @@
 
           </td>
           </tr>
-      </table>
-    </div>
--->
-
+</table>
 
 <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Paid</h3>
 
@@ -76,7 +63,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-30-percent">Payment type</td>
     <td class="govuk-table__cell govuk-25-percent">Period</td>
-    <td class="govuk-table__cell govuk-25-percent">Payment date</td>
+    <td class="govuk-table__cell govuk-25-percent">Date paid</td>
         <td class="govuk-table__cell govuk-20-percent">Paid</td>
       </tr>
       </thead>
