@@ -25,46 +25,74 @@
 
   <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Names</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><p><a class="" href="r-name-add" target="">Add another name</a></p>
 
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "First name"
-              },
-              value: {
-                html: "Jeff"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "",
-                    visuallyHiddenText: "contact details"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Last name"
-              },
-              value: {
-                html: 'Bridges'
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "",
-                    visuallyHiddenText: "contact details"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              First name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data["r-name-first"] %} {{data["r-name-first"]}} {% else %} Jefferson {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="r-name-change">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          {% if data["r-name-type"] == "Middle" %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Middle name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data["r-name-addional"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="r-name-another-change">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Second name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data["r-name-second"] %} {{data["r-name-second"]}} {% else %} Bridgesss {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="r-name-change">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          {% if data["r-name-type"] == "Preferred" %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data["r-name-addional"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="r-name-another-change">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+
+
+
+          </dl>
+
 
 
         {% include "person-record-0-0-4/r-name-scenarios.html" %}

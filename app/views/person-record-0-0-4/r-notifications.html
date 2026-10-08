@@ -280,3 +280,42 @@ attributes: {
   html: flagContext,
   type: 'information'
 }) }}
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You added name detail item</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-name-add-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You changed name detail item</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-name-change-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">You changed contact detail item</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-contact-change-banner"
+},
+  html: flagContext,
+  type: 'success'
+}) }}

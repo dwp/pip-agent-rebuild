@@ -39,6 +39,9 @@ router.post(`/system-citizen-record-selector-router`, (req, res) => {
   else if (systemCitizenRecordSelector == '1b') {
     res.redirect(`home-citizen-ns`)
   }
+  else if (systemCitizenRecordSelector == '1k') {
+    res.redirect(`home-citizen-nsnp`)
+  }
   else if (systemCitizenRecordSelector == '1c') {
     res.redirect(`home-citizen-bp`)
   }

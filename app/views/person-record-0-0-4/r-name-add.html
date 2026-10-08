@@ -1,0 +1,97 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-name#r-name-add-banner" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Name",
+          href: "r-name"
+        },
+        {
+          text: "Add another name",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Add another name</h1>
+
+
+
+        {{ govukRadios({
+          idPrefix: "r-name-type",
+          name: "r-name-type",
+          classes: "govuk-checkboxes govuk-!-margin-bottom-2",
+          fieldset: {
+            legend: {
+              text: "What type is this?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: "XXX"
+          },
+          items: [
+            {
+              value: "Middle",
+              text: "Middle",
+              checked: (data["r-name-type"] == "Middle")
+            },
+
+            {
+              value: "Preferred",
+              text: "Preferred",
+              checked: (data["r-name-type"] == "Preferred")
+            }
+          ]
+        }) }}
+
+
+        {{ govukInput({
+          name: "r-name-addional",
+            id: "r-name-addional",
+            value: data["r-name-addional"],
+            classes: "govuk-!-margin-bottom-6",
+
+            label: {
+              text: "Name",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            }
+          }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

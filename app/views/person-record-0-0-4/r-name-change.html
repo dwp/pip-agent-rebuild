@@ -1,0 +1,78 @@
+{% extends "layouts/main-agent.html" %}
+
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+{% block content %}
+
+{% include "person-record-0-0-4/r-notifications.html" %}
+
+<form action="r-name#r-name-add-banner" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+  {% include "person-record-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Name",
+          href: "r-name"
+        },
+        {
+          text: "Name",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Name</h1>
+
+
+
+        {{ govukInput({
+          name: "r-name-first",
+            id: "r-name-first",
+            value: data["r-name-first"],
+            classes: "govuk-!-margin-bottom-4",
+
+            label: {
+              text: "First name",
+              isPageHeading: false
+            }
+          }) }}
+
+        {{ govukInput({
+          name: "r-name-second",
+            id: "r-name-second",
+            value: data["r-name-second"],
+            classes: "govuk-!-margin-bottom-6",
+
+            label: {
+              text: "Second name",
+              isPageHeading: false
+            }
+          }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

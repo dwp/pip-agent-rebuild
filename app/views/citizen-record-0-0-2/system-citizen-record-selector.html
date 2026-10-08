@@ -1,4 +1,4 @@
-{% extends "layouts/main-agent-process-mr.html" %}
+{% extends "layouts/main-citizen-base.html" %}
 
 
 {% block pageTitle %}
@@ -47,8 +47,13 @@
     value: "1b",
     text: "[1b] Citzen (Application part submission)",
     checked: (data["system-citizen-record-selector"] == "1b")
-  },
-  {
+    },
+    {
+      value: "1k",
+      text: "[1k] Citzen (Application part submission) no previous",
+      checked: (data["system-citizen-record-selector"] == "1k")
+    },
+    {
     value: "1c",
     text: "[1c] Citzen (Being processed) ",
     checked: (data["system-citizen-record-selector"] == "1c")
