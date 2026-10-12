@@ -29,7 +29,7 @@
         {% if data["case-scenario-selector"]  == "0a" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Not yet processed",
@@ -49,7 +49,7 @@
         {% elif data["case-scenario-selector"]  == "0a" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Not yet processed",
@@ -70,7 +70,7 @@
         {% elif data["case-scenario-selector"]  == "0b" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Being processed",
@@ -109,7 +109,7 @@
 
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Decision made",
@@ -151,7 +151,7 @@
         </tr>-->
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Decision made",
@@ -172,7 +172,7 @@
 
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Decision made",
@@ -193,7 +193,7 @@
 
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "Decision made",
@@ -239,7 +239,7 @@
         </tr>-->
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -258,7 +258,7 @@
         {% else %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -306,7 +306,7 @@
         </tr>-->
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -350,7 +350,7 @@
         </tr>-->
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -371,7 +371,7 @@
 
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -394,7 +394,7 @@
         {% elif data["case-scenario-selector"]  == "2" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -416,7 +416,27 @@
         {% elif data["case-scenario-selector"]  == "2a" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">
+            {{govukTag({
+              text: "In payment",
+              classes: "govuk-tag--green"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current award/outcome</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: standard (8 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: standard (8 points)</p>
+          </td>
+        </tr>
+
+        {% elif data["case-scenario-selector"]  == "2a1" %}
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -437,7 +457,7 @@
         {% elif data["case-scenario-selector"]  == "3" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -458,7 +478,7 @@
         {% elif data["case-scenario-selector"]  == "3a" %}
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
               text: "In payment",
@@ -485,7 +505,7 @@
         </tr>-->
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header govuk-!-width-one-half">Case status</td>
+          <td class="govuk-table__header govuk-!-width-one-half">Claim status</td>
           <td class="govuk-table__cell govuk-!-width-one-half">
             {{govukTag({
             text: "In payment",
